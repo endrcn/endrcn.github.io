@@ -16,7 +16,7 @@ Bazen tarayıcı tabanlı oyunlarda, bazen de sürekli kullandığımız web sit
 
 Eklenti yüklendikten sonra tarayıcının sol üst köşesindeki eklenti alanına pinleyelim. Böylece eklentiye ulaşmamız ve yönetmemiz daha kolay olacak.
 
-![_config.yml]({{ site.baseurl }}/images/post_images/tampermonkey/img2.png =100x)
+![_config.yml]({{ site.baseurl }}/images/post_images/tampermonkey/img2.png)
 
 Bu işlemlerden sonra artık kullanıma geçebiliriz.
 
