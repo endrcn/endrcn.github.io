@@ -20,7 +20,7 @@ Node.js, Javascript kodlarını sadece bir thread'de(single thread) çalıştır
 
 Event-loop mimarisi, yazdığımız kodu single thread'de efektif bir biçimde çalıştırmamızı sağlar. Aşağıda Node.js'in nasıl çalıştığını anlatan bir görsel paylaşıyorum ve bunu iyice sindirmenizi tavsiye ediyorum.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/nodejs_architecture-1024x406.jpeg)
+![_config.yml]({{ site.baseurl }}/images/nodejs_architecture-1024x406.jpeg)
 
 Şimdi gelelim asıl konumuz olan asenkron fonksiyonlara. Node.js'te birçok modül asenkron fonksiyonlar barındırır. Bu makalemizde bir modül kullanmadan Node.js ile birlikte gelen asenkron timer fonksiyonlarını kullanacağız.
 

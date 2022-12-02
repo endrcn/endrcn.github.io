@@ -10,7 +10,7 @@ tags:
   - "nodejs-tutorial"
 ---
 
-![](https://endrcn.dev/wp-content/uploads/2021/12/nodejs_logo-1024x512.png)
+![_config.yml]({{ site.baseurl }}/images/nodejs_logo-1024x512.png)
 
 Merhabalar, her zaman niyetlenip bir türlü başlayamadığım blog yazma konusunda nihayet ilk adımı attım. İlk blog yazımı yazdığım ve bununla birlikte bir Node.js yazı dizisinin başlangıcını yaptığım için oldukça heyecanlı hissediyorum. Bu seride Node.js üzerine bilmeniz gereken temellerden başlayarak zamanla ileri düzey konulara geçmeyi ve gerçek hayat örnekleriyle de öğrendiklerinizin uygulama alanlarını göstermeyi hedefliyorum. Ayrıca bu eğitimi sadece bir blog yazı dizisi olmaktan çıkarıp videolu örneklerle de destekleme yönünde motivasyonum oldukça yüksek.
 

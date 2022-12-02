@@ -46,7 +46,7 @@ Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz ge
 
 Şimdi bu alandaki verileri çekmek için _jQuery_ yazmaya başlayabiliriz. Dev Tools üzerinden Console tab'ına tıkladığımızda bu web sitesi üzerinde çalışacak javascript kodu yazabileceğimiz alan açılır.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.04.22-1024x183.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.04.22-1024x183.png)
 
 İlk olarak jQuery kullanarak bulduğumuz kapsayıcı sınıfın alt elemanlarını çekelim.
 
@@ -62,7 +62,7 @@ $(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table
 });
 ```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.19.31-1024x401.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.19.31-1024x401.png)
 
 Son olarak bu değerleri bir çıktı olarak istediğimiz objeye yazalım.
 
@@ -93,11 +93,11 @@ console.log(json);
 
 Çıktı olarak elde ettiğimiz sonuç:
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.29.17-1024x768.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.29.17-1024x768.png)
 
 Son olarak çıktımızı tam olarak elde edebilmek için değerleri döngü içinde sayısal hale getirelim.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.32.49-1024x805.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.32.49-1024x805.png)
 
 Tüm işimizi tarayıcı üzerinde bitirdik. Şimdi bu kodları Node.js üzerinde gerçekleştirelim. İlk olarak _cheerio_ modülünü kuralım.
 
@@ -197,6 +197,6 @@ function extractWithCheerio($) {
 
 Çıktıyı da görelim:
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.53.38.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.53.38.png)
 
 Cheerio ile web scraping yazımızın sonuna geldik. Umarım faydalı bir içerik olmuştur. İyi çalışmalar.

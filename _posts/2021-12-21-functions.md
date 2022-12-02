@@ -11,7 +11,7 @@ tags:
 
 Bir uygulama geliştirirken her şeyi tek sayfada, alt alta yazmaya çalıştığınızı, bir matematiksel hesabı onlarca kez yaptığınızı, veritabanından aynı veriyi defalarca çektiğinizi bir düşünün. Bu şekilde yazılmış kodların bakımı da okunması da oldukça zor olurdu. İşte tam da burada devreye **fonksiyon** giriyor.
 
-![](https://endrcn.dev/wp-content/uploads/2021/12/functions.png)
+![_config.yml]({{ site.baseurl }}/images/functions.png)
 
 Kaynak: studytonight.com
 
