@@ -29,7 +29,7 @@ console.log(process.env);
 
 Çıktı olarak ortamdaki tüm değişkenleri verir.
 
-![Çevre Değişkenleri (environments)](https://endrcn.dev/wp-content/uploads/2022/01/env-2)
+![_config.yml]({{ site.baseurl }}/images/env-2.png)
 
 Uygulamaya özel değişkenlerimizi, uygulamayı komut satırında çağırmadan önce tanımlayabiliriz. Şimdi _main.js_ adında bir dosya oluşturup NODE_ENV değişkenini ekrana yazdıralım.
 
@@ -129,7 +129,7 @@ console.log("PORT:", process.env.PORT);
 
 Son olarak çıktımız şu şekilde olacak:
 
-![dotenv](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-11-at-03.20.22.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-11-at-03.20.22.png)
 
 ## Docker
 
