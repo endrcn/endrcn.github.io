@@ -29,7 +29,7 @@ console.log(process.env);
 
 Çıktı olarak ortamdaki tüm değişkenleri verir.
 
-![Çevre Değişkenleri (environments)](https://endrcn.dev/wp-content/uploads/2022/01/env-2-1024x592.png)
+![Çevre Değişkenleri (environments)](https://endrcn.dev/wp-content/uploads/2022/01/env-2)
 
 Uygulamaya özel değişkenlerimizi, uygulamayı komut satırında çağırmadan önce tanımlayabiliriz. Şimdi _main.js_ adında bir dosya oluşturup NODE_ENV değişkenini ekrana yazdıralım.
 

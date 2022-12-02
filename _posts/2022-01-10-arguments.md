@@ -26,7 +26,7 @@ console.log(process.argv);
 
 Script.js uygulamasını çalıştırdığımızda çıktı aşağıdaki gibi olur.
 
-![Node.js - Argümanlar](https://endrcn.dev/wp-content/uploads/2022/01/cli-1-1024x198.png)
+![Node.js - Argümanlar](https://endrcn.dev/wp-content/uploads/2022/01/cli-1)
 
 Uygulama çalıştırılırken her bir argüman birbirinden boşluk karakteriyle ayrılır. Bu nedenle eğer içinde boşluk geçen bir string'i argüman olarak göndermek istersek, tırnak içine almalıyız.
 
@@ -37,7 +37,7 @@ const arguments = process.argv.slice(2);
 console.log(arguments);
 ```
 
-![Node.js - Argümanlar](https://endrcn.dev/wp-content/uploads/2022/01/cli-2-1024x56.png)
+![Node.js - Argümanlar](https://endrcn.dev/wp-content/uploads/2022/01/cli-2)
 
 Son olarak genelde CLI uygulamalarını çalıştırırken bazı flag'ler ile bir sonraki parametrenin ne olduğuna dair bilgi verilir. Böylece parametrelerin sıralaması önemini yitirir. Bunun için yukarıdaki yöntemlerle kendimiz bir yapı kurabiliriz ancak daha önce de söylediğimiz gibi bu tarz özel işleri yapan birçok [modül](https://endrcn.dev/nodejs/modules/) mevcuttur. Bu tarz parametre alan CLI uygulaması geliştirmek için kullanabileceğimiz popüler bir modül de [yargs](https://www.npmjs.com/package/yargs) modülüdür. Modül kullanımıyla ilgili detaylara modülün NPM sayfasından ulaşabilirsiniz.
 
@@ -103,6 +103,6 @@ readFile(filePath, "utf-8", (err, fileContent) => {
 
 Uygulamamızı argüman vermeyerek, hatalı argüman vererek ve doğru argüman vererek çalıştırdığımızda aşağıdaki gibi sonuçlar elde ederiz.
 
-![Argümanlar - Örnek Uygulama](https://endrcn.dev/wp-content/uploads/2022/01/cli-4-1024x199.png)
+![Argümanlar - Örnek Uygulama](https://endrcn.dev/wp-content/uploads/2022/01/cli-4)
 
 Harika bir iş çıkartıyorsunuz. Bu şekilde devam. Bir sonraki yazımızda çevre değişkenlerinden (environment variables) bahsedeceğiz. İyi çalışmalar.

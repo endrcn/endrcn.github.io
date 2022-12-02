@@ -70,13 +70,13 @@ console.log(--i); // output: -1
 
 Aynı seviyedeki operatörlerde işlem sırası dikkate alınır. Soldan sağa doğru bakılan sıralamada önce hangi işlem yer alıyorsa o yapılır. İşlem önceliğini değiştirmek için aynı matematikte olduğu gibi parantezlerden yararlanabiliriz. Aşağıdaki örnekten işlem önceliklerini daha iyi anlayabiliriz.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-00.50.27-1024x346.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-00.50.27)
 
 Matematiksel Operatörlerde İşlem Önceliği
 
 Aynı işlemi bir de parantezlerle yaparak toplama ve mod alma işleminin çarpma ve bölmeden önce yapılmasını sağlayalım.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-00.46.48-1024x412.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-00.46.48)
 
 Matematiksel Operatörlerde İşlem Önceliği - 2
 

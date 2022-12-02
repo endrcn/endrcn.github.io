@@ -55,7 +55,7 @@ Yukarıdaki kodları açıklamak gerekirse:
 
 Oluşturduğunuz bir modül dosyasını doğru şekilde import ettiğinizde VS Code bunu tanıyacaktır ve otomatik tamamlamada ilgili sınıfa ait metot ve property'ler görünecektir.
 
-![Export - Otomatik tamamlama](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-07-at-01.48.31-1024x413.png)
+![Export - Otomatik tamamlama](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-07-at-01.48.31)
 
 **Not:** require ile import aşamasında dosyanın uzantısını belirtmedik ancak belirtsek de sorunsuz çalışacaktır.
 

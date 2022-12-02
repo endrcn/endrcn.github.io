@@ -13,7 +13,7 @@ Bir önceki yazımızda [operatörlerden](https://endrcn.dev/nodejs/operators/) 
 
 Node.js ile yazılan temel bir uygulamanın kodları çoğu programlama dilinde olduğu gibi yukarıdan aşağıya doğru çalıştırılır. **Koşullar**, bu akışta bazı düzenlemeler yapmamızı ve akışı yönlendirebilmemizi sağlar.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-12.12.18-1024x330.png)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-12.12.18)
 
 Koşulsuz Program Akışı
 
