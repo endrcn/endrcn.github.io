@@ -46,7 +46,7 @@ Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz ge
 
 Şimdi bu alandaki verileri çekmek için _jQuery_ yazmaya başlayabiliriz. Dev Tools üzerinden Console tab'ına tıkladığımızda bu web sitesi üzerinde çalışacak javascript kodu yazabileceğimiz alan açılır.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.04.22)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.04.22.png)
 
 İlk olarak jQuery kullanarak bulduğumuz kapsayıcı sınıfın alt elemanlarını çekelim.
 
@@ -62,7 +62,7 @@ $(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table
 });
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.19.31)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.19.31.png)
 
 Son olarak bu değerleri bir çıktı olarak istediğimiz objeye yazalım.
 
@@ -93,11 +93,11 @@ console.log(json);
 
 Çıktı olarak elde ettiğimiz sonuç:
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.29.17)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.29.17.png)
 
 Son olarak çıktımızı tam olarak elde edebilmek için değerleri döngü içinde sayısal hale getirelim.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.32.49)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.32.49.png)
 
 Tüm işimizi tarayıcı üzerinde bitirdik. Şimdi bu kodları Node.js üzerinde gerçekleştirelim. İlk olarak _cheerio_ modülünü kuralım.
 
