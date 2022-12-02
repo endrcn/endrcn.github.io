@@ -32,11 +32,11 @@ Cheerio modülü bize jQuery metotlarını Node.js içinde kullanma imkanı verd
 
 İlk işimiz veri kazıyacağımız adresi tarayıcıdan açıp ardından Dev Tools'u açalım. Dev Tools'u açmanın birçok yolu var. İlki web sayfasında sağ tıklayıp Öğeyi İncele(Inspect) seçeneğini seçmektir. Ya da Mac için _Cmd+Option+i_, Windows için F12 klavye kısayollarıyla da açabiliriz.
 
-![Developer Tools](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.35.32)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-22.35.32.png)
 
 Ardından Dev Tools'un sol üst köşesindeki Inspect iconuna tıklayıp web sitesinden ayıklamak istediğimiz alanın üzerine mouse imlecini getirip HTML'de ilgili alana gidelim.
 
-![Inspect Element](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.40.18)
+![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-22.40.18.png)
 
 Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz gereken sınıf(lar)ı görebildik.
 
