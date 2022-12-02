@@ -13,28 +13,33 @@ Daha önceki yazılarımızda Node.js'te [değişken tanımlama](https://endrcn.
 
 ## Aritmetik Operatörler
 
-Matematiksel işlemleri yapmak için kullanılır. Number tipindeki değişkenler üzerinde toplama(+), çıkarma(-), çarpma(\*), bölme(/) ve mod alma(%) olmak üzere beş tanedir. **Matematiksel operatörlerin** işlem önceliği matematikteki kurallar ile aynıdır.
+Matematiksel işlemleri yapmak için kullanılır. Number tipindeki değişkenler üzerinde toplama(+), çıkarma(-), çarpma(*), bölme(/) ve mod alma(%) olmak üzere beş tanedir. **Matematiksel operatörlerin** işlem önceliği matematikteki kurallar ile aynıdır.
 
+```javascript
 var total = 5.12+5; // 10.12
 var division = 10/5; // 2
-var multiplication = 5\*6; // 30
+var multiplication = 5*6; // 30
 var subtraction = 6-5; // 1
 var mod = 7%5; // 2
+```
 
 Yukarıdaki kod parçasında iki sayıyı topladığımız gibi, number tipinde iki -ya da daha fazla- değişkeni de matematiksel operatörlerle kullanabiliriz.
 
+```javascript
 var num1 = 10.12;
 var num2 = 2;
 var total = num1 + num2; // 12.12
 var division = num1 / num2; // 5.06
-var multiplication = num1 \* num2; // 20.24
+var multiplication = num1 * num2; // 20.24
 var subtraction = num1 - num2; // 8.12
 var mod = num1 % num2; // 0.12
+```
 
 Matematiksel operatörler zaten herkesin bildiği yapılar oldukları için bu operatörleri tek tek açıklamaya gerek duymuyorum. Sadece **mod(%)** operatörünü açıklayacağım. Mod operatörü; operatörün solundaki sayının, sağındaki sayıya bölümünden kalanı verir. Yukarıdaki **7%5** örneği üzerinden açıklarsak, 7'nin 5'e bölümünden kalan 2'dir.
 
 Ek olarak, aritmetik operatörlerde bir arttırma(++) ve bir eksiltme(--) operatörleri mevcuttur. Bu operatörler, kullanıldığı değişkenlerin değerini bir artırır ya da bir eksiltir. Kullanımı aşağıdaki gibidir.
 
+```javascript
 var i = 0;
 i++ // output: 1
 <meta charset="utf-8">var i = 0;
@@ -42,9 +47,11 @@ i++ // output: 1
 <meta charset="utf-8">var i = 0;
 i-- // output: -1
 --i // output: -1
+```
 
 ++ ve -- operatörlerinin değişkenin başında veya sonunda kullanılması arasında ince bir fark vardır. Operatör eğer değişkenin önünde kullanılırsa, önce arttırma/eksiltme işlemi yapılır ardından asıl işlem(örn: loglama) yapılır. Eğer operatör değişkenin sonunda kullanılırsa, önce asıl işlem yapılır, sonra arttırma/eksiltme işlemi yapılır. Bunu en kolay değişken değerlerini loglayarak görebiliriz.
 
+```javascript
 var i = 0;
 console.log(i++); // output: 0
 i = 0;
@@ -53,10 +60,11 @@ i = 0;
 console.log(i--); // output: 0
 i = 0;
 console.log(--i); // output: -1
+```
 
 ### Aritmetik Operatörlerde İşlem Önceliği
 
-1. Çarpma(\*) / Bölme(/)
+1. Çarpma(*) / Bölme(/)
 2. Mod(%)
 3. Toplama(+) / Çıkarma(-)
 
@@ -74,22 +82,26 @@ Matematiksel Operatörlerde İşlem Önceliği - 2
 
 Aritmetik operatörler number tipindeki değişkenler ve değerler ile kullanılabilir. Ancak + operatörü için bir istisna var. + operatörü, string tipindeki değişkenler ile kullanılabilir. [String](https://endrcn.dev/nodejs/data-types/#Strings) tipindeki bir değişkenle number ya da string tipindeki başka bir değişken + operatörü ile birleştirilebilir. Bunun sonucunda yeni değer string tipinde olur.
 
+```javascript
 var str = "5";
 var number = 5;
 var result = str + number;
 console.log(typeof result, result); // output: string 55
+```
 
 ## Atama Operatörleri
 
-Atama operatörleri, adından da anlaşılacağı gibi bir değişkene veri atamak için kullanılır. En temel atama operatörü olan **\= operatörünü** [değişkenler](https://endrcn.dev/nodejs/variables/) ve [veri tipleri](https://endrcn.dev/nodejs/data-types/) yazılarımızda kullanmıştık. Atama operatörleri; sağındaki değeri, solundaki değişkene atama görevini üstlenirler. = operatörü bir değişkene değer atarken, bu operatör aritmetik operatörlerle birleştirilerek toplayarak atama, çıkararak atama, çarparak atama, bölerek atama ve mod alarak atama operatörlerine dönüşür.
+Atama operatörleri, adından da anlaşılacağı gibi bir değişkene veri atamak için kullanılır. En temel atama operatörü olan **= operatörünü** [değişkenler](https://endrcn.dev/nodejs/variables/) ve [veri tipleri](https://endrcn.dev/nodejs/data-types/) yazılarımızda kullanmıştık. Atama operatörleri; sağındaki değeri, solundaki değişkene atama görevini üstlenirler. = operatörü bir değişkene değer atarken, bu operatör aritmetik operatörlerle birleştirilerek toplayarak atama, çıkararak atama, çarparak atama, bölerek atama ve mod alarak atama operatörlerine dönüşür.
 
+```javascript
 var num = 0; // temel atama işlemi
 var num2 = 1; // <meta charset="utf-8">temel atama işlemi
 num += num2; // toplayarak atama, num = num + num2
 num -= 6 // çıkararak atama, num = num - 6
 num /= 2 // bölerek atama, num = num / 2
-num \*= num2 // çarparak atama, num = num / num2
+num *= num2 // çarparak atama, num = num / num2
 num %= num2 // mod alarak atama, num = num % num2
+```
 
 _**Not:** Aritmetik operatörlerle birleştirilen atama operatörleri sadece number tipindeki değişkenlerle kullanılabilir. + operatörü için istisnayı yukarıda açıklamıştık._
 
@@ -103,6 +115,7 @@ Tablo 1 - Karşılaştırma Operatörleri
 
 Bir de kod parçasında sonuçları görelim.
 
+```javascript
 var str = "5";
 var num = 5;
 var result;
@@ -113,7 +126,8 @@ result = str !== num // result = true
 result = str > num // result = false
 result = str >= num // result = true
 result = str < num // result = false
-<meta charset="utf-8">result = str <= num // result = true
+result = str <= num // result = true
+```
 
 ## Mantıksal Operatörler
 

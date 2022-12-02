@@ -26,7 +26,9 @@ En temel tanımıyla bir metnin içindeki tarih, telefon, email vb. formatlı ve
 
 Regex yazmak için bazı karakterleri ve ne işe yaradıklarını bilmek gerekir. Bu karakterler, istediğimiz formatı oluşturmak için bize yardımcı olacak. Aşağıda tüm karakterleri tek tek inceleyeceğiz ve örneklendireceğiz. Regex denemeleriniz için [regex101](https://regex101.com) sitesini kullanabilirsiniz. Bir regex tanımlarken yazacağımız karakterleri iki slash(/) arasına yazmalıyız.
 
+```javascript
 /regex/g
+```
 
 Yukarıdaki regex örneği, metnin içinde "regex" geçiyorsa eşleşecektir. Regex101'de deneyelim.
 
@@ -42,7 +44,9 @@ Meta karakterler, kendisi haricinde regex'te farklı anlama sahip karakterlerdir
 
 Satır sonu haricinde herhangi bir karakteri temsil eder. Bir örnek ile görelim.
 
+```javascript
 /s.l.k/g
+```
 
 Bu şekilde bir regex tanımladığımızda, aslında şunu söylemiş oluyoruz:
 
@@ -62,13 +66,17 @@ Regex . karakteri
 
 Köşeli parantezler arasına yazılan karakterlerin ifadelerin tümüyle eşleşme sağlanır. Örneğin kasım ayının ingilizce karakterlerle yazılabilme ihtimaline karşı kasim ve kas1m ifadelerinin yakalanmasını istersek.
 
+```javascript
 /kas\[ıi1\]m/g
+```
 
 ![](https://endrcn.dev/wp-content/uploads/2022/01/regex3-1-1024x297.png)
 
 Ayrıca \[\] karakterlerini kullanarak bir karakter aralığı da tanımlayabiliriz. Aralık tanımlamak için - karakterinden yararlanırız. Örneğin metin içindeki sayıları yakalayan bir regex yazalım.
 
+```javascript
 /\[0-9\]/g
+```
 
 Yukarıdaki regex, metnin içinde geçen 0 ile 9 arasındaki tüm rakamları yakalar.
 
@@ -84,53 +92,59 @@ Ayrıca tüm küçük harfler için \[a-z\] ve tüm büyük harfler için \[A-Z\
 
 \+ karakteri, önünde tanımlanan ifadenin 1-sonsuz arasında tekrarlarının da yakalanmasını sağlar. Örneğin yukarıdaki sayı aralığı sadece bir sayıyla eşleşir ancak eğer aralığı aşağıdaki şekilde tanımlarsak yan yana gelen tüm rakamları tek eşleşmede yakalar.
 
+```javascript
 /\[0-9\]+/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex5-1024x227.png)
+![Regex - + karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex5-1024x227.png)
 
-Regex - + karakteri
+
 
 #### \* karakteri
 
 \* karakteri, önünde tanımlanan ifadenin 0-sonsuz arasında tekrarlarının da yakalanmasını sağlar. Örneğin dolar ifadesinin dolar, dlr, dlar ve dolr hallerinin ve hatta dolaaar, doooolar, doolaar gibi hallerinin de yakalanmasını sağlayalım.
 
+```javascript
 /do\*la\*r/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex6-1024x440.png)
-
-Regex - \* karakteri
+![Regex - * Karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex6-1024x440.png)
 
 #### ? karakteri
 
 ? karakteri, kendinden önceki karaktere varlığıyla yokluğu bir anlamını yükler. Örneğin dolar ifadesinde yukarıdaki gibi karakter çoklamasına izin verilmeyecek şekilde sadece karakter eksikliğinde çalışmasını istersek yazacağımız ifade **do?la?r** şeklinde olacaktır.
 
+```javascript
 /do?la?r/g
+```
 
 Yukarıdaki regexi ifadesi ile yakalanacak olan kelimeler: dolar, dolr, dlar, dlr. Ancak örneğin doolar ifadesi yakalanmayacaktır.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex7-1024x358.png)
-
-Regex - ? karakteri
+![Regex - ? karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex7-1024x358.png)
 
 #### {n,m} karakteri
 
 {n,m} karakteri, bir önceki karakterin n-m arasında tekrarlanması durumunda yakalar. n ve m birer sayı değerini temsil eder. Örneğin yukarıdaki \* ve ? karakterleri ile kullanımını gördüğümüz dolar ifadesinin belirli tekrarları kabul ettiğimiz versiyonunu yazalım. Amacımız \* karakteri gibi sonsuz sayıda tekrarı kabul etmemek fakat ? karakteri gibi de sadece bir kez kullanımıyla da yetinmemek olduğu durumlarda yazacağımız regex şu şekilde olacaktır.
 
+```javascript
 /do{0,3}la{0,3}r/g
+```
 
 Yukarıdaki regex ifadesi, o ve a karakterlerinin hiç yazılmaması ya da en fazla 3 kez tekrarlanması durumunda dolar ifadesinin yakalanmasını sağlayacak. Ancak o veya a karakterlerinden biri 3 defadan fazla kullanılırsa yakalamayacak.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex8-1024x466.png)
+![Regex - {n,m} karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex8-1024x466.png)
 
-Regex - {n,m} karakteri
+
 
 Ek olarak {} karakteri arasında bir aralık yerine tek bir sayı da verebiliriz. Bu durumda önceki karakterin net olarak kaç kez tekrarlanacağını söylemiş oluruz. Eğer bu tekrar sağlanmazsa regex ifadesi kelimeyi yakalamayacaktır. Bunun da bir örneğini görelim.
 
+```javascript
 /do{2}la{2}r/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex9-1024x470.png)
+![Regex - {n} karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex9-1024x470.png)
 
-Regex - {n} karakteri
+
 
 Son olarak **{n,}** şeklinde bir kullanım da mevcuttur. Bu durumda n tekrardan başlayarak sonsuz tekrarı yakalayan ifadeler yazabiliriz. Bu yapıyı \* ve + karakterlerinin karşılıklarını yazarak pekiştirebiliriz.
 
@@ -143,29 +157,33 @@ olarak ifade edebiliriz.
 
 ^ karakteri, metnin başını ifade eder. Eğer metnin başında kontrol etmek istediğimiz bir ifade varsa bu durumda kullanırız. Örneğin metnin büyük harfle başlayıp başlamadığını yakalayan bir regex yazalım.
 
+```javascript
 /^\[A-ZÖÇŞİĞÜ\]/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex10-1024x327.png)
+![Regex - ^ karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex10-1024x327.png)
 
-Regex - ^ karakteri
+
 
 Eğer köşeli parantezlerin içine yazılan karakterlerin başına ^ karakteri eklenirse girilen karakterler ya da aralıklar haricinde kalanları yakalar. Örneğin büyük harfle ya da sayıyla başlamayan metinleri yakalamak istersek.
 
+```javascript
 /^\[^A-ZÖÇŞİĞÜ0-9\]/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex11-1024x352.png)
-
-Regex - \[^...\] kullanımı
+![Regex - \[^...\] kullanımı](https://endrcn.dev/wp-content/uploads/2022/01/regex11-1024x352.png)
 
 #### \\ karakteri
 
 \\ karakteri, bir kaçış karakteridir. Regex'te özel bir göreve sahip karakterlerin özel görevlerinin değil de kendi anlamlarında kullanabilmemizi sağlar. Örneğin bir "\[ÇÖZÜLDÜ\] Regex öğrenme görevi", "\[BEKLEMEDE\] Node.js öğrenme görevi" yapısına sahip başlıklarımız olduğunu düşünelim. Bu başlıklardan \[\] arasındaki ifadeleri ayıklamak istersek, oluşturacağımız regex'te köşeli parantezlerin regex'teki özel görevlerine değil, kendi anlamlarına ihtiyacımız olacak. Dolayısıyla yazacağımız **regex** şu şekilde olmalıdır.
 
+```javascript
 /^\\\[.\*\\\] .\*/g
+```
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex12-1024x276.png)
+![Regex - \\ karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex12-1024x276.png)
 
-Regex - \\ karakteri
+
 
 Yukarıdaki örnekte ayıklama işlemi değil aslında bir yakalama işlemi yapmış olduk. Eğer ayıklama yapmak istersek bu durumda gruplama işlemi yapan parantezlere ihtiyacımız olacak.
 
@@ -173,7 +191,9 @@ Yukarıdaki örnekte ayıklama işlemi değil aslında bir yakalama işlemi yapm
 
 Parantezler, yazdığımız regex ifadelerinde ayıklamak istediğimiz alanları gruplayarak ana ifadeden ayrı şekilde ayırmamıza yarar. Bir üstteki örnekteki köşeli parantezler arasındaki ifadeleri ayıklamak istersek şöyle bir regex yazmamız gerekir.
 
+```javascript
 /^\\\[(.+)\\\] .\*/g
+```
 
 Yukarıdaki regex'i açıklayalım:
 
@@ -183,21 +203,21 @@ Yukarıdaki regex'i açıklayalım:
 - **boşluk** -> köşeli parantez kapatıldıktan sonra bir boşluk olması gerektiğini belirttik.
 - **.\*** -> metnin sonuna kadar var olan tüm karakterleri yakalamasını söyledik.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex13-1024x300.png)
+![Regex - () kullanımı](https://endrcn.dev/wp-content/uploads/2022/01/regex13-1024x300.png)
 
-Regex - () kullanımı
+
 
 #### $ karakteri
 
 $ karakteri, metnin sonunu ifade eder. Eğer metnin sonunda kontrol etmemiz gereken bir ifade varsa $ karakterini kullanırız. Örneğin cümlenin nokta ile bitip bitmediğini kontrol eden bir **regex** yazalım.
 
+```javascript
 /.\*\\.$/g
+```
 
 Oldukça basit öyle değil mi? :)
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/regex14-1024x292.png)
-
-Regex - $ karakteri
+![Regex - $ karakteri](https://endrcn.dev/wp-content/uploads/2022/01/regex14-1024x292.png)
 
 ## Karakter Etiketleri
 
@@ -205,31 +225,43 @@ Regex - $ karakteri
 
 \\s etiketi, white space karakterleri(boşluk, tab vb.) temsil eder. Regex'te boşluk ifadesi genelde yukarıdaki örnekte olduğu gibi değil de \\s ifadesi ile belirtilir. \\s etiketinin karşılığını regex ile yazmaya çalışırsak:
 
+```javascript
 /\[ \\n\\t\\r\\f\]/g
+```
 
 \\S etiketi de \\s etiketinin tersini ifade eder.
 
+```javascript
 /\[^ \\n\\t\\r\\f\]/g
+```
 
 #### \\d etiketi
 
 \\d etiketi herhangi bir rakamı ifade eder. Regex karşılığı aşağıdaki gibidir:
 
+```javascript
 /\[0-9\]/g
+```
 
 Tersi **\\D** etiketidir. Yani rakam olmayan karakterleri ifade eder.
 
+```javascript
 /\[^0-9\]/g
+```
 
 #### \\w etiketi
 
 \\w etiketi, harfleri, rakamları veya \_ karakterini temsil eder. Türkçe harfleri yakalamaz.
 
+```javascript
 /\[A-Za-z0-9\_\]/g
+```
 
 Tersi \\W etiketidir. Harf, rakam ya da \_ karakteri hariç diğer karakterleri temsil eder.
 
+```javascript
 /\[^A-Za-z0-9\_\]/g
+```
 
 Regex konusuna sıkı bir başlangıç yaptık. Artık birçok regex ifadesinin ne iş yaptığını kolayca anlayabilirsiniz. Tabii tüm bu gördüğümüz ifadeleri bolca pratikle beslemek gerekir.
 
@@ -237,5 +269,5 @@ Regex konusuna sıkı bir başlangıç yaptık. Artık birçok regex ifadesinin 
 
 - Bir girdinin **email** adresi olup olmadığını yakalayan regex ifadesi yazınız.
 - **gg.aa.YYYY** formatında yazılan tarihlerdeki gün, ay ve yıl alanlarını ayrı gruplara alan regex yazınız.
-- **<a href="http://endrcn.dev">endrcn.dev</a>** HTML etiketinde renkli alanları ayrı gruplara çıkaran regex yazınız.
+- **`<a href="http://endrcn.dev">endrcn.dev</a>`** HTML etiketinde href alanının değerini ve etiket içeriğini ayrı gruplara çıkaran regex yazınız.
 - ad ve soyad inputuna girilen ad soyad ifadesinde baş harflerin büyük olup olmadığını kontrol eden regex yazınız. (Örn: Ender Can)

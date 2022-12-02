@@ -19,6 +19,7 @@ Koşulsuz Program Akışı
 
 Yukarıdan aşağıya olan bu akışı, bazı durumlarda değiştirme ihtiyacı duyarız. Tam bu noktada koşul tanımlama ve kullanmayı bilmemiz gerekir. Bir koşul tanımlamak için ihtiyaç duyduğumuz anahtar kelimeler: _**if**, **else if**_ ve **_else_** dir. Bir if koşulunun temel syntax'i aşağıdaki gibidir.
 
+```javascript
 if (condition1) {
     // condition1 koşulu doğruysa çalışacak
 } else if (condition2) {
@@ -26,6 +27,7 @@ if (condition1) {
 } else {
     // iki koşul da yanlışsa çalışacak
 }
+```
 
 Yukarıdaki kod bloğunu tek tek açıklayacak olursak:
 
@@ -43,20 +45,25 @@ Koşullarla Programı Yönlendirme
 
 Bir if koşulunda, adından da anlaşılacağı gibi **if** olmazsa olmazdır. else if ve else blokları, koşulda opsiyonel olarak ihtiyaca göre kullanılır. En basit haliyle bir **if koşulu**:
 
+```javascript
 if (condition) {
     // condition ifadesi true ise bu alandaki kodlar çalışacak.
 }
+```
 
 Eğer, koşulun olumsuz olduğu durumda çalıştırılması gereken özel bir kod parçamız varsa bu durumda **else** bloğunu kullanmamız gerekir.
 
+```javascript
 if (condition) {
     // condition ifadesi <strong>true</strong> ise bu alandaki kodlar çalışacak.
 } else {
     // condition ifadesi <strong>false</strong> ise bu alandaki kodlar çalışacak.
 }
+```
 
 Eğer birbiriyle sıralı bağlantı olan birden fazla koşulumuz varsa, bu durumda **else if** bloğunu kullanmamız gerekir.
 
+```javascript
 if (condition1) {
     // condition1 koşulu doğruysa çalışacak
 } else if (condition2) {
@@ -64,9 +71,11 @@ if (condition1) {
 } else {
     // iki koşul da yanlışsa çalışacak
 }
+```
 
 Else if bloğu, birden fazla da olabilir.
 
+```javascript
 if (condition1) {
     // condition1 koşulu doğruysa çalışacak
 } else if (condition2) {
@@ -76,9 +85,11 @@ if (condition1) {
 } else {
     // iki koşul da yanlışsa çalışacak
 }
+```
 
 Son olarak, iç içe if blokları tanımlayabiliriz. Herhangi bir sınırlama yoktur.
 
+```javascript
 if (condition1) {
     if (conditionA) {
         
@@ -104,14 +115,17 @@ if (condition1) {
         
     }
 }
+```
 
 ## If Koşulunda Bloklar
 
 If koşulu tanımındaki süslü parantezler "{}" kullanılmadan da yazılabilir. Yalnız bu durumda if koşulundan sonraki ilk satır koşula tabi olacaktır. Diğer satırlar, koşuldan bağımsız olarak çalışacaktır.
 
+```javascript
 if (condition)
     console.log("Burası koşula bağlı ekrana basılır.")
 console.log("Burası koşuldan bağımsız ekrana basılır.")
+```
 
 Yukarıdaki örnek, else if ve else blokları için de geçerlidir.
 
@@ -119,18 +133,24 @@ Yukarıdaki örnek, else if ve else blokları için de geçerlidir.
 
 [Operatörler](https://endrcn.dev/nodejs/operators/) yazımızda bahsetmediğimiz koşul operatörü, if koşulunu tek satırda yazmamızı sağlar.
 
+```javascript
 // syntax
-condition <strong>?</strong> "condition is true" <strong>:</strong> "condition is false";
+condition ? "condition is true" : "condition is false";
+```
 
 Eğer koşul doğruysa ? ile : arasındaki alan, eğer koşul yanlışsa : dan sonraki alan çalıştırılır.
 
+```javascript
 var num1 = 5, num2 = 10;
 console.log(num1 > num2 ? "num1 büyüktür num2" : "num1 küçük veya eşittir num2");
+```
 
 Birden fazla koşulu da tek satırda yazabiliriz ancak bu okunabilirliği azaltacaktır.
 
+```javascript
 var result = (num1 > num2) ? "num1 büyüktür num2" : (num1 < num2) ? "num1 küçüktür num2" : "num1 eşittir num2";
 console.log(result); // Output: num1 küçüktür num2
+```
 
 Buraya kadar hep teorik ilerledik. Biliyorum ki bu durumda kimsenin aklında bir şey kalmayacak. Halbuki if koşulları, uygulama geliştirirken bolca kullanacağımız ve el hafızamızla yazmamız gereken kod parçalarıdır. Bu nedenle birkaç örnekle mantığını iyice zihnimize yerleştirelim.
 
@@ -140,6 +160,7 @@ Aşağıdaki senaryolara göre gerekli if koşullarını yazalım.
 
 - Bir dosyadan okuduğumuz iki cümle var. Bu cümleler eşitse ekrana **Eşit**, değilse de **Eşit değil** yazan kod parçasını yazınız.
 
+```javascript
 var sentence1 = "Hello, world!";
 var sentence2 = "You are awesome!";
 
@@ -147,29 +168,35 @@ if (sentence1 == sentence2)
     console.log("Eşit");
 else
     console.log("Eşit değil");
+```
 
 Bu örneği koşul operatörünü kullanarak tek satırda da yazabilirdik.
 
+```javascript
 var sentence1 = "Hello, world!";
 var sentence2 = "You are awesome!";
 console.log(sentence1 == sentence2 ? "Eşit" : "Eşit değil");
+```
 
 - Maaşları eşit olmayan iki çalışanımız var. Bu çalışanlardan maaşı düşük olanın maaşını %50, yüksek olanın maaşını %20 artıran kod parçasını yazınız.
 
+```javascript
 var emp1 = {name: "Ender", salary: 4000};
 var emp2 = {name: "Can", salary: 6000};
 if (emp1.salary < emp2.salary) {
-    emp1.salary \*= 1.5;
-    emp2.salary \*= 1.2;
+    emp1.salary *= 1.5;
+    emp2.salary *= 1.2;
 } else {
-    emp1.salary \*= 1.2;
-    emp2.salary \*= 1.5;
+    emp1.salary *= 1.2;
+    emp2.salary *= 1.5;
 }
 console.log("Emp1 new salary:", emp1.salary);
 console.log("Emp2 new salary:", emp2.salary);
+```
 
 - Veritabanından çektiğimiz üç ayrı müşterimiz; 66 yaşındaki AB, 23 yaşındaki BC ve 32 yaşındaki CD dir. Bu müşterilerden en küçüğünün adını yazınız.
 
+```javascript
 var cus1 = {name: "AB", age: 66}
 var cus2 = {name: "BC", age: 23}
 var cus3 = {name: "CD", age: 32}
@@ -199,5 +226,6 @@ if (cus1.age < cus2.age) { // AB, BC'den küçükse bu bloğa girer.
     }
 }
 // Output: BC
+```
 
 Harika gidiyorsunuz! Node.js öğrenme yolunda kritik bir adımı aştınız. Bir sonraki adım olan **döngüler** yazımıza geçebilir ve bu muhteşem macerada kendinizi daha da geliştirebilirsiniz.

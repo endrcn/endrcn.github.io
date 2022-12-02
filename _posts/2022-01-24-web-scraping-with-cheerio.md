@@ -12,6 +12,7 @@ coverImage: "Architecture-of-web-scraping.jpg"
 
 Veri çekme adımlarını [Regex ile Web Scraping](https://endrcn.dev/nodejs/web-scraping-with-regex/#Veri_Cekme) makalesinden inceleyebilirsiniz. Direkt kodu ekleyelim:
 
+```javascript
 const request = require("request-promise");
  
 getExchangeInfo();
@@ -23,6 +24,7 @@ async function getExchangeInfo() {
     });
     console.log(body);
 }
+```
 
 ## Cheerio ile Web Scraping
 
@@ -30,20 +32,16 @@ Cheerio modülü bize jQuery metotlarını Node.js içinde kullanma imkanı verd
 
 İlk işimiz veri kazıyacağımız adresi tarayıcıdan açıp ardından Dev Tools'u açalım. Dev Tools'u açmanın birçok yolu var. İlki web sayfasında sağ tıklayıp Öğeyi İncele(Inspect) seçeneğini seçmektir. Ya da Mac için _Cmd+Option+i_, Windows için F12 klavye kısayollarıyla da açabiliriz.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.35.32-1024x492.png)
-
-Developer Tools
+![Developer Tools](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.35.32-1024x492.png)
 
 Ardından Dev Tools'un sol üst köşesindeki Inspect iconuna tıklayıp web sitesinden ayıklamak istediğimiz alanın üzerine mouse imlecini getirip HTML'de ilgili alana gidelim.
 
-![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.40.18-1024x492.png)
-
-Inspect Element
+![Inspect Element](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-22.40.18-1024x492.png)
 
 Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz gereken sınıf(lar)ı görebildik.
 
-- **_enpara-gold-exchange-rates\_\_table_** sınıfıyla tanımlanmış bir div altında
-- **_enpara-gold-exchange-rates\_\_table-item_** sınıfına sahip elemanlar
+- **_enpara-gold-exchange-rates__table_** sınıfıyla tanımlanmış bir div altında
+- **_enpara-gold-exchange-rates__table-item_** sınıfına sahip elemanlar
 - Bu elemanların altında da _span_ etiketleriyle ayrılmış ve bizim sahip olmak istediğimiz değerler.
 
 Şimdi bu alandaki verileri çekmek için _jQuery_ yazmaya başlayabiliriz. Dev Tools üzerinden Console tab'ına tıkladığımızda bu web sitesi üzerinde çalışacak javascript kodu yazabileceğimiz alan açılır.
@@ -52,27 +50,32 @@ Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz ge
 
 İlk olarak jQuery kullanarak bulduğumuz kapsayıcı sınıfın alt elemanlarını çekelim.
 
-$(".enpara-gold-exchange-rates\_\_table").find(".enpara-gold-exchange-rates\_\_table-item");
+```javascript
+$(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table-item");
+```
 
 Ardından bu elemanlar üzerinde dönerek içlerindeki _span_ etiketlerinin verilerine erişebiliriz.
 
-$(".enpara-gold-exchange-rates\_\_table").find(".enpara-gold-exchange-rates\_\_table-item").each((index, item) => {
+```javascript
+$(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table-item").each((index, item) => {
     console.log($(item).find("span").text());
 });
+```
 
 ![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-23.19.31-1024x401.png)
 
 Son olarak bu değerleri bir çıktı olarak istediğimiz objeye yazalım.
 
+```javascript
 let json = {
     usd: {},
     eur: {},
     gold: {}
 }
-$(".enpara-gold-exchange-rates\_\_table").find(".enpara-gold-exchange-rates\_\_table-item").each((index, item) => {
-    let currency = $($(item).find("span")\[0\]).text();
-    let buy = $($(item).find("span")\[1\]).text();
-    let sell = $($(item).find("span")\[2\]).text();
+$(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table-item").each((index, item) => {
+    let currency = $($(item).find("span")[0]).text();
+    let buy = $($(item).find("span")[1]).text();
+    let sell = $($(item).find("span")[2]).text();
 console.log(currency, buy, sell);
     if (currency.includes("USD ($)")) {
         json.usd.buy = buy;
@@ -86,6 +89,7 @@ console.log(currency, buy, sell);
     }
 });
 console.log(json);
+```
 
 Çıktı olarak elde ettiğimiz sonuç:
 
@@ -97,10 +101,13 @@ Son olarak çıktımızı tam olarak elde edebilmek için değerleri döngü iç
 
 Tüm işimizi tarayıcı üzerinde bitirdik. Şimdi bu kodları Node.js üzerinde gerçekleştirelim. İlk olarak _cheerio_ modülünü kuralım.
 
+```javascript
 npm i cheerio
+```
 
 Ardından cheerio modülünü uygulamaya import edip kullanmaya başlayalım. _Request-promise_ modülü ile web sitesinden aldığımız HTML verisini cheerio modülü ile işlenebilir hale getiriyoruz.
 
+```javascript
 const request = require("request-promise");
 const cheerio = require("cheerio");
 
@@ -111,19 +118,21 @@ async function getExchangeInfo() {
     });
     let $ = cheerio.load(body);
 }
+```
 
 Son olarak extractWithCheerio adında bir fonksiyon oluşturup, tarayıcıda yazdığımız kodları oluşturup içine ekleyelim.
 
+```javascript
 function extractWithCheerio($) {
     let json = {
         usd: {},
         eur: {},
         gold: {}
     }
-    $(".enpara-gold-exchange-rates\_\_table").find(".enpara-gold-exchange-rates\_\_table-item").each((index, item) => {
-        let currency = $($(item).find("span")\[0\]).text();
-        let buy = parseFloat(parseFloat($($(item).find("span")\[1\]).text().replace(",", ".")).toFixed(3));
-        let sell = parseFloat(parseFloat($($(item).find("span")\[2\]).text().replace(",", ".")).toFixed(3));
+    $(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table-item").each((index, item) => {
+        let currency = $($(item).find("span")[0]).text();
+        let buy = parseFloat(parseFloat($($(item).find("span")[1]).text().replace(",", ".")).toFixed(3));
+        let sell = parseFloat(parseFloat($($(item).find("span")[2]).text().replace(",", ".")).toFixed(3));
         if (currency.includes("USD ($)")) {
             json.usd.buy = buy;
             json.usd.sell = sell;
@@ -137,9 +146,11 @@ function extractWithCheerio($) {
     });
    return json
 }
+```
 
 Kodun son hali aşağıdaki gibi olacaktır.
 
+```javascript
 const request = require("request-promise");
 const cheerio = require("cheerio");
 
@@ -165,10 +176,10 @@ function extractWithCheerio($) {
         eur: {},
         gold: {}
     }
-    $(".enpara-gold-exchange-rates\_\_table").find(".enpara-gold-exchange-rates\_\_table-item").each((index, item) => {
-        let currency = $($(item).find("span")\[0\]).text();
-        let buy = parseFloat(parseFloat($($(item).find("span")\[1\]).text().replace(",", ".")).toFixed(3));
-        let sell = parseFloat(parseFloat($($(item).find("span")\[2\]).text().replace(",", ".")).toFixed(3));
+    $(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table-item").each((index, item) => {
+        let currency = $($(item).find("span")[0]).text();
+        let buy = parseFloat(parseFloat($($(item).find("span")[1]).text().replace(",", ".")).toFixed(3));
+        let sell = parseFloat(parseFloat($($(item).find("span")[2]).text().replace(",", ".")).toFixed(3));
         if (currency.includes("USD ($)")) {
             json.usd.buy = buy;
             json.usd.sell = sell;
@@ -182,6 +193,7 @@ function extractWithCheerio($) {
     });
    return json
 }
+```
 
 Çıktıyı da görelim:
 

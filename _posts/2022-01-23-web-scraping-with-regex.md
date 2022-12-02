@@ -46,6 +46,7 @@ Biz bu makalede ilk yöntemi kullanacağız. Kaynak kodu indirdikten sonra ayık
 
 Bu adresten Dolar, Euro ve Altın'ın alış ve satış bilgilerini çekip bir JSON elde edeceğiz. Ulaşmak istediğimiz JSON formatı aşağıdaki gibi olacak.
 
+```javascript
 {
     usd: {
         sell:13.719,
@@ -60,18 +61,25 @@ Bu adresten Dolar, Euro ve Altın'ın alış ve satış bilgilerini çekip bir J
         buy: 768.251
     }
 };
+```
 
 Bir sitenin HTML kodlarını çekmek için _[request-promise](https://www.npmjs.com/package/request-promise)_ modülünü kullanabileceğimiz modüllerden sadece biridir. [Bir modülü kullanabilmek](https://endrcn.dev/nodejs/modules/) için öncelikle kurmamız gerektiğini biliyoruz. request-promise modülünü kullanabilmek için request modülünü de kurmamız gerektiğinden ikisini kuruyoruz.
 
+```javascript
 npm i request request-promise
+```
 
 Bir javascript dosyası oluşturup modülü import edelim.
 
+```javascript
 const request = require("request-promise");
+```
 
 Ardından bu modülü kullanarak yukarıdaki adrese bir _GET_ isteği gönderelim.
 
+```javascript
 const request = require("request-promise");
+
 
 getExchangeInfo();
 
@@ -82,6 +90,7 @@ async function getExchangeInfo() {
     });
     console.log(body);
 }
+```
 
 HTML verisini çekip body değişkenine atadık. Artık bu yığın içinden ihtiyacımız olan verileri ayıklayabiliriz.
 
@@ -105,28 +114,30 @@ Ardından kodların tamamını _regex101_'e yapıştıralım. Bazen sayfaların 
 
 ![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-14.53.50-1024x454.png)
 
-USD regex'i ile eşleşen 2 yer tespit edildi. Bunu gösterme amacım ilk olarak eşleşme yapacağımız yeri gözlemlememiz gerektiğini anlatmaktı. Şimdi HTML tag(örn: div, span) ve attribute(örn: class) alanlarından yararlanarak regex'i oluşturalım. Kaynak koduna dikkat ettiğimizde **_enpara-gold-exchange-rates\_\_table-item_** adında bir sınıf tanımlanmış. Regex'in yakalamaya başlaması için bu sınıfı, bitişi için de **_enpara-gold-exchange-rates\_\_information_** sınıfını kullanabiliriz.
+USD regex'i ile eşleşen 2 yer tespit edildi. Bunu gösterme amacım ilk olarak eşleşme yapacağımız yeri gözlemlememiz gerektiğini anlatmaktı. Şimdi HTML tag(örn: div, span) ve attribute(örn: class) alanlarından yararlanarak regex'i oluşturalım. Kaynak koduna dikkat ettiğimizde **_enpara-gold-exchange-rates__table-item_** adında bir sınıf tanımlanmış. Regex'in yakalamaya başlaması için bu sınıfı, bitişi için de **_enpara-gold-exchange-rates__information_** sınıfını kullanabiliriz.
 
-/enpara-gold-exchange-rates\_\_table-item(.\*?)enpara-gold-exchange-rates\_\_information/g
+/enpara-gold-exchange-rates__table-item(.*?)enpara-gold-exchange-rates__information/g
 
 ![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-15.02.26-1024x449.png)
 
 Oluşturduğumuz regexi açıklayalım:
 
-- **_enpara-gold-exchange-rates\_\_table-item_** gördüğün zaman yakalamaya başla.
-- **_(.\*?)_** gördüğün tüm karakterleri yakala ve bir grup içine al.
-- **_enpara-gold-exchange-rates\_\_information_** gördüğün zaman yakalamayı bitir.
+- **_enpara-gold-exchange-rates__table-item_** gördüğün zaman yakalamaya başla.
+- **_(.*?)_** gördüğün tüm karakterleri yakala ve bir grup içine al.
+- **_enpara-gold-exchange-rates__information_** gördüğün zaman yakalamayı bitir.
 
 Şimdi regex'te bir aralık belirledik. Tüm ifadeleri bir tane regex yazarak elde etmeye çalışmak yazdığımız regex'i karmaşıklaştıracaktır. Bu nedenle burada yakaladığımız daha küçük alanda çalışacak yeni bir regex yazabiliriz. Ayrıca daha küçük bir alanda çalışacağını bildiğimiz için çok daha genel bir regex yazma imkanına sahip olduk.
 
-/(\[0-9,\]+)\\sTL/g
+```javascript
+/([0-9,]+)\sTL/g
+```
 
 ![](https://endrcn.dev/wp-content/uploads/2022/01/Screen-Shot-2022-01-23-at-15.13.24-1024x468.png)
 
 Süper! Artık elimizde istediğimiz alanlar var. Yazdığımız basit iki tane regex ile istediğimiz sonuca ulaştık. Yazdığımız son regex'i açıklayalım ve kodlamaya geçelim.
 
-- **_(\[0-9,\]+)_** 0-9 arasındaki sayıları ve virgül(,) işaretini gördüğünde yan yana kaç kez tekrar ediyorsa yakala bunları bir gruba al.
-- **\\s+** yan yana olan tüm white space karakterleri yakala
+- **_([0-9,]+)_** 0-9 arasındaki sayıları ve virgül(,) işaretini gördüğünde yan yana kaç kez tekrar ediyorsa yakala bunları bir gruba al.
+- **\s+** yan yana olan tüm white space karakterleri yakala
 - **TL** ifadesini yakala
 
 Düzenli ifadelerle ilgili eksiğiniz olduğunu düşünüyorsanız sizi şöyle alalım:
@@ -138,19 +149,21 @@ Düzenli ifadelerle ilgili eksiğiniz olduğunu düşünüyorsanız sizi şöyle
 
 Artık web scraping için tüm araçlar hazır. Yapacağımız işlem yazdığımız regex'leri [String metotlarını](https://endrcn.dev/nodejs/built-in-modules/#String_Methods) kullanarak uygulamamıza eklemek. Uygulamamızda HTML verisini çekmiştik. Şimdi bir fonksiyon tanımlayıp ayıklama işlemlerini yapalım.
 
+```javascript
 function extractWithRegex(body) {
-    let extractedInfo = body.match(/enpara-gold-exchange-rates\_\_table-item(.\*?)enpara-gold-exchange-rates\_\_information/g);
+    let extractedInfo = body.match(/enpara-gold-exchange-rates__table-item(.*?)enpara-gold-exchange-rates__information/g);
     if (!extractedInfo) throw new Error("Regex is not match any values. Please check your regex");
 
-    extractedInfo = extractedInfo\[0\].match(/(\[0-9,\]+)\\s\*TL/g);
+    extractedInfo = extractedInfo[0].match(/([0-9,]+)\s*TL/g);
     if (!extractedInfo) throw new Error("Regex is not match any values. Please check your regex");
 
     for (let i = 0; i < extractedInfo.length; i++) {
-        extractedInfo\[i\] = parseFloat(parseFloat(extractedInfo\[i\].replace(/\\s\*TL/g, "").replace(/\\,/g,".")).toFixed(3));
+        extractedInfo[i] = parseFloat(parseFloat(extractedInfo[i].replace(/\s*TL/g, "").replace(/,/g,".")).toFixed(3));
     }
 
     return extractedInfo;
 }
+```
 
 Kodları adım adım açıklayalım:
 
@@ -164,26 +177,29 @@ Kodları adım adım açıklayalım:
 
 Böylece 6-7 satır kodla veri ayıklama işlemimizi bitirdik. extractWithRegex fonksiyonunun çıktısı bir dizi olacaktır.
 
-\[ 13.195, 13.72, 14.855, 15.675, 768.251, 810.83 \]
+```javascript
+[ 13.195, 13.72, 14.855, 15.675, 768.251, 810.83 ]
+```
 
 Burada dikkat ederseniz değerler istediğimiz gibi sayısal değil ve sonlarında TL ifadesi yer alıyor. Bu verileri JSON objesine yazarken düzenleyebiliriz. Şimdi bu verileri en başta söylediğimiz gibi JSON formatına dönüştürelim. Bunun için de ayrı bir fonksiyon tanımlayalım.
 
+```javascript
 function createJSON(info) {
     let usd = {}, eur = {}, gold = {};
     if (!Array.isArray(info)) throw new Error("info parameter must be an Array");
     if (info.length >= 2) {
-        usd.buy = info\[0\];
-        usd.sell = info\[1\];
+        usd.buy = info[0];
+        usd.sell = info[1];
     }
 
     if (info.length >= 4) {
-        eur.buy = info\[2\];
-        eur.sell = info\[3\];
+        eur.buy = info[2];
+        eur.sell = info[3];
     }
 
     if (info.length >= 6) {
-        gold.buy = info\[4\];
-        gold.sell = info\[5\];
+        gold.buy = info[4];
+        gold.sell = info[5];
     }
 
     return {
@@ -192,9 +208,11 @@ function createJSON(info) {
         gold
     };
 }
+```
 
 createJSON fonksiyonumuzda bazı kabullerimiz oldu. Bu kabuller; info parametresinin bir dizi olması gerektiği ve bu dizinin değerlerinin sırasının önemli olduğudur. Bu kabulleri belirlerken, web sitesinde çektiğimiz verilerin sıralamasından ve extractWithRegex metodunun çıktısını dikkate aldık. Son olarak tüm uygulamamız aşağıdaki halini aldı.
 
+```javascript
 const request = require("request-promise");
 
 try {
@@ -213,14 +231,14 @@ async function getExchangeInfo() {
 }
 
 function extractWithRegex(body) {
-    let extractedInfo = body.match(/enpara-gold-exchange-rates\_\_table-item(.\*?)enpara-gold-exchange-rates\_\_information/g);
+    let extractedInfo = body.match(/enpara-gold-exchange-rates__table-item(.*?)enpara-gold-exchange-rates__information/g);
     if (!extractedInfo) throw new Error("Regex is not match any values. Please check your regex");
 
-    extractedInfo = extractedInfo\[0\].match(/(\[0-9,\]+)\\s\*TL/g);
+    extractedInfo = extractedInfo[0].match(/([0-9,]+)\s*TL/g);
     if (!extractedInfo) throw new Error("Regex is not match any values. Please check your regex");
 
     for (let i = 0; i < extractedInfo.length; i++) {
-        extractedInfo\[i\] = parseFloat(parseFloat(extractedInfo\[i\].replace(/\\s\*TL/g, "").replace(/\\,/g,".")).toFixed(3));
+        extractedInfo[i] = parseFloat(parseFloat(extractedInfo[i].replace(/\s*TL/g, "").replace(/,/g,".")).toFixed(3));
     }
 
     return extractedInfo;
@@ -231,18 +249,18 @@ function createJSON(info) {
     if (!Array.isArray(info)) throw new Error("info parameter must be an Array");
 
     if (info.length >= 2) {
-        usd.buy = info\[0\];
-        usd.sell = info\[1\];
+        usd.buy = info[0];
+        usd.sell = info[1];
     }
 
     if (info.length >= 4) {
-        eur.buy = info\[2\];
-        eur.sell = info\[3\];
+        eur.buy = info[2];
+        eur.sell = info[3];
     }
 
     if (info.length >= 6) {
-        gold.buy = info\[4\];
-        gold.sell = info\[5\];
+        gold.buy = info[4];
+        gold.sell = info[5];
     }
 
     return {
@@ -251,6 +269,7 @@ function createJSON(info) {
         gold
     };
 }
+```
 
 Toplamda 50 satırlık kodla bir web sitesinden **_veri çekme_**, **_regex ile ayıklama_** ve **_formatlama_** işlemlerini yapmış olduk. Burada geliştirdiğimiz fonksiyonlarda bazı hatalar fırlattık. Bu nedenle try-catch kullanarak bu [hataları yakalamak](https://endrcn.dev/nodejs/error-handling/) uygulamanın çökmesini engellemek için önemlidir. Bu nedenle **_getExchangeInfo()_** fonksiyonunu çağırırken try-catch arasına aldık.
 

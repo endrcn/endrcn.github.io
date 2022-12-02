@@ -20,13 +20,13 @@ MongoDB, genel olarak oldukça hızlı sorgulama yapmamıza imkan tanıyan bir v
 
 currentOp metodu, bize o anda gerçekleştirilen sorguların dökümünü verir. Bu döküm sayesinde uzun süren işlemleri rahatlıkla görebiliriz. MongoDB'de işlem yapacağımız veritabanına bağlandıktan sonra komutu aşağıdaki şekilde çalıştırabiliriz.
 
-```
+```js
 db.currentOp();
 ```
 
 Bu komut, veritabanını kullanan tüm kullanıcıların sorgularını gösterdiğinden, sınırlı yetkisi olan bir kullanıcı ile bu komutu çalıştırırsak aşağıdaki şekilde bir hata alırız:
 
-```
+```js
 {
 	"ok" : 0,
 	"errmsg" : "not authorized on admin to execute command { currentOp: 1.0 }",
@@ -37,13 +37,13 @@ Bu komut, veritabanını kullanan tüm kullanıcıların sorgularını gösterdi
 
 Bu hatanın önüne geçmek ve sadece komutu çalıştırdığımız kullanıcının işlemlerini görmek için $ownOps parametresi ile sorgu atabiliriz.
 
-```
+```js
 db.currentOp({$ownOps: true})
 ```
 
 Yukarıdaki sorgunun çıktısı aşağıdaki gibi bir yapıda olacaktır:
 
-```
+```js
 {
 	"inprog" : [
 		{
@@ -103,23 +103,23 @@ Yukarıdaki sorgunun çıktısı aşağıdaki gibi bir yapıda olacaktır:
 }
 ```
 
-Bu çıktıda odaklanacağımız alanlar; _op_, _secs\_running_, _query_, _opid_ ve _ns_ alanlarıdır. Bu alanların verdiği bilgiler:
+Bu çıktıda odaklanacağımız alanlar; _op_, _secs_running_, _query_, _opid_ ve _ns_ alanlarıdır. Bu alanların verdiği bilgiler:
 
 **op**: İşlem tipini gösterir. _query_, _update_, _insert_ gibi.  
-**secs\_running**: İşlemin ne kadar süredir devam ettiğini saniye cinsinden gösterir.  
+**secs_running**: İşlemin ne kadar süredir devam ettiğini saniye cinsinden gösterir.  
 **query**: Yapılan sorgu ile ilgili bilgi verir.  
 **opid**: İşlemin Id değeridir.  
 **ns**: Hangi collection'da işlem yapıldığı bilgisini verir.
 
 Bu alanlardan yola çıkarak uzun süren işlemlerle ilgili bilgi sahibi olarak gerekli müdahaleleri yapabiliriz. Ayrıca çıktı alanları ile ilgili filtreler de yaparak görünecek çıktıyı sınırlayabiliriz. Örneğin benim en sık kullandığım sorgu; 5 saniyeden uzun süren işlemleri gösteren sorgudur. Bu sayede index ihtiyacı olan işlemleri görmek kolaylaşır.
 
-```
+```js
 db.currentOp({$ownOps: true, secs_running:{$gt:5}});
 ```
 
 Şimdi bu sorguyla gerçek hayatta karşılaştığımız bir çıktı örneği üzerinden hangi işlemlerle sorunu çözeceğimize bakalım. Aşağıdaki işlem çıktısı, yaklaşık 20 milyon veri bulunan bir collection'a atılan sorgunun **721 saniyedir** devam ettiğini gösteriyor.
 
-```
+```js
 {
     "desc": "conn58802",
     "threadId": "140631535146752",
@@ -167,7 +167,7 @@ db.currentOp({$ownOps: true, secs_running:{$gt:5}});
 }
 ```
 
-Bu çıktıya bakarak, bir index oluşturmamız gerektiğini anlıyoruz. Index'i oluştururken kullanacağımız alanları görebilmek için, çıktının _ns_ ve _query_ alanlarına bakmamız gerekir. _ns_ alanı bize hangi collection'da bir index oluşturmamız gerektiğini, _query_ alanı da index'in kapsayacağı alanları görmemize yardımcı olacaktır. Yukarıdaki çıktıya göre oluşturmamız gereken index _comments_ tablosunda olmalı ve _page\_id_ ile _from.id_ alanlarını kapsamalıdır. Index'i nasıl oluşturacağımız görelim.
+Bu çıktıya bakarak, bir index oluşturmamız gerektiğini anlıyoruz. Index'i oluştururken kullanacağımız alanları görebilmek için, çıktının _ns_ ve _query_ alanlarına bakmamız gerekir. _ns_ alanı bize hangi collection'da bir index oluşturmamız gerektiğini, _query_ alanı da index'in kapsayacağı alanları görmemize yardımcı olacaktır. Yukarıdaki çıktıya göre oluşturmamız gereken index _comments_ tablosunda olmalı ve _page_id_ ile _from.id_ alanlarını kapsamalıdır. Index'i nasıl oluşturacağımız görelim.
 
 ## Index oluşturma - createIndex()
 
@@ -175,25 +175,25 @@ MongoDB'de index oluşturmak için kullanılan metod, createIndex metodudur. Eğ
 
 Yukarıdaki örneğimizden yola çıkarak ihtiyacımız olan index'i nasıl oluşturacağımızı görelim.
 
-```
+```js
 db.comments.createIndex({page_id:1, "from.id": 1});
 ```
 
-Bu komutla basitçe bir index oluşturabiliriz. Eğer _page\_id_ ya da _from.id_ alanları için tersten(Z-A, desc) bir sıralama yapılması gerekseydi bu durumda _1_ yerine _\-1_ vermeliydik. Kısaca 1: Ascending, -1: Descending anlamına geliyor.
+Bu komutla basitçe bir index oluşturabiliriz. Eğer _page_id_ ya da _from.id_ alanları için tersten(Z-A, desc) bir sıralama yapılması gerekseydi bu durumda _1_ yerine _-1_ vermeliydik. Kısaca 1: Ascending, -1: Descending anlamına geliyor.
 
-```
+```js
 db.comments.createIndex({page_id: -1, "from.id": 1});
 ```
 
 Şimdi önemli bir konuya değinmemiz gerekiyor. **Index oluşturma sırasında veritabanımız kilitlenir.** Bu da eğer paralelde işlemlerimiz varsa can sıkıcı olacaktır. Bunun önüne geçmek için createIndex metoduna _background: true_ parametresini geçmemiz gerekir. Bu parametre, normal index oluşturmaya göre daha yavaş çalışır ancak herhangi bir kilitleme yaşatmaz.
 
-```
+```js
 db.comments.createIndex({page_id: 1, "from.id": 1}, {background: true});
 ```
 
 Son olarak, index oluşturma işlemlerinin currentOp() çıktısına bakalım.
 
-```
+```js
 {
     "desc": "conn58779",
     "threadId": "140631569884928",
@@ -282,7 +282,7 @@ Burada dikkat çekeceğim alanlar; _progress_ ve _msg_ alanlarıdır. Bu alanlar
 
 currentOp() ile incelediğimiz ve devam etmesini istemediğimiz bir işlemi kapatmak istediğimizde killOp() metodunu kullanabiliriz. currentOp başlığı altında bahsettiğim _opid_ alanını kullanarak sonlandırma işlemini gerçekleştirebiliriz.
 
-```
+```js
 db.killOp(opid);
 ```
 
@@ -290,13 +290,13 @@ db.killOp(opid);
 
 Index oluşturmamıza rağmen bazen sorgularımız yavaş çalışmaya devam edebiliyor. Bunun sebebi de mongodb'nin bazı durumlarda yanlış index'i seçmesinden kaynaklanıyor. Bu tarz durumları yakalamak ve müdahale edebilmek için gerekli bilgiyi veren metod _explain()_ metodudur. Analiz etmek istediğimiz sorgunun sonuna eklenerek çalışan explain() metodu, bize sorguyla ilgili hangi index'leri denediğini ve hangisini seçtiğini söyler. Kullanımı aşağıdaki gibidir:
 
-```
+```js
 db.comments.find({"page_id" : "165826141939","from.id" : "7271129512928941"}).explain()
 ```
 
 Bu sorgunun çıktısı:
 
-```
+```js
 {
 	"queryPlanner" : {
 		"plannerVersion" : 1,
@@ -337,10 +337,10 @@ Bu sorgunun çıktısı:
 				"direction" : "forward",
 				"indexBounds" : {
 					"page_id" : [
-						"[\"165826141939\", \"165826141939\"]"
+						"["165826141939", "165826141939"]"
 					],
 					"from.id" : [
-						"[\"7271129512928941\", \"7271129512928941\"]"
+						"["7271129512928941", "7271129512928941"]"
 					]
 				}
 			}
@@ -372,7 +372,7 @@ Bu sorgunun çıktısı:
 					"direction" : "forward",
 					"indexBounds" : {
 						"page_id" : [
-							"[\"165826141939\", \"165826141939\"]"
+							"["165826141939", "165826141939"]"
 						],
 						"created_time" : [
 							"[MaxKey, MinKey]"
@@ -410,7 +410,7 @@ Bu sorgunun çıktısı:
 					"direction" : "forward",
 					"indexBounds" : {
 						"page_id" : [
-							"[\"165826141939\", \"165826141939\"]"
+							"["165826141939", "165826141939"]"
 						],
 						"is_hidden" : [
 							"[MinKey, MaxKey]"
@@ -448,7 +448,7 @@ Bu sorgunun çıktısı:
 					"direction" : "forward",
 					"indexBounds" : {
 						"page_id" : [
-							"[\"165826141939\", \"165826141939\"]"
+							"["165826141939", "165826141939"]"
 						]
 					}
 				}
@@ -471,19 +471,19 @@ Yukarıdaki çıktıda; winningPlan ve rejectedPlan alanları bize denenen ve ka
 
 hint() metodu, index seçimini direkt bizim yapmamızı sağlar. Parametre olarak index adını alır. Kullanım şekli _explain()_ metodu ile aynıdır.
 
-```
+```js
 db.comments.find({"page_id" : "165826141939","from.id" : "7271129512928941"}).hint("page_id_1_from.id_1")
 ```
 
 Bu sorgunun ucuna explain() metodunu da eklersek farkı görebiliriz.
 
-```
+```js
 db.comments.find({"page_id" : "165826141939","from.id" : "7271129512928941"}).hint("page_id_1_from.id_1").explain()
 ```
 
 Çıktıyı tekrar incelediğimizde bu kez rejectedPlans alanının boş kaldığını görebiliriz. Bunun sebebi hint ile direkt olarak kullanılacak index'i belirtmiş olmamızdır.
 
-```
+```js
 {
 	"queryPlanner" : {
 		"plannerVersion" : 1,
@@ -524,10 +524,10 @@ db.comments.find({"page_id" : "165826141939","from.id" : "7271129512928941"}).hi
 				"direction" : "forward",
 				"indexBounds" : {
 					"page_id" : [
-						"[\"165826141939\", \"165826141939\"]"
+						"["165826141939", "165826141939"]"
 					],
 					"from.id" : [
-						"[\"7271129512928942\", \"7271129512928942\"]"
+						"["7271129512928942", "7271129512928942"]"
 					]
 				}
 			}
@@ -550,13 +550,13 @@ Son olarak, _hint()_ metodunun parametre olarak index adını aldığını söyl
 
 Bir collection'da tanımlı index'leri ve özelliklerini görebilmek için _getIndexes()_ metodunu kullanırız.. Kullanımı aşağıdaki gibidir:
 
-```
+```js
 db.comments.getIndexes()
 ```
 
 Bu komutun çıktısı, comments collection'unda tanımlı olan index'lerin listesi olacaktır.
 
-```
+```js
 [
 	{
 		"v" : 2,

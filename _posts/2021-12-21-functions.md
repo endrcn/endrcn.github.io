@@ -21,30 +21,38 @@ Kaynak: studytonight.com
 
 Fonksiyonlar tanımlanırken **function** anahtar kelimesi kullanılır. Bir fonksiyon tanımlanırken alacağı parametreler, bir dönüş değeri olup olmayacağı ve ismi belirlenir. Fonksiyon isimlerinde [değişken](https://endrcn.dev/nodejs/variables/) tanım kuralları aynen geçerlidir.
 
+```javascript
 // Syntax
 function functionName (param1, param2, ...) {
     // Codes
 }
+```
 
 Fonksiyonlar ikiye ayrılırlar. Dönüş değeri olanlar ve dönüş değeri olmayanlar. Bir fonksiyondan veri döndürmek için **return** anahtar kelimesi kullanılır. Eğer bir veri döndürülmeyecekse herhangi bir işlem yapmaya gerek yoktur. Dönüş değeri olan bir fonksiyon tanımı örneği olarak, girilen iki sayıyı toplayıp, toplamı dönen bir fonksiyon tanımlayalım.
 
+```javascript
 function add(num1, num2) {
     return num1 + num2;
 }
+```
 
 Yukarıdaki örnekte **add**, fonksiyon ismi, **num1** ve **num2** parametreler ve **return num1 + num2** de dönüş değeridir. Fonksiyonların dönüş değeri herhangi bir [veri tipinde](https://endrcn.dev/nodejs/data-types/) olabilir.
 
 Dönüş değeri olmayan(void) fonksiyonlar ise işlemi yapan ancak dönüşte bir veri üretmeyen fonksiyonlardır. Void fonksiyonlara da bir örnek yapalım. Örneğimizde ekrana log basan bir fonksiyon yazalım.
 
+```javascript
 function writeLog(logParam){
     console.log(logParam);
 }
+```
 
 Fonksiyonların parametre alması zorunlu değildir. Hiç parametre almayan bir fonksiyon da tanımlayabiliriz.
 
+```javascript
 function methodWithoutParameter() {
     console.log("Parametre yok");
 }
+```
 
 Bir fonksiyon tanımlandığında çalışmaz. Sadece bellekte yer tutar ve çalıştırılmayı bekler.
 
@@ -52,13 +60,17 @@ Bir fonksiyon tanımlandığında çalışmaz. Sadece bellekte yer tutar ve çal
 
 Tanımlanmış bir fonksiyonu çağırmak için ismi yazılır. Eğer parametre alıyorsa, parametreleri de verilir/verilmez. Yukarıda tanımladığımız fonksiyonları çağıralım.
 
+```javascript
 console.log(add(2,3)); // output: 5
 writeLog("bir log yaz"); // output: bir log yaz
 methodWithoutParameter(); // output: Parametre yok
+```
 
 Fonksiyonlar çağrılırken tanımda belirlenen parametrelerin aktarılması zorunlu değildir. Ancak bu durumda fonksiyonlar doğru çalışmayabilir.
 
+```javascript
 console.log(add()); // output: NaN
+```
 
 **Ek bilgi:** _NaN_ - Not a Number ifadesinin kısaltmasıdır.
 
@@ -72,6 +84,7 @@ Pass by Reference, fonksiyona bir parametre olarak verilen değişkenlerin memor
 
 Bir değişkenin referans değerinin gönderilmesi, eğer bu değişken fonksiyon içinde bir değişikliğe uğrarsa, fonksiyon dışında da değişir anlamını taşır. Bir örnekle gösterelim.
 
+```javascript
 // Pass by Reference Example
 function changeReferencedValue(varObj) {
     varObj.name = "CAN";
@@ -90,9 +103,11 @@ Fonksiyon çalışmadan önce varObj= { name: 'Ender' }
 Fonksiyon içinde varObj { name: 'CAN' }
 Fonksiyon çalıştıktan sonra varObj= { name: 'CAN' } --> Değişti!
 \*/
+```
 
 Fakat, eğer fonksiyon içinde parametreye yeni bir değer atarsak, yeni bir değişken gibi algılanır ve dışarıdan gönderilen değişkenle bağlantısı kopar. Bu nedenle de fonksiyon içindeki değişiklik dışarıdakini etkilemez.
 
+```javascript
 // Pass by Reference Example2
 function changeReferencedValue2(varObj) {
     varObj = { name: "CAN" };
@@ -111,11 +126,13 @@ Fonksiyon çalışmadan önce varObj= { name: 'Ender' }
 Fonksiyon içinde varObj { name: 'CAN' }
 Fonksiyon çalıştıktan sonra varObj= { name: 'Ender' } --> Değişmedi!
 \*/
+```
 
 ### Pass by Value
 
 Pass by Value, bir değişkenin referans değerinin değil de direkt değerinin aktarılması anlamına gelir. Javascript'te default parametre aktarımı pass by value'dir. Yani dışarıdan verilen değişkenin değeri, fonksiyonun argümanına kopyalanır.
 
+```javascript
 // Pass by Value Example
 function changeParamValue(number) {
     number = 2;
@@ -132,11 +149,13 @@ Fonksiyon çalışmadan önce number= 5
 Fonksiyon içinde number = 2
 Fonksiyon çalıştıktan sonra number= 5 --> Değişmedi
 \*/
+```
 
 ### Arguments
 
 Bir fonksiyon tanımlarken parametre sayısını bilemeyebiliriz. Bu gibi durumlarda **arguments** imdadımıza yetişir. Örneğin gönderilen tüm parametreleri toplayan bir fonksiyona ihtiyacımız var. Bu durumda aşağıdaki gibi bir tanım yapabiliriz.
 
+```javascript
 function sum(){
     let total = 0;
     for (let i=0;i<arguments.length;i++) {
@@ -147,6 +166,7 @@ function sum(){
 
 let result = sum(2,3,4,5,6,7,8);
 console.log(result) // output: 35
+```
 
 Yukarıdaki örnekte sum fonksiyonu hiç parametre almıyor gibi görünse de, javascript'te fonksiyon çağrılırken gönderilen parametreler **arguments** dizisi olarak saklanır. Böylece sınırsız parametre alabilen fonksiyonlara sahip olabiliriz.
 
@@ -158,6 +178,7 @@ Fonksiyon tanımlama başlığı altında bir fonksiyonun temel dönüş yapıla
 
 En temel fonksiyon dönüş yapısı **return** anahtar kelimesiyle yapılandır. Bir fonksiyonda yapılan işlemler sonucu ortaya çıkan değeri fonksiyonun çağrıldığı yere göndermek için kullanılır. Bunu bir örnek ile pekiştirelim.
 
+```javascript
 function square(number) {
     let result = number \* number;
     return result;
@@ -166,6 +187,7 @@ function square(number) {
 let num = 5;
 let squareOfNumber = square(num);
 console.log(squareOfNumber); // output: 25
+```
 
 Yukarıdaki örneği adım adım açıklayalım:
 
@@ -182,6 +204,7 @@ Void fonksiyonlar, herhangi bir dönüş değeri olmayan fonksiyonlardır. Bu ti
 
 Bir fonksiyona parametre aktarırken sadece değişkenler kullanılmaz. Tanımladığımız bir fonksiyona parametre olarak farklı bir fonksiyon da verebiliriz. İşte parametre olarak verdiğimiz bu fonksiyonların genel isimlendirmesi **callback**'tir. Callback fonksiyonlar, parametre olarak verildikleri fonksiyonlardaki işlemler bittikten sonra çağrılan fonksiyonlardır. Bunun için bir örnek yapalım: Veritabanından müşterileri getiren bir fonksiyon tanımlayalım. Fonksiyon, müşterileri çektikten sonra bir callback ile dönüş sağlasın
 
+```javascript
 function getCustomers(query, cb) {
    let result = db.getFromDB(query, function(customers){
       // Some customer processes
@@ -192,6 +215,7 @@ function getCustomers(query, cb) {
 getCustomers({},function(customers){
     console.log(customers);
 });
+```
 
 Yukarıdaki örneği satır satır açıklayalım
 
@@ -206,6 +230,7 @@ Yukarıdaki örneği satır satır açıklayalım
 
 [Ecmascript 6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_%E2%80%93_ECMAScript_2015) ile birlikte gelen bu arrow function'lar, adını tanımlanma biçiminden alırlar. Bir fonksiyon tanımlarken kullandığımız **function** anahtar kelimesi, arrow function tanımlarken kullanılmaz.
 
+```javascript
 // Syntax
 const func = (param1, param2, ...) => {
    // Function area
@@ -225,11 +250,13 @@ function getCustomers(query, cb) {
 getCustomers({},(customers) => { // arrow function
     console.log(customers);
 });
+```
 
 ## İç İçe Fonksiyonlar (Nested Functions)
 
 Bir fonksiyon içinde başka bir fonksiyon tanımlanabilir. Bu durumda içerdeki fonksiyona dışarıdan erişilemez.
 
+```javascript
 // A nested function example
 function getScore() {
   var num1 = 2,
@@ -243,6 +270,7 @@ function getScore() {
 }
 
 getScore(); // Returns "Chamakh scored 5"
+```
 
 Harikasınız! Fonksiyonlar konusunu tamamlayarak Node.js öğrenme serüveninizde BÜYÜK BİR ADIM attınız.
 
