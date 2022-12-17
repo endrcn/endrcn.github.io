@@ -20,14 +20,10 @@ avatar: https://raw.githubusercontent.com/aweekj/kiko-now/master/images/jekyll-l
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
 # it from the list(Delete '- name: ' and 'url: ', too!)
 navigation:
-  - name: Blog
-    url: /
-  - name: About
-    url: /about
   - name: Archive
     url: /archive
-  - name: Tags
-    url: /tags
+  - name: Kategoriler
+    url: /categories
   - name: Github
     url: https://github.com/endrcn
 
