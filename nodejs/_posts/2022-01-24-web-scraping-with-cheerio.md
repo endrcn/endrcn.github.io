@@ -8,6 +8,8 @@ coverImage: "Architecture-of-web-scraping.jpg"
 
 [Regex ile Web Scraping](https://endrcn.dev/nodejs/web-scraping-with-regex/) makalesinin devamı niteliğindeki bu yazımızda aynı projeyi bu kez _[cheerio](https://github.com/cheeriojs/cheerio)_ modülünü kullanarak nasıl yapacağımızı anlatmaya çalışacağım. Cheerio modülü, Node.js içinde jQuery metotlarını kullanmamızı sağlayan bir modüldür. Böylece sanki tarayıcıdaymış gibi kod geliştirerek verileri ayıklayabiliriz.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fjI1Tfz3bRk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Veri Çekme
 
 Veri çekme adımlarını [Regex ile Web Scraping](https://endrcn.dev/nodejs/web-scraping-with-regex/#Veri_Cekme) makalesinden inceleyebilirsiniz. Direkt kodu ekleyelim:
