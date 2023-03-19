@@ -8,6 +8,8 @@ tags:
 
 Bazen tarayıcı tabanlı oyunlarda, bazen de sürekli kullandığımız web sitelerindeki bazı alanları kendimize göre düzenlemek isteyebiliyoruz. Bu gibi durumlarda imdadımıza TamperMonkey yetişir. TamperMonkey, bir Chrome eklentisidir ve bir web sitesinde kendi yazdığımız Javascript kodunu çalıştırabilmemizi sağlar. Eğer Chrome kullanmıyorsanız, Firefox’ta da benzer işleri yapan GreaseMonkey eklentisini kullanabilirsiniz.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dCyAdLMAk2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 # Kurulum
 
 Öncelikle eklentiyi indirmekle başlayalım. Bunun için [Chrome Web Mağazasına](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=tr) girip eklentiyi kurmalıyız. Mağazaya girdiğimizde sağda Chrome’a Ekle butonuna basmak, eklentiyi kurmak için yeterlidir.
