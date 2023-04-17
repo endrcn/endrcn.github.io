@@ -13,6 +13,8 @@ tags:
 
 Bir önceki yazımızda [Node.js ile CLI uygulaması geliştirmeyi](https://endrcn.dev/nodejs/arguments/) ve bu uygulamaya argümanlar ile nasıl veri aktarabileceğimizi anlatmıştım. Bu yazıdaysa aynı işlevi farklı bir biçimde gerçekleştiren ve özellikle büyük uygulamalar geliştirdiğimizde tercih edeceğimiz **çevre değişkenleri (environment variables, environments)** aktarımından bahsedeceğim.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/czO4F5PfhVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Çevre Değişkenleri Nedir? Neden İhtiyaç Duyarız?
 
 Çevre değişkenleri -ortam değişkenleri de deniyor-, işletim sistemi düzeyinde saklanan değişkenlerdir. Genelde bir yazılım geliştirildikten sonra bir yayınlama sürecine gireriz. Bu yayınlama sürecinde genelde _Development_ > _Test_ > _QA_ > _Prod_ şeklinde adlandırdığımız 4 farklı ortamda uygulamamız geliştirilir, test edilir ve yayınlanır. İşte tam da bu noktada ortamlara uygun parametreleri(Örn: DB bağlantı bilgileri, Log Path, Log seviyesi vs.) uygulamamıza aktarmamız gerekir. Ortamlara göre değişen bu bilgileri ayrı ayrı sabit dosyalarda tutmak çok ilkel ve kullanışsız bir yöntem olacağından, bu gibi durumlarda ortam değişkenlerinden yararlanırız.
