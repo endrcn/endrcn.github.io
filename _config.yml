@@ -26,6 +26,8 @@ navigation:
     url: /categories
   - name: Github
     url: https://github.com/endrcn
+  - name: QR Generator
+    url: https://qrgenerator.endrcn.dev
 
 # Pagination
 paginate: 5
