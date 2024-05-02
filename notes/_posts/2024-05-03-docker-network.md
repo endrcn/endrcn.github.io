@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Docker'da Farklı YAML Dosyaları Arasında Uygulama Haberleşmesi
 date: "2024-05-03"
 categories: 
