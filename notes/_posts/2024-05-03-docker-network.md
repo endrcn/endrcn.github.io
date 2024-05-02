@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Docker'da Farklı YAML Dosyaları Arasında Uygulama Haberleşmesi: Bir Rehber
+date: "2024-05-03"
+categories: 
+  - "notes"
 tags:
   - docker
   - docker-network
