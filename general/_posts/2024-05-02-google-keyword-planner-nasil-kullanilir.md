@@ -2,7 +2,7 @@
 title: "Google Keyword Planner Nedir?"
 date: "2024-05-02"
 categories: 
-  - "nodejs"
+  - "general"
 tags: 
   - "google-keyword-planner"
   - "keyword-araştırması"
