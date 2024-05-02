@@ -1,18 +1,12 @@
 ---
+layout: post
 title: Docker'da Farklı YAML Dosyaları Arasında Uygulama Haberleşmesi
-date: "2024-05-03"
-categories: 
-  - "notes"
 tags:
   - docker
   - docker-network
   - docker-compose
   - mikroservis
-  - konteyner-yönetimi
 ---
-
-# Docker'da Farklı YAML Dosyaları Arasında Uygulama Haberleşmesi: Bir Rehber
-
 
 Docker, mikroservis mimarilerinde ve konteyner yönetiminde öncü bir araçtır. Ancak, farklı `docker-compose.yaml` dosyalarında tanımlanmış uygulamaların birbiriyle nasıl haberleşeceği, özellikle yeni başlayanlar için kafa karıştırıcı olabilir. Bu makalede, Docker'da farklı YAML dosyaları arasında uygulama haberleşmesini sağlamanın yöntemlerini adım adım açıklayacağız.
 
