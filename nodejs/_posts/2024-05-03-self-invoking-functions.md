@@ -1,5 +1,5 @@
 ---
-title: "JavaScript'te Kendi Kendini Çağıran Fonksiyonlar"
+title: "JavaScript'te Kendi Kendini Çağıran Fonksiyonlar (Self-Invoking Functions)"
 date: "2024-05-03"
 categories: 
   - "javascript"
@@ -9,8 +9,6 @@ tags:
   - "iife"
   - "programlama"
 ---
-
-# JavaScript'te Kendi Kendini Çağıran Fonksiyonlar (Self-Invoking Functions)
 
 JavaScript, web geliştiricileri arasında popülerliğini koruyan dinamik ve esnek bir programlama dilidir. Bu dilin sunduğu pek çok özellikten biri de **kendi kendini çağıran fonksiyonlar**dır. Bu makalede, JavaScript'teki kendi kendini çağıran fonksiyonların ne olduğunu, nasıl kullanıldığını ve avantajlarını detaylı bir şekilde inceleyeceğiz.
 
