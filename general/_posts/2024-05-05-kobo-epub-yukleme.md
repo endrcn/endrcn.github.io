@@ -1,13 +1,13 @@
 ---
 title: "Kobo E-Reader'a EPUB Dosyaları Nasıl Aktarılır?"
-date: "2024-05-01"
+date: "2024-05-05"
 categories: 
   - "general"
 tags: 
-  - "vidiq"
-  - "youtube-seo"
-  - "video-optimizasyonu"
-  - "içerik-pazarlaması"
+  - "e-kitap"
+  - "Kobo"
+  - "EPUB"
+  - "e-reader"
 ---
 
 Kobo e-reader'ınızla mükemmel bir okuma deneyimi yaşamak için, sevdiğiniz kitapları cihazınıza aktarmanız gerekir. EPUB formatı, Kobo e-reader'lar için en uyumlu dosya türlerinden biridir. Bu rehberde, Kobo'nuzla EPUB dosyalarını nasıl kolayca senkronize edebileceğinizi adım adım anlatacağız.
