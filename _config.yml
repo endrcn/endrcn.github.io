@@ -1,9 +1,9 @@
 # Site
 name: "endrcn.dev"
 title: ""
-description: "Personal Blog"
+description: ""
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/logo_ec.png'
 baseurl: ''
 google_analytics: 'G-09E6KHEP07'
 disqus: 'demowebsite'
