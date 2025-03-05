@@ -2,7 +2,7 @@
 layout: post
 title: "MongoDB Performans Artırma Yöntemleri"
 image: https://community-cdn-digitalocean-com.global.ssl.fastly.net/uCcwj4q1e8Tx91Ce5En11NdE
-author: Ender CAN
+author: endrcn
 date: "2022-05-07"
 categories: [ MongoDB ]
 ---
