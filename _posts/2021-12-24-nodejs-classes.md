@@ -24,7 +24,7 @@ class Rectangle {
 }
 ```
 
-Bir class, bir constructor, property'ler(değişkenler) ve metod'lar([fonksiyonlar](https://endrcn.dev/nodejs/functions/)) barındırır. Constructor, bir sınıftan nesne oluşturulurken ilk aşamada yapılacak işlemleri yapan ana metoddur.
+Bir class, bir constructor, property'ler(değişkenler) ve metod'lar([fonksiyonlar](https://endrcn.dev/nodejs-functions/)) barındırır. Constructor, bir sınıftan nesne oluşturulurken ilk aşamada yapılacak işlemleri yapan ana metoddur.
 
 ```javascript
 class Rectangle {
@@ -51,7 +51,7 @@ Yukarıdaki örnekte kullandığımız **this** anahtar sözcüğü, sınıfın 
 
 ## Method Tanımlama
 
-Metodlar, fonksiyonların sınıf içinde tanımlanmış halleridir. Bir sınıfın işlevselliğini, metodlarla artırabiliriz. [Fonksiyonlardan](https://endrcn.dev/nodejs/functions/) tek farkı, **function** anahtar sözcüğünü kullanmamamız. Rectangle örneğimizden gidecek olursak, alan ve çevre hesabı yapan metodlar tanımlayabiliriz.
+Metodlar, fonksiyonların sınıf içinde tanımlanmış halleridir. Bir sınıfın işlevselliğini, metodlarla artırabiliriz. [Fonksiyonlardan](https://endrcn.dev/nodejs-functions/) tek farkı, **function** anahtar sözcüğünü kullanmamamız. Rectangle örneğimizden gidecek olursak, alan ve çevre hesabı yapan metodlar tanımlayabiliriz.
 
 ```javascript
 class Rectangle {
@@ -70,7 +70,7 @@ class Rectangle {
 }
 ```
 
-Sınıf içinde tanımlanan property([değişken](https://endrcn.dev/nodejs/variables/)) ve metodlara erişmek için nesneler kullanılır. Şimdiye kadar sınıf tanımından bahsederken sürekli nesnelerden bahsettik. Peki nedir bu nesne görelim.
+Sınıf içinde tanımlanan property([değişken](https://endrcn.dev/nodejs-variables/)) ve metodlara erişmek için nesneler kullanılır. Şimdiye kadar sınıf tanımından bahsederken sürekli nesnelerden bahsettik. Peki nedir bu nesne görelim.
 
 ## Nesne Tanımlama
 
@@ -79,7 +79,7 @@ Nesneler, bir sınıftan oluşturulan değişkenlerdir. Sınıf kavramı, soyut 
 let rect = new Rectangle(5,2);
 console.log(rect); // Output: Rectangle { width: 5, height: 2 }
 
-Yukarıdaki örnekte genişliği(width) 5, yüksekliği(height) 2 olan bir dikdörtgen nesnesi tanımladık ve ekrana bastık. Bu nesnenin türetildiği sınıfa ait property ve metodlara erişmek için nokta(**.**) [operatörü](https://endrcn.dev/nodejs/operators/) kullanılır. Türettiğimiz nesnenin genişliğine ve yüksekliğini ekrana basalım.
+Yukarıdaki örnekte genişliği(width) 5, yüksekliği(height) 2 olan bir dikdörtgen nesnesi tanımladık ve ekrana bastık. Bu nesnenin türetildiği sınıfa ait property ve metodlara erişmek için nokta(**.**) [operatörü](https://endrcn.dev/nodejs-operators/) kullanılır. Türettiğimiz nesnenin genişliğine ve yüksekliğini ekrana basalım.
 
 console.log(rect.width); // Output: 5
 console.log(rect.height); // Output: 2
@@ -144,7 +144,7 @@ static getClassName(){
 
 ## Property Tanımlama
 
-Bir sınıfa ait property'leri tanımlama işlemini constructor içinde **this** kullanarak yapmıştık. Ancak property'leri herhangi bir metod kullanmadan da direkt class [scope](https://endrcn.dev/nodejs/scopes/)'unda public ya da private olarak tanımlayabiliriz.
+Bir sınıfa ait property'leri tanımlama işlemini constructor içinde **this** kullanarak yapmıştık. Ancak property'leri herhangi bir metod kullanmadan da direkt class [scope](https://endrcn.dev/nodejs-scopes/)'unda public ya da private olarak tanımlayabiliriz.
 
 ### Public Property Tanımlama
 

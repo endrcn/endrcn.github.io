@@ -6,7 +6,7 @@ author: endrcn
 categories: [NodeJS]
 ---
 
-Bir önceki yazımızda [Node.js ile CLI uygulaması geliştirmeyi](https://endrcn.dev/nodejs/arguments/) ve bu uygulamaya argümanlar ile nasıl veri aktarabileceğimizi anlatmıştım. Bu yazıdaysa aynı işlevi farklı bir biçimde gerçekleştiren ve özellikle büyük uygulamalar geliştirdiğimizde tercih edeceğimiz **çevre değişkenleri (environment variables, environments)** aktarımından bahsedeceğim.
+Bir önceki yazımızda [Node.js ile CLI uygulaması geliştirmeyi](https://endrcn.dev/nodejs-arguments/) ve bu uygulamaya argümanlar ile nasıl veri aktarabileceğimizi anlatmıştım. Bu yazıdaysa aynı işlevi farklı bir biçimde gerçekleştiren ve özellikle büyük uygulamalar geliştirdiğimizde tercih edeceğimiz **çevre değişkenleri (environment variables, environments)** aktarımından bahsedeceğim.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/czO4F5PfhVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -130,6 +130,6 @@ Son olarak çıktımız şu şekilde olacak:
 
 ## Docker
 
-[Docker](https://www.docker.com/), başlı başına ayrı bir konu. Temel olarak, işletim sistemi içinde ayrı bir container yapısı kurup uygulamanız için gerekli olan her şeyi kendi içinde barındıran bir yapı kurmamızı sağlar. Böylece ortamdan bağımsız bir pakete sahip oluruz. Kurulum ve kullanımı oldukça kolaylaştırdığı için özellikle On-premise(uygulamanın cloud değil de müşterinin iç sunucusunda çalışması) olarak geliştirdiğimiz uygulamalarda tercih edilir. Docker, uygulamaya ait bir ortam oluşturduğu için çevre değişkenlerini de docker'i ayağa kaldırmak için kullandığımız YAML dosyasında tanımlayabiliriz. Eğer uygulamamızı [dockerize](https://github.com/docker/labs/tree/master/developer-tools/nodejs/porting/) edersek, bundan önceki başlıklarda anlattığım yapıları kullanmadan direkt olarak çevre değişkenlerini tanımlayabiliriz.
+[Docker](https://www.docker.com/), başlı başına ayrı bir konu. Temel olarak, işletim sistemi içinde ayrı bir container yapısı kurup uygulamanız için gerekli olan her şeyi kendi içinde barındıran bir yapı kurmamızı sağlar. Böylece ortamdan bağımsız bir pakete sahip oluruz. Kurulum ve kullanımı oldukça kolaylaştırdığı için özellikle On-premise(uygulamanın cloud değil de müşterinin iç sunucusunda çalışması) olarak geliştirdiğimiz uygulamalarda tercih edilir. Docker, uygulamaya ait bir ortam oluşturduğu için çevre değişkenlerini de docker'i ayağa kaldırmak için kullandığımız YAML dosyasında tanımlayabiliriz. Eğer uygulamamızı [dockerize](https://github.com/docker/labs/tree/master/developer-tools/nodejs-porting/) edersek, bundan önceki başlıklarda anlattığım yapıları kullanmadan direkt olarak çevre değişkenlerini tanımlayabiliriz.
 
 Çevre değişkenleri konusunun da sonuna geldik. Bir sonraki yazımızda görüşmek dileğiyle.

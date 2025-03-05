@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [nodejs,node.js,destructuring]
 ---
 
-**Destructuring Assignment**, [array ve object](https://endrcn.dev/nodejs/data-types/) tipindeki değişkenlerin içinde bulunan değerleri, ayrı birer değişkene kolayca aktarmamızı sağlayan bir yapıdır. Tüm makale boyunca kullanacağımız dizi ve objemizi görelim.
+**Destructuring Assignment**, [array ve object](https://endrcn.dev/nodejs-data-types/) tipindeki değişkenlerin içinde bulunan değerleri, ayrı birer değişkene kolayca aktarmamızı sağlayan bir yapıdır. Tüm makale boyunca kullanacağımız dizi ve objemizi görelim.
 
 ```javascript
 const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -81,7 +81,7 @@ Yukarıdaki örnekte **lst** dizisinde two değişkenine karşılık gelen elema
 
 ### Dizi Dönen Fonksiyonlarda Destructuring
 
-Dönüş değeri dizi olan [fonksiyonlara](https://endrcn.dev/nodejs/functions/) da yukarıdaki tüm işlemleri uygulayabiliriz. Uygulama sırasında atama [operatörünün](https://endrcn.dev/nodejs/operators/) (=) sağ tarafında dizi dönen fonksiyonu çağırmak yeterlidir.
+Dönüş değeri dizi olan [fonksiyonlara](https://endrcn.dev/nodejs-functions/) da yukarıdaki tüm işlemleri uygulayabiliriz. Uygulama sırasında atama [operatörünün](https://endrcn.dev/nodejs-operators/) (=) sağ tarafında dizi dönen fonksiyonu çağırmak yeterlidir.
 
 ```javascript
 function getList(){
@@ -149,7 +149,7 @@ let { id, firstName} = user;
 console.log(id, firstName); // Output: 1234567890 Ender
 ```
 
-Değişkenleri önceden tanımlayıp ardından atama işlemi de yapabiliriz. Bu durumda tüm atama işlemini parantezler içine almalıyız. Aksi halde [SyntaxError](https://endrcn.dev/nodejs/error-handling/) hatası fırlatılır.
+Değişkenleri önceden tanımlayıp ardından atama işlemi de yapabiliriz. Bu durumda tüm atama işlemini parantezler içine almalıyız. Aksi halde [SyntaxError](https://endrcn.dev/nodejs-error-handling/) hatası fırlatılır.
 
 ```javascript
 let age, lastName;

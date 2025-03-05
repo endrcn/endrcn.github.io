@@ -129,7 +129,7 @@ Output:
 */
 ```
 
-Yukarıdaki örnekte [arrow function](https://endrcn.dev/nodejs/functions/#Arrow_Functions) kullanarak bir _**replacer**_ fonksiyonu oluşturduk ve bu fonksiyonda bir koşul tanımlayarak dönen field'larda eğer key değeri firstName ya da lastName ise toLowerCase() fonksiyonu -bu fonksiyona String metotları altında değineceğiz- ile tüm harflerini küçülttük.
+Yukarıdaki örnekte [arrow function](https://endrcn.dev/nodejs-functions/#Arrow_Functions) kullanarak bir _**replacer**_ fonksiyonu oluşturduk ve bu fonksiyonda bir koşul tanımlayarak dönen field'larda eğer key değeri firstName ya da lastName ise toLowerCase() fonksiyonu -bu fonksiyona String metotları altında değineceğiz- ile tüm harflerini küçülttük.
 
 ### JSON.parse(String)
 
@@ -146,7 +146,7 @@ Output:
 */
 ```
 
-Eğer parametre olarak verilen string değeri JSON formatına uygun bir veri içermiyorsa [SyntaxError](https://endrcn.dev/nodejs/error-handling/) hatası fırlatılır. Bu nedenle dönüşümlerin [try-catch](https://endrcn.dev/nodejs/error-handling/) bloklarının kullanılması uygulamanın çökmesini engeller.
+Eğer parametre olarak verilen string değeri JSON formatına uygun bir veri içermiyorsa [SyntaxError](https://endrcn.dev/nodejs-error-handling/) hatası fırlatılır. Bu nedenle dönüşümlerin [try-catch](https://endrcn.dev/nodejs-error-handling/) bloklarının kullanılması uygulamanın çökmesini engeller.
 
 ## Array Methods
 
@@ -182,7 +182,7 @@ let result = arr.find((item) => {
 console.log(result); // Output: { name: 'Leyla', score: 8 }
 ```
 
-Bu kez item değeri bir object olacağı için eşleşmeyi objenin "name" alanında arıyoruz. Buradaki karşılaştırmalar farklı [operatörlerle](https://endrcn.dev/nodejs/operators/#Karsilastirma_Operatorleri) de yapılabilir.
+Bu kez item değeri bir object olacağı için eşleşmeyi objenin "name" alanında arıyoruz. Buradaki karşılaştırmalar farklı [operatörlerle](https://endrcn.dev/nodejs-operators/#Karsilastirma_Operatorleri) de yapılabilir.
 
 ### array.findIndex(function)
 
@@ -291,7 +291,7 @@ Output:
 
 ### array.forEach(function)
 
-**forEach**() metodu, bir döngü metodudur. Dizinin her bir elemanı için parametre olarak aldığı fonksiyonu çalıştırır. Herhangi bir dönüş değeri yoktur. [for...in](https://endrcn.dev/nodejs/loops/) döngüsünün metotlaştırılmış hali olarak düşünebiliriz.
+**forEach**() metodu, bir döngü metodudur. Dizinin her bir elemanı için parametre olarak aldığı fonksiyonu çalıştırır. Herhangi bir dönüş değeri yoktur. [for...in](https://endrcn.dev/nodejs-loops/) döngüsünün metotlaştırılmış hali olarak düşünebiliriz.
 
 ```javascript
 var arr = [
@@ -453,7 +453,7 @@ Output:
 */
 ```
 
-Yukarıdaki örnek, uygulama geliştirirken kullanacağımız yapıya çok daha yakın bir kod parçası oldu. Bir de [arrow function](https://endrcn.dev/nodejs/functions/#Arrow_Functions) yapısının en sade kullanımına bir örnek de görmüş olduk. Eğer herhangi bir işlem yapmadan direkt return değeri göndereceğimiz bir kod yazacaksak bu şekilde kullanabiliriz. Silme işlemine de bir örnek görelim. Eklediğimiz Sena isimli kişiyi bu kez silelim. Bu kez **howmany** parametresine 1 eleman silmek istediğimiz için 1 yazıyoruz.
+Yukarıdaki örnek, uygulama geliştirirken kullanacağımız yapıya çok daha yakın bir kod parçası oldu. Bir de [arrow function](https://endrcn.dev/nodejs-functions/#Arrow_Functions) yapısının en sade kullanımına bir örnek de görmüş olduk. Eğer herhangi bir işlem yapmadan direkt return değeri göndereceğimiz bir kod yazacaksak bu şekilde kullanabiliriz. Silme işlemine de bir örnek görelim. Eklediğimiz Sena isimli kişiyi bu kez silelim. Bu kez **howmany** parametresine 1 eleman silmek istediğimiz için 1 yazıyoruz.
 
 ```javascript
 let index = arr.findIndex((item) => item.name == "Sena");
@@ -486,7 +486,7 @@ console.log(strArr) // Output: 1 -> 2 -> 3 -> ender -> can -> true -> 3.14
 
 ### Array.isArray(obj)
 
-isArray() metodu, [static tanımlı](https://endrcn.dev/nodejs/classes/#Static_Method_ve_Static_Property) bir metottur. Bu nedenle direkt bir array değişken ile değil Array sınıfı ile çağrılır. Parametre ile verilen değişkenin bir dizi olup olmadığını söyler. Dönüş değeri [Boolean](https://endrcn.dev/nodejs/data-types/#Booleans)'dır. Eğer dizi ise **_true_**, değilse **_false_** döner.
+isArray() metodu, [static tanımlı](https://endrcn.dev/nodejs-classes/#Static_Method_ve_Static_Property) bir metottur. Bu nedenle direkt bir array değişken ile değil Array sınıfı ile çağrılır. Parametre ile verilen değişkenin bir dizi olup olmadığını söyler. Dönüş değeri [Boolean](https://endrcn.dev/nodejs-data-types/#Booleans)'dır. Eğer dizi ise **_true_**, değilse **_false_** döner.
 
 ```javascript
 var arr = [1,2,3];
@@ -503,7 +503,7 @@ String sınıfına ait metotlar, en sık kullandığımız bir başka metot grub
 
 ### str.includes(value, _start_)
 
-includes() metodu, bir string değer içinde farklı bir değeri aramak için kullanılır. Dönüş değeri [Boolean](https://endrcn.dev/nodejs/data-types/#Booleans)'dır. Eğer aranan değer string içinde bulunursa ise **_true_**, değilse **_false_** döner. Aramalar büyük-küçük harf duyarlıdır.
+includes() metodu, bir string değer içinde farklı bir değeri aramak için kullanılır. Dönüş değeri [Boolean](https://endrcn.dev/nodejs-data-types/#Booleans)'dır. Eğer aranan değer string içinde bulunursa ise **_true_**, değilse **_false_** döner. Aramalar büyük-küçük harf duyarlıdır.
 
 ```javascript
 var str = "Ender Can";
@@ -647,7 +647,7 @@ if (strIndex > -1) {
 console.log(subStr); // Output: undefined
 ```
 
-Sonucun **_undefined_** olmasının sebebi [Scope](https://endrcn.dev/nodejs/scopes/) erişimleri ile ilgilidir. subStr değişkeni if scope içinde tanımlandığı ve bu if'e girmediği için sonuç **_undefined_** çıktı.
+Sonucun **_undefined_** olmasının sebebi [Scope](https://endrcn.dev/nodejs-scopes/) erişimleri ile ilgilidir. subStr değişkeni if scope içinde tanımlandığı ve bu if'e girmediği için sonuç **_undefined_** çıktı.
 
 ### toUpperCase() & toLowerCase()
 

@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [conditions,kosullar,node.js,nodejs]
 ---
 
-Bir önceki yazımızda [operatörlerden](https://endrcn.dev/nodejs/operators/) bahsetmiştik. Bu yazımızdaysa özellikle karşılaştırma operatörlerinin en sık kullanıldığı yer olan koşullar konusuna değineceğiz.
+Bir önceki yazımızda [operatörlerden](https://endrcn.dev/nodejs-operators/) bahsetmiştik. Bu yazımızdaysa özellikle karşılaştırma operatörlerinin en sık kullanıldığı yer olan koşullar konusuna değineceğiz.
 
 Node.js ile yazılan temel bir uygulamanın kodları çoğu programlama dilinde olduğu gibi yukarıdan aşağıya doğru çalıştırılır. **Koşullar**, bu akışta bazı düzenlemeler yapmamızı ve akışı yönlendirebilmemizi sağlar.
 
@@ -35,7 +35,7 @@ Yukarıdaki kod bloğunu tek tek açıklayacak olursak:
 
 **else**: Eğer, tüm koşullar yanlış ise else bloğu çalışacaktır.
 
-**condition**: Koşul ifadesi, dönüş değeri [boolean](https://endrcn.dev/nodejs/data-types/#Booleans) olan bir değerdir. [Karş](https://endrcn.dev/nodejs/operators/)[ılaştırma operatörlerinin](https://endrcn.dev/nodejs/operators/#Karsilastirma_Operatorleri) ve [Mantıksal operatörlerin](https://endrcn.dev/nodejs/operators/#Mantiksal_Operatorler) en çok kullanıldığı alan burasıdır. Eğer koşul ifadesi **true** dönerse, devamındaki blok çalıştırılır.
+**condition**: Koşul ifadesi, dönüş değeri [boolean](https://endrcn.dev/nodejs-data-types/#Booleans) olan bir değerdir. [Karş](https://endrcn.dev/nodejs-operators/)[ılaştırma operatörlerinin](https://endrcn.dev/nodejs-operators/#Karsilastirma_Operatorleri) ve [Mantıksal operatörlerin](https://endrcn.dev/nodejs-operators/#Mantiksal_Operatorler) en çok kullanıldığı alan burasıdır. Eğer koşul ifadesi **true** dönerse, devamındaki blok çalıştırılır.
 
 ![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2021-12-19-at-20.06.47.png)
 
@@ -129,7 +129,7 @@ Yukarıdaki örnek, else if ve else blokları için de geçerlidir.
 
 ## Koşul Operatörü
 
-[Operatörler](https://endrcn.dev/nodejs/operators/) yazımızda bahsetmediğimiz koşul operatörü, if koşulunu tek satırda yazmamızı sağlar.
+[Operatörler](https://endrcn.dev/nodejs-operators/) yazımızda bahsetmediğimiz koşul operatörü, if koşulunu tek satırda yazmamızı sağlar.
 
 ```javascript
 // syntax

@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [nodejs,node.js,operatorler,operators]
 ---
 
-Daha önceki yazılarımızda Node.js'te [değişken tanımlama](https://endrcn.dev/nodejs/variables/) ve [veri tiplerinden](https://endrcn.dev/nodejs/data-types/) bahsetmiştik. Bu yazımızda ise operatörlere değineceğiz. Tüm programlama dillerinin olmazsa olmazlarından biri olan operatörler; aritmetik operatörler, atama operatörleri, karşılaştırma operatörleri, mantıksal operatörler olmak üzere beş bölüme ayrılıyor. Tüm bölümleri ayrı başlıklar altında inceleyelim.
+Daha önceki yazılarımızda Node.js'te [değişken tanımlama](https://endrcn.dev/nodejs-variables/) ve [veri tiplerinden](https://endrcn.dev/nodejs-data-types/) bahsetmiştik. Bu yazımızda ise operatörlere değineceğiz. Tüm programlama dillerinin olmazsa olmazlarından biri olan operatörler; aritmetik operatörler, atama operatörleri, karşılaştırma operatörleri, mantıksal operatörler olmak üzere beş bölüme ayrılıyor. Tüm bölümleri ayrı başlıklar altında inceleyelim.
 
 ## Aritmetik Operatörler
 
@@ -78,7 +78,7 @@ Aynı işlemi bir de parantezlerle yaparak toplama ve mod alma işleminin çarpm
 
 Matematiksel Operatörlerde İşlem Önceliği - 2
 
-Aritmetik operatörler number tipindeki değişkenler ve değerler ile kullanılabilir. Ancak + operatörü için bir istisna var. + operatörü, string tipindeki değişkenler ile kullanılabilir. [String](https://endrcn.dev/nodejs/data-types/#Strings) tipindeki bir değişkenle number ya da string tipindeki başka bir değişken + operatörü ile birleştirilebilir. Bunun sonucunda yeni değer string tipinde olur.
+Aritmetik operatörler number tipindeki değişkenler ve değerler ile kullanılabilir. Ancak + operatörü için bir istisna var. + operatörü, string tipindeki değişkenler ile kullanılabilir. [String](https://endrcn.dev/nodejs-data-types/#Strings) tipindeki bir değişkenle number ya da string tipindeki başka bir değişken + operatörü ile birleştirilebilir. Bunun sonucunda yeni değer string tipinde olur.
 
 ```javascript
 var str = "5";
@@ -89,7 +89,7 @@ console.log(typeof result, result); // output: string 55
 
 ## Atama Operatörleri
 
-Atama operatörleri, adından da anlaşılacağı gibi bir değişkene veri atamak için kullanılır. En temel atama operatörü olan **= operatörünü** [değişkenler](https://endrcn.dev/nodejs/variables/) ve [veri tipleri](https://endrcn.dev/nodejs/data-types/) yazılarımızda kullanmıştık. Atama operatörleri; sağındaki değeri, solundaki değişkene atama görevini üstlenirler. = operatörü bir değişkene değer atarken, bu operatör aritmetik operatörlerle birleştirilerek toplayarak atama, çıkararak atama, çarparak atama, bölerek atama ve mod alarak atama operatörlerine dönüşür.
+Atama operatörleri, adından da anlaşılacağı gibi bir değişkene veri atamak için kullanılır. En temel atama operatörü olan **= operatörünü** [değişkenler](https://endrcn.dev/nodejs-variables/) ve [veri tipleri](https://endrcn.dev/nodejs-data-types/) yazılarımızda kullanmıştık. Atama operatörleri; sağındaki değeri, solundaki değişkene atama görevini üstlenirler. = operatörü bir değişkene değer atarken, bu operatör aritmetik operatörlerle birleştirilerek toplayarak atama, çıkararak atama, çarparak atama, bölerek atama ve mod alarak atama operatörlerine dönüşür.
 
 ```javascript
 var num = 0; // temel atama işlemi
@@ -105,7 +105,7 @@ _**Not:** Aritmetik operatörlerle birleştirilen atama operatörleri sadece num
 
 ## Karşılaştırma Operatörleri
 
-Karşılaştırma operatörleri, iki değişkeni ya da değeri karşılaştırmak için kullanılır. Bu operatörler genelde [koşullarda](https://endrcn.dev/nodejs/conditions) kullanırız. Bu operatörler kullanıldığında sonuç [boolean](https://endrcn.dev/nodejs/data-types/) veri tipinde oluşur.
+Karşılaştırma operatörleri, iki değişkeni ya da değeri karşılaştırmak için kullanılır. Bu operatörler genelde [koşullarda](https://endrcn.dev/nodejs-conditions) kullanırız. Bu operatörler kullanıldığında sonuç [boolean](https://endrcn.dev/nodejs-data-types/) veri tipinde oluşur.
 
 <table><tbody><tr><td>Operatör</td><td>Açıklama</td></tr><tr><td>a == b</td><td>a ile b nin değerleri eşit mi kontrolü, değerler eşitse, <strong>true</strong></td></tr><tr><td>a === b</td><td>a ile b nin değerleri ve tipleri eşit mi kontrolü, hem değerler hem de tipleri eşitse, <strong>true</strong></td></tr><tr><td>a != b</td><td>a ile b nin değerlerinin eşit değil mi kontrolü, değerleri eşit değilse, <strong>true</strong></td></tr><tr><td>a !== b</td><td><meta charset="utf-8">a ile b nin değerleri ve tipleri eşit değil mi kontrolü, hem değerleri hem de tipleri eşit değilse, <strong>true</strong></td></tr><tr><td>a &gt; b</td><td>a, b'den büyük mü kontrolü. a, b'den büyükse, <strong>true</strong></td></tr><tr><td>a &lt; b</td><td><meta charset="utf-8">a, b'den küçük mü kontrolü. a, b'den <meta charset="utf-8">küçükse, <strong>true</strong></td></tr><tr><td>a &gt;= b</td><td>a, b'den büyük veya eşit mi kontrolü. a, b'den büyük veya b'ye eşitse, <meta charset="utf-8"><strong>true</strong></td></tr><tr><td>a &lt;= b</td><td><meta charset="utf-8">a, b'den küçük veya eşit mi kontrolü. a, b'den küçük veya b'ye eşitse, <meta charset="utf-8"><strong>true</strong></td></tr></tbody></table>
 
@@ -155,4 +155,4 @@ NOT operatörü, verilen değerin tersini alır. Eğer verilen değer true ise s
 
 Tablo 4 - NOT Operatörü
 
-Operatör konusunun da sonuna geldik. Bir sonraki makalede [koşullardan](https://endrcn.dev/nodejs/conditions/) bahsedeceğiz. Koşullarla birlikte yazdığımız uygulamayı nasıl yönlendirebileceğimizi göreceğiz. Hız kesmeden devam edelim!
+Operatör konusunun da sonuna geldik. Bir sonraki makalede [koşullardan](https://endrcn.dev/nodejs-conditions/) bahsedeceğiz. Koşullarla birlikte yazdığımız uygulamayı nasıl yönlendirebileceğimizi göreceğiz. Hız kesmeden devam edelim!

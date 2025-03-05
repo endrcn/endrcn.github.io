@@ -7,9 +7,9 @@ categories: [NodeJS]
 tags: [donguler,javascript,nodejs,node.js,js loops, javascript loops]
 ---
 
-Son makalemizde uygulama içinde [koşullar](https://endrcn.dev/nodejs/conditions/) tanımlayarak program akışını nasıl yönlendirebileceğinizi anlatmıştım. Döngüler konusu; [değişkenleri](https://endrcn.dev/nodejs/variables/), [koşulları](https://endrcn.dev/nodejs/conditions/), [operatörleri](https://endrcn.dev/nodejs/operators/) sıklıkla kullandığımız bir konudur. Bu nedenle buralarda eksiğiniz olduğunu düşünüyorsanız öncelikle onu tamamlamanızı öneririm.
+Son makalemizde uygulama içinde [koşullar](https://endrcn.dev/nodejs-conditions/) tanımlayarak program akışını nasıl yönlendirebileceğinizi anlatmıştım. Döngüler konusu; [değişkenleri](https://endrcn.dev/nodejs-variables/), [koşulları](https://endrcn.dev/nodejs-conditions/), [operatörleri](https://endrcn.dev/nodejs-operators/) sıklıkla kullandığımız bir konudur. Bu nedenle buralarda eksiğiniz olduğunu düşünüyorsanız öncelikle onu tamamlamanızı öneririm.
 
-**Döngü**, [array](https://endrcn.dev/nodejs/data-types/#Arrays) ya da [object](https://endrcn.dev/nodejs/data-types/#Objects) tipindeki verilerin içindeki değerleri tek tek gezip işlem yapmamızı sağlayan yapılardır. Döngüler, tüm programlama dillerinde yaklaşık olarak aynı şekilde tanımlanıp kullanılan yapılardır. Node.js'te kullanılan birden fazla döngü yapısı vardır. Bunlar; **while**, **do-while**, **for**, **for-in** ve **for-of** döngüleridir.
+**Döngü**, [array](https://endrcn.dev/nodejs-data-types/#Arrays) ya da [object](https://endrcn.dev/nodejs-data-types/#Objects) tipindeki verilerin içindeki değerleri tek tek gezip işlem yapmamızı sağlayan yapılardır. Döngüler, tüm programlama dillerinde yaklaşık olarak aynı şekilde tanımlanıp kullanılan yapılardır. Node.js'te kullanılan birden fazla döngü yapısı vardır. Bunlar; **while**, **do-while**, **for**, **for-in** ve **for-of** döngüleridir.
 
 ## While Döngüsü
 
@@ -139,7 +139,7 @@ for(let i = arr.length - 1; i>=0; i--) {
 console.log(arr); // Output: []
 ```
 
-Yukarıdaki kod parçasında dizinin elemanlarını tersten döndüğümüzü farkedeceksiniz. Bunun sebebi, [Veri Tipleri - Arrays](https://endrcn.dev/nodejs/data-types/#Arrays) konusunda not olarak paylaştığımız durumdur. _Bir diziden bir ara eleman silerseniz, diğer elemanlar sola doğru kayar ve index'ler değişir._ Bu kodu aşağıdaki şekilde yazsaydık, dizinin tüm elemanlarının silinemediğini görürdük.
+Yukarıdaki kod parçasında dizinin elemanlarını tersten döndüğümüzü farkedeceksiniz. Bunun sebebi, [Veri Tipleri - Arrays](https://endrcn.dev/nodejs-data-types/#Arrays) konusunda not olarak paylaştığımız durumdur. _Bir diziden bir ara eleman silerseniz, diğer elemanlar sola doğru kayar ve index'ler değişir._ Bu kodu aşağıdaki şekilde yazsaydık, dizinin tüm elemanlarının silinemediğini görürdük.
 
 ```javascript
 for(let i = 0; i < arr.length; i++) {
@@ -159,9 +159,9 @@ for (let key in objectValue) {
 }
 ```
 
-Parantez içindeki ifadelerde anahtar kelimemiz **in** sözcüğüdür. Bu sözcüğün sağındaki **objectValue**, içinde dönülmesini istediğimiz object tipindeki değişkeni ifade eder. In anahtar kelimesinin solundaki yeni tanımlanmış **key** değişkeni de objenin sıradaki elemanının key değerini temsil eder. **_let_** anahtar kelimesine, [değişkenler](https://endrcn.dev/nodejs/variables/) yazımızda değinmiştik.
+Parantez içindeki ifadelerde anahtar kelimemiz **in** sözcüğüdür. Bu sözcüğün sağındaki **objectValue**, içinde dönülmesini istediğimiz object tipindeki değişkeni ifade eder. In anahtar kelimesinin solundaki yeni tanımlanmış **key** değişkeni de objenin sıradaki elemanının key değerini temsil eder. **_let_** anahtar kelimesine, [değişkenler](https://endrcn.dev/nodejs-variables/) yazımızda değinmiştik.
 
-For...in döngüsüne örnek olarak, her bir müşterimizin bilgilerini barındıran [object](https://endrcn.dev/nodejs/data-types/#Objects) tipindeki değişkenimizin değerleri arasında dönüp, key-value çiftlerini yazdıran bir kod parçası geliştirelim.
+For...in döngüsüne örnek olarak, her bir müşterimizin bilgilerini barındıran [object](https://endrcn.dev/nodejs-data-types/#Objects) tipindeki değişkenimizin değerleri arasında dönüp, key-value çiftlerini yazdıran bir kod parçası geliştirelim.
 
 ```javascript
 // For...in Loop
@@ -184,7 +184,7 @@ gender - Male
 */
 ```
 
-For...in döngüsü genelde object tipindeki değişkenlerle kullanılsa da [diziler](https://endrcn.dev/nodejs/data-types/#Arrays) içinde dönmek için de kullanılabilir. key alanı, dizilerle kullanıldığında index değerini alır.
+For...in döngüsü genelde object tipindeki değişkenlerle kullanılsa da [diziler](https://endrcn.dev/nodejs-data-types/#Arrays) içinde dönmek için de kullanılabilir. key alanı, dizilerle kullanıldığında index değerini alır.
 
 ```javascript
 let arr = [1,2,3,4,5,6,7,8,9,0];

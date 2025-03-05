@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [async, async-await, callback, promise, nodejs, node.js]
 ---
 
-[Node.js Temelleri](https://endrcn.dev/nodejs/introduction/) yazı dizisinde bu makalemizin konusu **Asenkron Fonksiyonlar**. Daha önce [fonksiyonlar](https://endrcn.dev/nodejs/functions/) konusuna değinmiştik şimdiyse konuyu biraz daha ileri düzeye taşıyalım. Ancak Asenkron fonksiyonları incelemeye başlamadan önce buna neden ihtiyaç duyulduğunu anlamak gerek.
+[Node.js Temelleri](https://endrcn.dev/nodejs-introduction/) yazı dizisinde bu makalemizin konusu **Asenkron Fonksiyonlar**. Daha önce [fonksiyonlar](https://endrcn.dev/nodejs-functions/) konusuna değinmiştik şimdiyse konuyu biraz daha ileri düzeye taşıyalım. Ancak Asenkron fonksiyonları incelemeye başlamadan önce buna neden ihtiyaç duyulduğunu anlamak gerek.
 
 Node.js, Javascript kodlarını sadece bir thread'de(single thread) çalıştırır. Yani bir seferde sadece bir şey oluyor. Bu nedenle uygulamayı bloklayacak kod parçalarından kaçınmamız gerekir. Örneğin senkron şekilde bir dosya okuma ya da sonsuz bir döngü. Bu tarz durumlarda node.js tek thread çalıştığı için bloklanacak ve cevap veremez hale gelecektir.
 
@@ -53,7 +53,7 @@ Asenkron fonksiyonlarda iki farklı dönüş yapısı vardır. Callback ve Promi
 
 ## Callback
 
-Callback, asenkron fonksiyonlarda kullanılan ilk [dönüş yöntemidir](https://endrcn.dev/nodejs/functions/#Callback). Bir fonksiyon parametresi olarak verilir ve asenkron fonksiyonda işlemler yapıldıktan sonra callback fonksiyonu çağrılır. Yukarıdaki örnekte setTimeout fonksiyonundaki ilk parametre de callback fonksiyona bir örnektir. Şimdi setTimeout asenkron fonksiyonunu kullanan başka bir fonksiyon yazalım.
+Callback, asenkron fonksiyonlarda kullanılan ilk [dönüş yöntemidir](https://endrcn.dev/nodejs-functions/#Callback). Bir fonksiyon parametresi olarak verilir ve asenkron fonksiyonda işlemler yapıldıktan sonra callback fonksiyonu çağrılır. Yukarıdaki örnekte setTimeout fonksiyonundaki ilk parametre de callback fonksiyona bir örnektir. Şimdi setTimeout asenkron fonksiyonunu kullanan başka bir fonksiyon yazalım.
 
 ```javascript
 function run(callback) {
@@ -286,7 +286,7 @@ returnPositiveNumber(5).then(result => {
 // Output: 5
 ```
 
-Bir async fonksiyonun nasıl tanımlandığını gördük. Peki await nasıl çalışır? **await**, temelde then ve catch metotları yerine kullanılan bir anahtar kelimedir. Bu nedenle await kullanabilmemiz için fonksiyonun **Promise dönmesi** gerektiğini söyleyebiliriz. Son bir kuralımız da await anahtar kelimesini kullanabilmek için mutlaka async tanımlanmış bir fonksiyon içinde olmalıyız. Aksi halde [SyntaxError hatası](https://endrcn.dev/nodejs/error-handling/) fırlatılacaktır.
+Bir async fonksiyonun nasıl tanımlandığını gördük. Peki await nasıl çalışır? **await**, temelde then ve catch metotları yerine kullanılan bir anahtar kelimedir. Bu nedenle await kullanabilmemiz için fonksiyonun **Promise dönmesi** gerektiğini söyleyebiliriz. Son bir kuralımız da await anahtar kelimesini kullanabilmek için mutlaka async tanımlanmış bir fonksiyon içinde olmalıyız. Aksi halde [SyntaxError hatası](https://endrcn.dev/nodejs-error-handling/) fırlatılacaktır.
 
 ```javascript
 await returnPositiveNumber(5); // Output: SyntaxError: await is only valid in async function
@@ -316,7 +316,7 @@ run();
 //Output: number parameter is not a number
 ```
 
-Yukarıdaki kod bloğu async/await yapısının en doğru kullanımıdır diyebilirim. Çünkü eğer bir hata fırlatılır ve bu yakalanmazsa [Hata Yakalama (Error Handling)](https://endrcn.dev/nodejs/error-handling/) konusunda anlattığımız gibi Node.js uygulaması çöker.
+Yukarıdaki kod bloğu async/await yapısının en doğru kullanımıdır diyebilirim. Çünkü eğer bir hata fırlatılır ve bu yakalanmazsa [Hata Yakalama (Error Handling)](https://endrcn.dev/nodejs-error-handling/) konusunda anlattığımız gibi Node.js uygulaması çöker.
 
 **_Burada önemli bir konuya değinmek istiyorum_**. Async fonksiyonlar içinde eğer callback içeren fonksiyonlarla işlem yapacaksak bu durumda Promise yapısını kullanmamız gerekir. Bunun nedeni, async fonksiyon tanımında dönüşü direkt return ile yapmamızdır. Eğer bir callback function içinde return ile dönersek bu return callback fonksiyonunun return'u olacaktır. Bu durumda da async fonksiyonun return'u çalışmayacağı için fonksiyon cevap veremez.
 
@@ -340,9 +340,9 @@ async function returnPositiveNumber(number) {
 
 Bu kod parçasında işaretlediğim alanlara dikkat edelim.
 
-- 2. satırda; setTimeout fonksiyonunun dönüş değeri için [arrow function](https://endrcn.dev/nodejs/functions/#Arrow_Functions) yapısı ile bir callback fonksiyonu tanımladık.
+- 2. satırda; setTimeout fonksiyonunun dönüş değeri için [arrow function](https://endrcn.dev/nodejs-functions/#Arrow_Functions) yapısı ile bir callback fonksiyonu tanımladık.
 - 5. ve 7. satırlardada; return ile sayıyı döndürdük. Fakat bu return, callback fonksiyonunun içinde olduğu için aslında callback fonksiyonun dönüşünü yapmış olduk.
-- Sonuç olarak returnPositiveNumber fonksiyonunun dönüşü tanımlanmamış oldu ve çağrılan fonksiyon dönüş değeri tanımlanmadığı için aslında [Void](https://endrcn.dev/nodejs/functions/#Void) bir fonksiyon oldu.
+- Sonuç olarak returnPositiveNumber fonksiyonunun dönüşü tanımlanmamış oldu ve çağrılan fonksiyon dönüş değeri tanımlanmadığı için aslında [Void](https://endrcn.dev/nodejs-functions/#Void) bir fonksiyon oldu.
 - Eğer bu fonksiyonu çağıracak olursak dönüş değeri **_undefined_** olacaktır.
 
 ```javascript

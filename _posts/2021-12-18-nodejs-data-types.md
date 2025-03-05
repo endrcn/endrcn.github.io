@@ -51,7 +51,7 @@ var bool = true
 console.log(typeof bool) // output: boolean
 ````
 
-[Koşullar ve Operatörler](https://endrcn.dev/nodejs/conditions-and-operators) başlığı altında daha detaylı anlatacağız ancak burada değinmeden geçmeyi doğru bulmadım. Bir değişkenin tersini not (!) operatörü ile alabiliriz. “!” operatörünü kullanarak bir değişken true ise false, false ise true yapabiliriz.
+[Koşullar ve Operatörler](https://endrcn.dev/nodejs-conditions-and-operators) başlığı altında daha detaylı anlatacağız ancak burada değinmeden geçmeyi doğru bulmadım. Bir değişkenin tersini not (!) operatörü ile alabiliriz. “!” operatörünü kullanarak bir değişken true ise false, false ise true yapabiliriz.
 
 ```javascript
 var bool = true
@@ -287,4 +287,4 @@ delete obj.aString;
 console.log(obj) // output: { anInteger: 5, 'an-Array': [ 'ender', 'can' ] }
 ```
 
-Tebrikler! **_Node.js öğrenme yolunda önemli bir aşamayı geçtiniz._** Kendiniz için büyük iki adım atmış oldunuz bile. Ancak durmak yok daha yeni başladık. Bir sonraki derste programınızın akışını yönlendirmenizi sağlayacak [operatörleri](https://endrcn.dev/nodejs/operators/) öğrenerek gücümüze güç katacağız.
+Tebrikler! **_Node.js öğrenme yolunda önemli bir aşamayı geçtiniz._** Kendiniz için büyük iki adım atmış oldunuz bile. Ancak durmak yok daha yeni başladık. Bir sonraki derste programınızın akışını yönlendirmenizi sağlayacak [operatörleri](https://endrcn.dev/nodejs-operators/) öğrenerek gücümüze güç katacağız.

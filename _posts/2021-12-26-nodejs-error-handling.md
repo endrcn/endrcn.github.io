@@ -63,7 +63,7 @@ Yukarıdaki örnekte "_Hatadan sonraki kod_" mesajı ekrana basılmadan direkt "
 // Syntax
 throw new Error();
 
-**throw** ile hata fırlattığımızda, aynı sistemin hata fırlatmasında olduğu gibi uygulama çöker. Bu nedenle mutlaka **try-catch** blokları içinde kullanılmalıdır. throw kullanımına örnek olması açısından, alınan parametrelerin kontrolünü yapıp, beklenenden farklı parametre gelmesi durumunda hata fırlatan bir [fonksiyon](https://endrcn.dev/nodejs/functions/) yazalım.
+**throw** ile hata fırlattığımızda, aynı sistemin hata fırlatmasında olduğu gibi uygulama çöker. Bu nedenle mutlaka **try-catch** blokları içinde kullanılmalıdır. throw kullanımına örnek olması açısından, alınan parametrelerin kontrolünü yapıp, beklenenden farklı parametre gelmesi durumunda hata fırlatan bir [fonksiyon](https://endrcn.dev/nodejs-functions/) yazalım.
 
 ```javascript
 function checkParameterType(number, str) {
@@ -181,7 +181,7 @@ ERR Stack: ReferenceError: ender is not defined
 */
 ```
 
-[Node.js Temelleri - Kalıtım (Inheritance)](https://endrcn.dev/nodejs/inheritance/) makalemizde örnek olarak gösterdiğimiz gibi, Error sınıfından alt sınıflar oluşturarak projemize özel hatalar oluşturabiliriz. Aynı örneği burada da görelim.
+[Node.js Temelleri - Kalıtım (Inheritance)](https://endrcn.dev/nodejs-inheritance/) makalemizde örnek olarak gösterdiğimiz gibi, Error sınıfından alt sınıflar oluşturarak projemize özel hatalar oluşturabiliriz. Aynı örneği burada da görelim.
 
 ```javascript
 class CustomError extends Error {

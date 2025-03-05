@@ -84,4 +84,4 @@ ReferenceError: name is not defined
 
 **_Not_**_:Javascript’te satır sonunda noktalı virgül konulması şart değildir. Konulsa da konulmasa da çalışmaya bir etkisi olm_az.
 
-Bir sonraki yazımızda, değişkenlerin devamı niteliğindeki [veri tiplerinden](https://endrcn.dev/nodejs/data-types/) bahsedeceğiz. Böylece değişken tanımlama yazımızı tamamlamış olacağız.
+Bir sonraki yazımızda, değişkenlerin devamı niteliğindeki [veri tiplerinden](https://endrcn.dev/nodejs-data-types/) bahsedeceğiz. Böylece değişken tanımlama yazımızı tamamlamış olacağız.

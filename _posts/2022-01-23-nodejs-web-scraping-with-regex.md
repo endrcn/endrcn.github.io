@@ -60,7 +60,7 @@ Bu adresten Dolar, Euro ve Altın'ın alış ve satış bilgilerini çekip bir J
 };
 ```
 
-Bir sitenin HTML kodlarını çekmek için _[request-promise](https://www.npmjs.com/package/request-promise)_ modülünü kullanabileceğimiz modüllerden sadece biridir. [Bir modülü kullanabilmek](https://endrcn.dev/nodejs/modules/) için öncelikle kurmamız gerektiğini biliyoruz. request-promise modülünü kullanabilmek için request modülünü de kurmamız gerektiğinden ikisini kuruyoruz.
+Bir sitenin HTML kodlarını çekmek için _[request-promise](https://www.npmjs.com/package/request-promise)_ modülünü kullanabileceğimiz modüllerden sadece biridir. [Bir modülü kullanabilmek](https://endrcn.dev/nodejs-modules/) için öncelikle kurmamız gerektiğini biliyoruz. request-promise modülünü kullanabilmek için request modülünü de kurmamız gerektiğinden ikisini kuruyoruz.
 
 ```javascript
 npm i request request-promise
@@ -144,7 +144,7 @@ Düzenli ifadelerle ilgili eksiğiniz olduğunu düşünüyorsanız sizi şöyle
 
 ### Node.js ile Kodlama
 
-Artık web scraping için tüm araçlar hazır. Yapacağımız işlem yazdığımız regex'leri [String metotlarını](https://endrcn.dev/nodejs/built-in-modules/#String_Methods) kullanarak uygulamamıza eklemek. Uygulamamızda HTML verisini çekmiştik. Şimdi bir fonksiyon tanımlayıp ayıklama işlemlerini yapalım.
+Artık web scraping için tüm araçlar hazır. Yapacağımız işlem yazdığımız regex'leri [String metotlarını](https://endrcn.dev/nodejs-built-in-modules/#String_Methods) kullanarak uygulamamıza eklemek. Uygulamamızda HTML verisini çekmiştik. Şimdi bir fonksiyon tanımlayıp ayıklama işlemlerini yapalım.
 
 ```javascript
 function extractWithRegex(body) {
@@ -268,7 +268,7 @@ function createJSON(info) {
 }
 ```
 
-Toplamda 50 satırlık kodla bir web sitesinden **_veri çekme_**, **_regex ile ayıklama_** ve **_formatlama_** işlemlerini yapmış olduk. Burada geliştirdiğimiz fonksiyonlarda bazı hatalar fırlattık. Bu nedenle try-catch kullanarak bu [hataları yakalamak](https://endrcn.dev/nodejs/error-handling/) uygulamanın çökmesini engellemek için önemlidir. Bu nedenle **_getExchangeInfo()_** fonksiyonunu çağırırken try-catch arasına aldık.
+Toplamda 50 satırlık kodla bir web sitesinden **_veri çekme_**, **_regex ile ayıklama_** ve **_formatlama_** işlemlerini yapmış olduk. Burada geliştirdiğimiz fonksiyonlarda bazı hatalar fırlattık. Bu nedenle try-catch kullanarak bu [hataları yakalamak](https://endrcn.dev/nodejs-error-handling/) uygulamanın çökmesini engellemek için önemlidir. Bu nedenle **_getExchangeInfo()_** fonksiyonunu çağırırken try-catch arasına aldık.
 
 Bir web sitesinden veri çekme işlemi, o web sitesinin HTML kodlarına çok bağımlıdır. Eğer sitede bir değişiklik olursa yüksek ihtimalle yazdığınız kod çalışmayacaktır. Web Scraping yaparken bu konuyu göz önünde bulundurmanız önemlidir.
 

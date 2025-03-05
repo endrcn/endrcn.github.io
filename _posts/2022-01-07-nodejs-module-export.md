@@ -6,9 +6,9 @@ author: endrcn
 categories: [NodeJS]
 ---
 
-[Node.js Temelleri](https://endrcn.dev/nodejs/introduction/) serisinde şimdiye kadar tüm örneklerimizi sadece bir dosya üzerinden anlattık. Ancak bir uygulamayı sadece bir dosya ile geliştiremeyeceğimiz çok açık. Bu nedenle uygulamada kullanacağımız sınıfları, metotları vs. ayrı birer dosyada tutup bu verileri export etmeliyiz.
+[Node.js Temelleri](https://endrcn.dev/nodejs-introduction/) serisinde şimdiye kadar tüm örneklerimizi sadece bir dosya üzerinden anlattık. Ancak bir uygulamayı sadece bir dosya ile geliştiremeyeceğimiz çok açık. Bu nedenle uygulamada kullanacağımız sınıfları, metotları vs. ayrı birer dosyada tutup bu verileri export etmeliyiz.
 
-[Node.js - Modüller](https://endrcn.dev/nodejs/modules/) makalesinde bir modülü çalışma dosyamıza nasıl import edeceğimizi görmüştük. Aslında gördüğümüz require anahtar kelimesi ile oluşturduğumuz dosyaları da aynı şekilde import edebiliriz.
+[Node.js - Modüller](https://endrcn.dev/nodejs-modules/) makalesinde bir modülü çalışma dosyamıza nasıl import edeceğimizi görmüştük. Aslında gördüğümüz require anahtar kelimesi ile oluşturduğumuz dosyaları da aynı şekilde import edebiliriz.
 
 const SomeClass = require("./SomeClass");
 
@@ -50,7 +50,7 @@ console.log(result); // Output: conv
 Yukarıdaki kodları açıklamak gerekirse:
 
 - 2. satırda, require ile lib altındaki Conversations.js dosyasını main.js'e import ettik.
-- 3. satırda, import ettiğimiz dosyada bir sınıf export edildiği için, sınıftan bir [nesne](https://endrcn.dev/nodejs/classes/) türettik.
+- 3. satırda, import ettiğimiz dosyada bir sınıf export edildiği için, sınıftan bir [nesne](https://endrcn.dev/nodejs-classes/) türettik.
 - 4. satırda, sınıfın find() metodu çağrılarak result değişkenine atadık.
 - 4. satırda, sonucu ekrana bastık.
 
@@ -75,7 +75,7 @@ const conversations = {
 module.exports = conversations;
 ```
 
-Bu şekilde export edilen bir dosyayı yukarıdaki ile aynı şekilde import edip kullanabiliriz. Ayrıca [destructuring assignment](https://endrcn.dev/nodejs/destructuring/) kullanarak sadece kullanacağımız metodu import etme seçeneğimiz de var. Bunu nasıl yapacağımızı görelim.
+Bu şekilde export edilen bir dosyayı yukarıdaki ile aynı şekilde import edip kullanabiliriz. Ayrıca [destructuring assignment](https://endrcn.dev/nodejs-destructuring/) kullanarak sadece kullanacağımız metodu import etme seçeneğimiz de var. Bunu nasıl yapacağımızı görelim.
 
 ```javascript
 const { find } = require("./lib/ConversationObject");

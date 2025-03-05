@@ -17,7 +17,7 @@ Kaynak: studytonight.com
 
 ## Fonksiyon Tanımlama
 
-Fonksiyonlar tanımlanırken **function** anahtar kelimesi kullanılır. Bir fonksiyon tanımlanırken alacağı parametreler, bir dönüş değeri olup olmayacağı ve ismi belirlenir. Fonksiyon isimlerinde [değişken](https://endrcn.dev/nodejs/variables/) tanım kuralları aynen geçerlidir.
+Fonksiyonlar tanımlanırken **function** anahtar kelimesi kullanılır. Bir fonksiyon tanımlanırken alacağı parametreler, bir dönüş değeri olup olmayacağı ve ismi belirlenir. Fonksiyon isimlerinde [değişken](https://endrcn.dev/nodejs-variables/) tanım kuralları aynen geçerlidir.
 
 ```javascript
 // Syntax
@@ -34,7 +34,7 @@ function add(num1, num2) {
 }
 ```
 
-Yukarıdaki örnekte **add**, fonksiyon ismi, **num1** ve **num2** parametreler ve **return num1 + num2** de dönüş değeridir. Fonksiyonların dönüş değeri herhangi bir [veri tipinde](https://endrcn.dev/nodejs/data-types/) olabilir.
+Yukarıdaki örnekte **add**, fonksiyon ismi, **num1** ve **num2** parametreler ve **return num1 + num2** de dönüş değeridir. Fonksiyonların dönüş değeri herhangi bir [veri tipinde](https://endrcn.dev/nodejs-data-types/) olabilir.
 
 Dönüş değeri olmayan(void) fonksiyonlar ise işlemi yapan ancak dönüşte bir veri üretmeyen fonksiyonlardır. Void fonksiyonlara da bir örnek yapalım. Örneğimizde ekrana log basan bir fonksiyon yazalım.
 

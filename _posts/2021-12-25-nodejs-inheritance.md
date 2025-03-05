@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [kalıtım,inheritance,nodejs,node.js,javascript]
 ---
 
-Bir önceki [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs/classes/) makalemizde sınıf tanımlama, constructor, property, metodlar ve erişim belirteçlerinden bahsetmiştik. Bu yazımızdaysa hedefimiz kalıtım(inheritance) kavramına değinmek ve uygulamalı nasıl ve ne zaman kullanılacağını göstermektir.
+Bir önceki [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs-classes/) makalemizde sınıf tanımlama, constructor, property, metodlar ve erişim belirteçlerinden bahsetmiştik. Bu yazımızdaysa hedefimiz kalıtım(inheritance) kavramına değinmek ve uygulamalı nasıl ve ne zaman kullanılacağını göstermektir.
 
 **Kalıtım(Inheritance),** genel bir sınıftan daha özel bir sınıf türeterek, genel sınıfın özelliklerinin özel sınıfta da kullanılabilmesidir. Böylece kod tekrarından ve anlam karmaşalarından uzak, temiz ve anlaşılır bir kod geliştirebiliriz.
 
@@ -15,7 +15,7 @@ Bir önceki [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs
 
 Kalıtım(Inheritance)
 
-Bir sınıftan yeni bir sınıf türetmek için [sınıf tanımlama](https://endrcn.dev/nodejs/classes/#https://endrcn.dev/nodejs/classes/#Sinif_Tanimlama) aşamasında **extends** anahtar kelimesini kullanırız. Şekildeki gibi bir yapıyı oluşturmaya çalışalım. Öncelikle Person sınıfını oluşturalım.
+Bir sınıftan yeni bir sınıf türetmek için [sınıf tanımlama](https://endrcn.dev/nodejs-classes/#https://endrcn.dev/nodejs-classes/#Sinif_Tanimlama) aşamasında **extends** anahtar kelimesini kullanırız. Şekildeki gibi bir yapıyı oluşturmaya çalışalım. Öncelikle Person sınıfını oluşturalım.
 
 ```javascript
 class Person {
@@ -38,7 +38,7 @@ class Person {
 }
 ```
 
-Yukarıda standart bir sınıf oluşturduk. Buraya kadar anlayamadığınız bir yer olduysa [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs/classes/) makalemizi okumanızı öneririm.
+Yukarıda standart bir sınıf oluşturduk. Buraya kadar anlayamadığınız bir yer olduysa [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs-classes/) makalemizi okumanızı öneririm.
 
 Şimdi de oluşturduğumuz Person sınıfından bir Student sınıfı türetelim. Ardından da Student ve Person sınıflarından birer nesne tanımlayalım.
 
@@ -220,4 +220,4 @@ CustomError: Not Found
 
 CustomError sınıfı kullanıldığında çıktıda message haricinde code ve description alanları da dönüyor.
 
-Müthiş gidiyorsunuz! [Sınıflar](https://endrcn.dev/nodejs/classes/) ve **Kalıtım** konularını da tamamlayarak OOP dünyasına hızlı bir giriş yaptınız. Bundan böyle yazdığınız kodlar makineden uzaklaşıp insana yaklaşacak. Bir sonraki makalemizde burada ufak dokunduğumuz **hatalar ve hata yakalama** konularına değineceğiz.
+Müthiş gidiyorsunuz! [Sınıflar](https://endrcn.dev/nodejs-classes/) ve **Kalıtım** konularını da tamamlayarak OOP dünyasına hızlı bir giriş yaptınız. Bundan böyle yazdığınız kodlar makineden uzaklaşıp insana yaklaşacak. Bir sonraki makalemizde burada ufak dokunduğumuz **hatalar ve hata yakalama** konularına değineceğiz.

@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [node.js,nodejs,javascript,scope]
 ---
 
-Değişken kapsamları, bir [değişkenin](https://endrcn.dev/nodejs/variables/) erişim alanını ifade eder. Literatürde "değişken kapsamları" ifadesi kullanılmayıp "**scope**" ya da "**variable scope**" ifadesi kullanılır. EcmaScript 6'dan önce Javascript'te sadece **Global Scope** ve **Function Scope** terimleri vardı. Ancak, ES6 ile birlikte değişken tanımlamak için eklenen let ve const keyword'leri ile birlikte **Block Scope** kavramı ortaya çıkmıştır. Tüm **scope** yapılarını alt başlıklar halinde inceleyelim.
+Değişken kapsamları, bir [değişkenin](https://endrcn.dev/nodejs-variables/) erişim alanını ifade eder. Literatürde "değişken kapsamları" ifadesi kullanılmayıp "**scope**" ya da "**variable scope**" ifadesi kullanılır. EcmaScript 6'dan önce Javascript'te sadece **Global Scope** ve **Function Scope** terimleri vardı. Ancak, ES6 ile birlikte değişken tanımlamak için eklenen let ve const keyword'leri ile birlikte **Block Scope** kavramı ortaya çıkmıştır. Tüm **scope** yapılarını alt başlıklar halinde inceleyelim.
 
 ![_config.yml]({{ site.baseurl }}/assets/images/js-variable-scope.webp)
 
@@ -37,7 +37,7 @@ function myFunction() {
 
 ## Function Scope
 
-Function Scope, her [fonksiyonun](https://endrcn.dev/nodejs/functions/) kendine ait alanına verilen isimdir. Eğer bir değişken bir fonksiyonun içinde tanımlandıysa, bu değişken fonksiyon dışında kullanılamaz.
+Function Scope, her [fonksiyonun](https://endrcn.dev/nodejs-functions/) kendine ait alanına verilen isimdir. Eğer bir değişken bir fonksiyonun içinde tanımlandıysa, bu değişken fonksiyon dışında kullanılamaz.
 
 ```javascript
 function myFunction () {
@@ -70,7 +70,7 @@ function myFunction(){
 console.log(person); // Output: ReferenceError: person is not defined
 ```
 
-Ancak diğer bloklarda durum farklılaşıyor. Eğer, bir [if bloğunda](https://endrcn.dev/nodejs/conditions/) ya da [döngüde](https://endrcn.dev/nodejs/loops/) **var** ile bir değişken tanımlanırsa, bu değişkene blok dışından erişilebilir ancak **let** ya da **const** ile tanımlanmış bir değişkene blok dışından erişilemez.
+Ancak diğer bloklarda durum farklılaşıyor. Eğer, bir [if bloğunda](https://endrcn.dev/nodejs-conditions/) ya da [döngüde](https://endrcn.dev/nodejs-loops/) **var** ile bir değişken tanımlanırsa, bu değişkene blok dışından erişilebilir ancak **let** ya da **const** ile tanımlanmış bir değişkene blok dışından erişilemez.
 
 ```javascript
 if (true) {

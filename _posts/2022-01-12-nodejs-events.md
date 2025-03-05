@@ -6,13 +6,13 @@ author: endrcn
 categories: [NodeJS]
 ---
 
-Node.js'in yapısına kısaca değindiğimiz [Asenkron Fonksiyonlar](https://endrcn.dev/nodejs/asynchronous-functions/) makalesinde de söylediğimiz gibi; Node.js Single Threaded çalışan ve bir Event Loop üzerinden işlemlerini yürüten bir Javascript run-time environment'tir. Events, bu yapıyı daha iyi kavramamızı sağlayacak bir modüldür.
+Node.js'in yapısına kısaca değindiğimiz [Asenkron Fonksiyonlar](https://endrcn.dev/nodejs-asynchronous-functions/) makalesinde de söylediğimiz gibi; Node.js Single Threaded çalışan ve bir Event Loop üzerinden işlemlerini yürüten bir Javascript run-time environment'tir. Events, bu yapıyı daha iyi kavramamızı sağlayacak bir modüldür.
 
 Javascript, Olay Yönelimli (Event-Driven) bir programlama dili olduğundan olaylar(events) sıkça kullanılan yapılardır. Events kavramını bir cümleyle özetlemek istersek, bir olay oluştuğunda tetiklenen ve bir dinleyici(listener) tarafından yakalanarak ilgili fonksiyonların çalışmasını sağlayan yapıya verilen isimdir. "events" modülü built-in bir modüldür bu nedenle herhangi bir kurulum gerektirmez.
 
 ## Nasıl Kullanılır?
 
-EventEmitter'i kullanmak için öncelikle import etmemiz gerekir. Bunun için _events.js_ adında bir dosya oluşturup, [destructuring assignment](https://endrcn.dev/nodejs/destructuring/) kullanarak events modülü içindeki EventEmitter [sınıfını](https://endrcn.dev/nodejs/classes/) import edelim. Ardından bu sınıfa ait bir nesne üretelim.
+EventEmitter'i kullanmak için öncelikle import etmemiz gerekir. Bunun için _events.js_ adında bir dosya oluşturup, [destructuring assignment](https://endrcn.dev/nodejs-destructuring/) kullanarak events modülü içindeki EventEmitter [sınıfını](https://endrcn.dev/nodejs-classes/) import edelim. Ardından bu sınıfa ait bir nesne üretelim.
 
 ```javascript
 // events.js
@@ -73,7 +73,7 @@ Bu uygulamayı çalıştırdığımızda çıktı aşağıdaki gibi olacaktır.
 
 ![_config.yml]({{ site.baseurl }}/assets/images/event_output.png)
 
-**Not:** Bir eventEmitter nesnesi üzerinden tanımlanmış bir listener, sadece aynı nesneden tetiklenen emit leri yakalar. Bu nedenle [referansı](https://endrcn.dev/nodejs/classes/) kaybetmemek önemlidir.
+**Not:** Bir eventEmitter nesnesi üzerinden tanımlanmış bir listener, sadece aynı nesneden tetiklenen emit leri yakalar. Bu nedenle [referansı](https://endrcn.dev/nodejs-classes/) kaybetmemek önemlidir.
 
 _event_ isimli listener, gönderdiğimiz objenin tamamını ekrana basabilmişken, _message_ isimli listener ise sadece "ender" çıktısını üretti. Bunun sebebi, emit ile gönderilen parametre sayısı ile listener fonksiyonundaki parametre sayısının farklı olması. Kısaca emit() metodu ile kaç parametre gönderiliyorsa listener fonksiyonunda da o kadar parametre alınmalıdır. _message_ event listener tanımını aşağıdaki şekilde güncellediğimizde tüm parametreleri alabiliriz.
 

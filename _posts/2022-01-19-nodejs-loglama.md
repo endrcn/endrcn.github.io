@@ -91,7 +91,7 @@ Log çıktısı:
 }
 ```
 
-Çıktıdan da gördüğümüz gibi headers objesinin detayları loglanmadı. Tüm detayları loglamak için JSON objesini string'e çevirmemiz gerekir. Bunun için [JSON.stringify()](https://endrcn.dev/nodejs/built-in-modules/#JSON_Methods) metodunu kullanırız.
+Çıktıdan da gördüğümüz gibi headers objesinin detayları loglanmadı. Tüm detayları loglamak için JSON objesini string'e çevirmemiz gerekir. Bunun için [JSON.stringify()](https://endrcn.dev/nodejs-built-in-modules/#JSON_Methods) metodunu kullanırız.
 
 ```javascript
 console.log(JSON.stringify(json));
@@ -142,7 +142,7 @@ npm i winston --save
 
 ### Logger Oluşturma
 
-Loglama yapısını kurmak için ilk yapacağımız iş, bir logger oluşturmaktır. Bunun için _winston_ modülünün **_createLogger()_** metodunu kullanırız. Tanımladığımız logger, projemizin her yerinde kullanılacağı için [modül olarak tanımlayıp export](https://endrcn.dev/nodejs/module-export/) edelim..
+Loglama yapısını kurmak için ilk yapacağımız iş, bir logger oluşturmaktır. Bunun için _winston_ modülünün **_createLogger()_** metodunu kullanırız. Tanımladığımız logger, projemizin her yerinde kullanılacağı için [modül olarak tanımlayıp export](https://endrcn.dev/nodejs-module-export/) edelim..
 
 ![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-19-at-00.06.38.png)
 
@@ -194,8 +194,8 @@ transportList.push(transport);
 
 Yukarıdaki kodu açıklayalım:
 
-- [Destructuring assignment](https://endrcn.dev/nodejs/destructuring/) kullanarak _winston_ modülü içerisindeki transport, createLogger ve format alanlarını birer değişkene atadık.
-- transportList adında bir [array](https://endrcn.dev/nodejs/data-types/) tanımladık. Tanımladığımız transport'ları bu dizide toplayacağız.
+- [Destructuring assignment](https://endrcn.dev/nodejs-destructuring/) kullanarak _winston_ modülü içerisindeki transport, createLogger ve format alanlarını birer değişkene atadık.
+- transportList adında bir [array](https://endrcn.dev/nodejs-data-types/) tanımladık. Tanımladığımız transport'ları bu dizide toplayacağız.
 - Ardından iki tane transport tanımladık. İlk tanımladığımız transport, terminale basan **Console** tipinde, diğeri ise dosyaya basan **File** tipindedir.
 
 Son olarak tanımladığımız transportList dizisini createLogger metoduna gönderelim.
@@ -251,7 +251,7 @@ const customLevelLogger = createLogger({
 addColors(myCustomLevels.colors);
 ```
 
-Son olarak; oluşturduğumuz transport'a vereceğimiz level ayarı ile hangi logların basılacağını belirleyebiliriz. Örneğin development ortamında log seviyesini **debug** olarak belirlerken, production ortamındaki log seviyemiz **info** olabilir. Bu ayarı ortama göre verebilmek için [çevre değişkenlerinden](https://endrcn.dev/nodejs/environments/) yararlanabiliriz. Level bilgisini nasıl vereceğimizi görelim:
+Son olarak; oluşturduğumuz transport'a vereceğimiz level ayarı ile hangi logların basılacağını belirleyebiliriz. Örneğin development ortamında log seviyesini **debug** olarak belirlerken, production ortamındaki log seviyemiz **info** olabilir. Bu ayarı ortama göre verebilmek için [çevre değişkenlerinden](https://endrcn.dev/nodejs-environments/) yararlanabiliriz. Level bilgisini nasıl vereceğimizi görelim:
 
 ```javascript
 const logger = createLogger({

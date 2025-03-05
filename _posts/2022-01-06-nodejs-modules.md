@@ -78,7 +78,7 @@ const request = require("request");
 
 Bu tanımdan sonra artık **request** isimli değişkenin içinde modülün barındırdığı tüm metotlar yer alır. Her modülün içerdiği metotlar/sınıflar doğal olarak farklıdır. Dolayısıyla modüle ait metotları, modülün dokümanından yararlanarak öğrenebiliriz. Modül dokümanları genelde **NPM** ya da **Github**'da paylaşılır. Ancak bazı modüllerin dokümantasyonu ayrı bir websitesi olarak da karşımıza çıkabiliyor.
 
-[Destructuring assignment](https://endrcn.dev/nodejs/destructuring/) kullanarak, import edilen dosyada kullanacağımız metotları da alabiliriz.
+[Destructuring assignment](https://endrcn.dev/nodejs-destructuring/) kullanarak, import edilen dosyada kullanacağımız metotları da alabiliriz.
 
 ```javascript
 const {post, get} = require("request");

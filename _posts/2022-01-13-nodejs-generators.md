@@ -32,7 +32,7 @@ Yukarıdaki kodu incelediğimizde:
 
 - Generator fonksiyon tanımında * karakterinden yararlanırız.
 - Dönüş değerini **yield** anahtar kelimesiyle yaparız.
-- Birden fazla yield kullanabiliriz. [Fonksiyonlar yazımızda](https://endrcn.dev/nodejs/functions/) gördüğümüz gibi return'u sadece bir kez kullanabiliyorduk.
+- Birden fazla yield kullanabiliriz. [Fonksiyonlar yazımızda](https://endrcn.dev/nodejs-functions/) gördüğümüz gibi return'u sadece bir kez kullanabiliyorduk.
 
 **Not:** * karakteri her iki tarafla da birleştirilebilir.
 
@@ -46,7 +46,7 @@ let getNumber = function* () {}
 let getNumber = function *() {}
 ```
 
-[Arrow function](https://endrcn.dev/nodejs/functions/#Arrow_Functions) yapısını kullanarak generator tanımı yapamıyoruz. Tanımlamaya çalışırsak SyntaxError hatası alırız.
+[Arrow function](https://endrcn.dev/nodejs-functions/#Arrow_Functions) yapısını kullanarak generator tanımı yapamıyoruz. Tanımlamaya çalışırsak SyntaxError hatası alırız.
 
 let generator = *() => {} // SyntaxError
 let generator = ()* => {} // SyntaxError
@@ -74,7 +74,7 @@ Generator fonksiyonların bir iterator oluşturduğunu düşünürsek, bu iteras
 
 - **next()**: Bir sonraki yield sonucunu object olarak döner.
 - **return()**: Generator fonksiyonun sonlanmasını sağlar. Dönüş değeri aynı yapıdadır, eğer bir parametre verilirse dönüş objesindeki _value_ alanı bu değere sahip olacaktır.
-- **throw()**: Generator fonksiyonu sonlandırarak bir hata fırlatır. [Try-catch](https://endrcn.dev/nodejs/error-handling/#Try-Catch) ile yakalanmalıdır.
+- **throw()**: Generator fonksiyonu sonlandırarak bir hata fırlatır. [Try-catch](https://endrcn.dev/nodejs-error-handling/#Try-Catch) ile yakalanmalıdır.
 
 Buraya kadar sürekli tanımlar ve açıklamalar yaptık ancak Generator fonksiyonları anlamak için örneklere ihtiyacımız var. Haydi başlayalım.
 
