@@ -35,11 +35,11 @@ Cheerio modülü bize jQuery metotlarını Node.js içinde kullanma imkanı verd
 
 İlk işimiz veri kazıyacağımız adresi tarayıcıdan açıp ardından Dev Tools'u açalım. Dev Tools'u açmanın birçok yolu var. İlki web sayfasında sağ tıklayıp Öğeyi İncele(Inspect) seçeneğini seçmektir. Ya da Mac için _Cmd+Option+i_, Windows için F12 klavye kısayollarıyla da açabiliriz.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-22.35.32.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-22.35.32.png)
 
 Ardından Dev Tools'un sol üst köşesindeki Inspect iconuna tıklayıp web sitesinden ayıklamak istediğimiz alanın üzerine mouse imlecini getirip HTML'de ilgili alana gidelim.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-22.40.18.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-22.40.18.png)
 
 Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz gereken sınıf(lar)ı görebildik.
 
@@ -49,7 +49,7 @@ Bu işlemle birlikte USD, EUR ve Altın alanlarına erişmek için erişmemiz ge
 
 Şimdi bu alandaki verileri çekmek için _jQuery_ yazmaya başlayabiliriz. Dev Tools üzerinden Console tab'ına tıkladığımızda bu web sitesi üzerinde çalışacak javascript kodu yazabileceğimiz alan açılır.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.04.22.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-23.04.22.png)
 
 İlk olarak jQuery kullanarak bulduğumuz kapsayıcı sınıfın alt elemanlarını çekelim.
 
@@ -65,7 +65,7 @@ $(".enpara-gold-exchange-rates__table").find(".enpara-gold-exchange-rates__table
 });
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.19.31.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-23.19.31.png)
 
 Son olarak bu değerleri bir çıktı olarak istediğimiz objeye yazalım.
 
@@ -96,11 +96,11 @@ console.log(json);
 
 Çıktı olarak elde ettiğimiz sonuç:
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.29.17.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-23.29.17.png)
 
 Son olarak çıktımızı tam olarak elde edebilmek için değerleri döngü içinde sayısal hale getirelim.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.32.49.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-23.32.49.png)
 
 Tüm işimizi tarayıcı üzerinde bitirdik. Şimdi bu kodları Node.js üzerinde gerçekleştirelim. İlk olarak _cheerio_ modülünü kuralım.
 
@@ -200,6 +200,6 @@ function extractWithCheerio($) {
 
 Çıktıyı da görelim:
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-23.53.38.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-23.53.38.png)
 
 Cheerio ile web scraping yazımızın sonuna geldik. Umarım faydalı bir içerik olmuştur. İyi çalışmalar.

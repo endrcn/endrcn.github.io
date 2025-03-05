@@ -7,7 +7,7 @@ categories: [NodeJS]
 tags: [class,nodejs,node.js,sınıf, oop]
 ---
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-24-at-03.07.39.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2021-12-24-at-03.07.39.png)
 
 Sınıf Tanımı
 

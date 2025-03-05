@@ -14,7 +14,7 @@ Bir önceki yazımızda [Node.js ile CLI uygulaması geliştirmeyi](https://endr
 
 Çevre değişkenleri -ortam değişkenleri de deniyor-, işletim sistemi düzeyinde saklanan değişkenlerdir. Genelde bir yazılım geliştirildikten sonra bir yayınlama sürecine gireriz. Bu yayınlama sürecinde genelde _Development_ > _Test_ > _QA_ > _Prod_ şeklinde adlandırdığımız 4 farklı ortamda uygulamamız geliştirilir, test edilir ve yayınlanır. İşte tam da bu noktada ortamlara uygun parametreleri(Örn: DB bağlantı bilgileri, Log Path, Log seviyesi vs.) uygulamamıza aktarmamız gerekir. Ortamlara göre değişen bu bilgileri ayrı ayrı sabit dosyalarda tutmak çok ilkel ve kullanışsız bir yöntem olacağından, bu gibi durumlarda ortam değişkenlerinden yararlanırız.
 
-![_config.yml]({{ site.baseurl }}/images/deployment.png)
+![_config.yml]({{ site.baseurl }}/assets/images/deployment.png)
 
 Kaynak: [https://medium.com/venture-garden-group-technology-blog/effective-development-environments-development-test-staging-pre-production-and-production-environmen-a3a85cd349b2](https://medium.com/venture-garden-group-technology-blog/effective-development-environments-development-test-staging-pre-production-and-production-environmen-a3a85cd349b2)
 
@@ -26,7 +26,7 @@ console.log(process.env);
 
 Çıktı olarak ortamdaki tüm değişkenleri verir.
 
-![_config.yml]({{ site.baseurl }}/images/env-2.png)
+![_config.yml]({{ site.baseurl }}/assets/images/env-2.png)
 
 Uygulamaya özel değişkenlerimizi, uygulamayı komut satırında çağırmadan önce tanımlayabiliriz. Şimdi _main.js_ adında bir dosya oluşturup NODE_ENV değişkenini ekrana yazdıralım.
 
@@ -126,7 +126,7 @@ console.log("PORT:", process.env.PORT);
 
 Son olarak çıktımız şu şekilde olacak:
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-11-at-03.20.22.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-11-at-03.20.22.png)
 
 ## Docker
 

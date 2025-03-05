@@ -675,13 +675,13 @@ Eveeeeeet! String Metotlarının da sonuna geldik. Built-in Methods konusu yazma
 
 Makaleleri yazarken örnekler için kullandığım Visual Studio Code'da(ya da başka bir IDE/Editor) otomatik tamamlama özelliği vardır. Bu özellik sayesinde değişkenler ya da sınıflar üzerinde kullanabileceğiniz metot/property'leri görebilirsiniz.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-02-at-14.40.31.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-02-at-14.40.31.png)
 
 Metot Tamamlama Örneği
 
 Aynı zamanda bir metodun signature(imzasını) yani alacağı parametreleri, tiplerini ve ne iş yaptığını görebilirsiniz.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-02-at-14.40.38.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-02-at-14.40.38.png)
 
 Method Signature
 

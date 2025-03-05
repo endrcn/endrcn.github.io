@@ -9,7 +9,7 @@ tags: [fonksiyon,javascript fonksiyonlar, nodejs, node.js]
 
 Bir uygulama geliştirirken her şeyi tek sayfada, alt alta yazmaya çalıştığınızı, bir matematiksel hesabı onlarca kez yaptığınızı, veritabanından aynı veriyi defalarca çektiğinizi bir düşünün. Bu şekilde yazılmış kodların bakımı da okunması da oldukça zor olurdu. İşte tam da burada devreye **fonksiyon** giriyor.
 
-![_config.yml]({{ site.baseurl }}/images/functions.png)
+![_config.yml]({{ site.baseurl }}/assets/images/functions.png)
 
 Kaynak: studytonight.com
 

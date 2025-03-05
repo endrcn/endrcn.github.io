@@ -12,7 +12,7 @@ Generator fonksiyonların çıkış noktası, asenkron programlamada kullandığ
 
 Generator fonksiyon, normal fonksiyonlardan farklı olarak çağrıldığı anda içinde tanımlanmış tüm işleri yapmaz. İlk yield dönüşüne kadar olan kısmı işletir ve döner. Ayrıca çağrılma biçimleri de normal fonksiyonlardan farklıdır.
 
-![_config.yml]({{ site.baseurl }}/images/1_7X8rtWOiz5RKENZ_vugmKg.png)
+![_config.yml]({{ site.baseurl }}/assets/images/1_7X8rtWOiz5RKENZ_vugmKg.png)
 
 Normal Functions vs Generators
 

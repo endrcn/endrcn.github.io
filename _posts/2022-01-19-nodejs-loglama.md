@@ -26,13 +26,13 @@ Bir hatayı ekrana basmak için kullanılır.
 console.error("There is an error");
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-15-at-02.13.34.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-15-at-02.13.34.png)
 
 ```javascript
 console.error(new Error("There is an error"));
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-15-at-02.14.55.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-15-at-02.14.55.png)
 
 ### console.warn(msg)
 
@@ -42,7 +42,7 @@ Uyarı mesajlarını loglamak için kullanılır.
 console.warn("This is a warning message");
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-15-at-02.16.23.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-15-at-02.16.23.png)
 
 ### console.info(msg)
 
@@ -50,13 +50,13 @@ Bilgi mesajlarını loglamak için kullanılır.
 
 console.info("info");
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-15-at-02.17.50.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-15-at-02.17.50.png)
 
 ### console.table(json)
 
 Bir JSON verisini tablo olarak gösterebilmemizi sağlar.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-15-at-02.21.10.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-15-at-02.21.10.png)
 
 En sık kullanılan loglama metotlarını görmüş olduk. Ek olarak bir JSON objesini loglamaya çalıştığımızda iç içe objeler olması durumunda tamamını göremeyiz.
 
@@ -144,7 +144,7 @@ npm i winston --save
 
 Loglama yapısını kurmak için ilk yapacağımız iş, bir logger oluşturmaktır. Bunun için _winston_ modülünün **_createLogger()_** metodunu kullanırız. Tanımladığımız logger, projemizin her yerinde kullanılacağı için [modül olarak tanımlayıp export](https://endrcn.dev/nodejs/module-export/) edelim..
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-19-at-00.06.38.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-19-at-00.06.38.png)
 
 logger.js içine winston modülünü import edip logger'i oluşturalım. createLogger() metodu bir object parametresi alır. Bu obje, loglama ayarlarımızı barındırır. Aşağıda bir loglama yapısında en gerekli ayarların detaylarına değineceğiz.
 
@@ -336,7 +336,7 @@ logger.info({
 });
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-20-at-00.11.27.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-20-at-00.11.27.png)
 
 Oluşturduğumuz logger, tüm seviyeler için bir metoda sahiptir. Bizim seviyelerimiz error, warn, info,...,silly olarak tanımlı olduğundan bu metotları kullanabiliriz.
 
@@ -506,11 +506,11 @@ logger.info("12345", "127.0.0.1", "main.js", "log", { req: { foo: "bar" } });
 
 Böylece çok daha kolay ve anlaşılır bir log formatına sahip olduk. Ayrıca kod yazarken kullandığımız Editor/IDE artık metodun imzasını bize söyleyebilir oldu.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-20-at-00.31.31.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-20-at-00.31.31.png)
 
 Son olarak çıktımızı da görelim:
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-20-at-00.34.20.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-20-at-00.34.20.png)
 
 Bir yazımızın daha sonuna geldik. _Mutlu günler :)_
 

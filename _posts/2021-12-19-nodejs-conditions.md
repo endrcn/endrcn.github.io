@@ -11,7 +11,7 @@ Bir önceki yazımızda [operatörlerden](https://endrcn.dev/nodejs/operators/) 
 
 Node.js ile yazılan temel bir uygulamanın kodları çoğu programlama dilinde olduğu gibi yukarıdan aşağıya doğru çalıştırılır. **Koşullar**, bu akışta bazı düzenlemeler yapmamızı ve akışı yönlendirebilmemizi sağlar.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-12.12.18.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2021-12-19-at-12.12.18.png)
 
 Koşulsuz Program Akışı
 
@@ -37,7 +37,7 @@ Yukarıdaki kod bloğunu tek tek açıklayacak olursak:
 
 **condition**: Koşul ifadesi, dönüş değeri [boolean](https://endrcn.dev/nodejs/data-types/#Booleans) olan bir değerdir. [Karş](https://endrcn.dev/nodejs/operators/)[ılaştırma operatörlerinin](https://endrcn.dev/nodejs/operators/#Karsilastirma_Operatorleri) ve [Mantıksal operatörlerin](https://endrcn.dev/nodejs/operators/#Mantiksal_Operatorler) en çok kullanıldığı alan burasıdır. Eğer koşul ifadesi **true** dönerse, devamındaki blok çalıştırılır.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-19-at-20.06.47.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2021-12-19-at-20.06.47.png)
 
 Koşullarla Programı Yönlendirme
 

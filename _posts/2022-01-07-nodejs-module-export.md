@@ -14,7 +14,7 @@ const SomeClass = require("./SomeClass");
 
 Tabii bir dosyayı import edebilmek için bazı kurallar var. Bir dosyayı modül gibi import edebilmek için öncelikle dosyanın export edilmesi gerekir. Bir örnek üzerinde görelim. Öncelikle proje klasörümüzde bir lib klasörü oluşturup içine Conversations.js tanımlayalım. Ana dizine de main.js dosyamızı oluşturalım.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-07-at-01.39.45.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-07-at-01.39.45.png)
 
 Modül Oluşturma Dizin Yapısı
 
@@ -56,7 +56,7 @@ Yukarıdaki kodları açıklamak gerekirse:
 
 Oluşturduğunuz bir modül dosyasını doğru şekilde import ettiğinizde VS Code bunu tanıyacaktır ve otomatik tamamlamada ilgili sınıfa ait metot ve property'ler görünecektir.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-07-at-01.48.31.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-07-at-01.48.31.png)
 
 **Not:** require ile import aşamasında dosyanın uzantısını belirtmedik ancak belirtsek de sorunsuz çalışacaktır.
 

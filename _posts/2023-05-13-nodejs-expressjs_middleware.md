@@ -10,7 +10,7 @@ ExpressJS, Node.js ile web geliştirme yapan neredeyse herkesin hayatı boyunca 
 
 Genel hatlarıyla ExpressJS, web projelerimizde endpoint oluşturmayı, uygulamanın bir portu dinleyerek gelen isteklere cevap verebilmesini kolaylaştıran bir framework olarak karşımıza çıkar. İşte bu isteklerin karşılanması konusunda Middleware dediğimiz yapılara oldukça fazla iş düşer. ExpressJS ile geliştirilen bir uygulamaya atılan istekler, genellikle ilgili endpoint'e gelmeden önce bazı kontrollerden geçmelidir. İşte tam da burada middleware dediğimiz yapılar devreye girer.
 
-![_config.yml]({{ site.baseurl }}/images/express_middlewares.png)
+![_config.yml]({{ site.baseurl }}/assets/images/express_middlewares.png)
 
 Bir middleware nasıl çalışır konusundan önce, ExpressJS'te bir route nasıl tanımlanır konusuna değinmemiz gerekir. Bu konu netleştiğinde zaten işin mantığını da kavramış oluyoruz. Aşağıda bir route nasıl tanımlanır görelim:
 

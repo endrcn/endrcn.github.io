@@ -97,25 +97,25 @@ Veri ayıklama geliştirmesini yapmadan önce her zaman web sitesininin kaynak k
 
 İlk adımımız sayfaya tarayıcıdan girip sağ tık Kaynağı Görüntüle(View Source Code) ile sayfanın kaynak kodlarını açmak.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-14.19.51.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-14.19.51.png)
 
 Ardından kaynak kodlar arasında ayıklayacağımız değerlerin yerini kaynak kod içinde arama yaparak(Windows için: Ctrl+f, mac için Cmd+f) tespit edelim.
 
-![_config.yml]({{ site.baseurl }}/images/image-1.png)
+![_config.yml]({{ site.baseurl }}/assets/images/image-1.png)
 
 Ardından kodların tamamını _regex101_'e yapıştıralım. Bazen sayfaların kaynak kodları çok kalabalık oluyor bu durumda ayıklamak istediğimiz alanının üstten ve alttan biraz fazlasını kopyalayıp alabiliriz. Eğer sadece ayıklamak istediğimiz alanı alırsak tam sayfa üzerinde regex'i çalıştırdığımızda farklı bir yerle eşleşebilir bu da sonucun doğru dönmemesine neden olur.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-14.23.45.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-14.23.45.png)
 
 Özellikle sol tarafta ECMAScript(Javascript)'in işaretli olduğundan emin olalım ki geliştirme aşamasında yazdığımız Regex'te bir sorun çıkmasın. Ortamımız hazır, artık regex'i yazmaya başlayabiliriz. İlk olarak Regex alanına **USD** yazıp kaç tane yakaladığına bakalım.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-14.53.50.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-14.53.50.png)
 
 USD regex'i ile eşleşen 2 yer tespit edildi. Bunu gösterme amacım ilk olarak eşleşme yapacağımız yeri gözlemlememiz gerektiğini anlatmaktı. Şimdi HTML tag(örn: div, span) ve attribute(örn: class) alanlarından yararlanarak regex'i oluşturalım. Kaynak koduna dikkat ettiğimizde **_enpara-gold-exchange-rates__table-item_** adında bir sınıf tanımlanmış. Regex'in yakalamaya başlaması için bu sınıfı, bitişi için de **_enpara-gold-exchange-rates__information_** sınıfını kullanabiliriz.
 
 /enpara-gold-exchange-rates__table-item(.*?)enpara-gold-exchange-rates__information/g
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-15.02.26.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-15.02.26.png)
 
 Oluşturduğumuz regexi açıklayalım:
 
@@ -129,7 +129,7 @@ Oluşturduğumuz regexi açıklayalım:
 /([0-9,]+)\sTL/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2022-01-23-at-15.13.24.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2022-01-23-at-15.13.24.png)
 
 Süper! Artık elimizde istediğimiz alanlar var. Yazdığımız basit iki tane regex ile istediğimiz sonuca ulaştık. Yazdığımız son regex'i açıklayalım ve kodlamaya geçelim.
 

@@ -9,7 +9,7 @@ tags: [node.js,nodejs,javascript,scope]
 
 Değişken kapsamları, bir [değişkenin](https://endrcn.dev/nodejs/variables/) erişim alanını ifade eder. Literatürde "değişken kapsamları" ifadesi kullanılmayıp "**scope**" ya da "**variable scope**" ifadesi kullanılır. EcmaScript 6'dan önce Javascript'te sadece **Global Scope** ve **Function Scope** terimleri vardı. Ancak, ES6 ile birlikte değişken tanımlamak için eklenen let ve const keyword'leri ile birlikte **Block Scope** kavramı ortaya çıkmıştır. Tüm **scope** yapılarını alt başlıklar halinde inceleyelim.
 
-![_config.yml]({{ site.baseurl }}/images/js-variable-scope.webp)
+![_config.yml]({{ site.baseurl }}/assets/images/js-variable-scope.webp)
 
 ## Global Scope
 

@@ -21,7 +21,7 @@ console.log(process.argv);
 
 Script.js uygulamasını çalıştırdığımızda çıktı aşağıdaki gibi olur.
 
-![_config.yml]({{ site.baseurl }}/images/cli-1.png)
+![_config.yml]({{ site.baseurl }}/assets/images/cli-1.png)
 
 Uygulama çalıştırılırken her bir argüman birbirinden boşluk karakteriyle ayrılır. Bu nedenle eğer içinde boşluk geçen bir string'i argüman olarak göndermek istersek, tırnak içine almalıyız.
 
@@ -32,7 +32,7 @@ const arguments = process.argv.slice(2);
 console.log(arguments);
 ```
 
-![_config.yml]({{ site.baseurl }}/images/cli-2.png)
+![_config.yml]({{ site.baseurl }}/assets/images/cli-2.png)
 
 Son olarak genelde CLI uygulamalarını çalıştırırken bazı flag'ler ile bir sonraki parametrenin ne olduğuna dair bilgi verilir. Böylece parametrelerin sıralaması önemini yitirir. Bunun için yukarıdaki yöntemlerle kendimiz bir yapı kurabiliriz ancak daha önce de söylediğimiz gibi bu tarz özel işleri yapan birçok [modül](https://endrcn.dev/nodejs/modules/) mevcuttur. Bu tarz parametre alan CLI uygulaması geliştirmek için kullanabileceğimiz popüler bir modül de [yargs](https://www.npmjs.com/package/yargs) modülüdür. Modül kullanımıyla ilgili detaylara modülün NPM sayfasından ulaşabilirsiniz.
 
@@ -40,7 +40,7 @@ Son olarak genelde CLI uygulamalarını çalıştırırken bazı flag'ler ile bi
 
 Parametre olarak dosya yolu(path) alan ve dosyayı okuyup içindeki verileri ekrana basan bir uygulamayı örnek olarak geliştirelim. Öncelikle ana dizinde bir _data_ klasörü oluşturup altına da _text.txt_ adında bir metin dosyası yükleyelim.
 
-![_config.yml]({{ site.baseurl }}/images/cli-3.png)
+![_config.yml]({{ site.baseurl }}/assets/images/cli-3.png)
 
 Ardından ana dizinde _readfile.js_ adında bir dosya oluşturup yukarıda gördüğümüz gibi argümanları alalım.
 
@@ -98,6 +98,6 @@ readFile(filePath, "utf-8", (err, fileContent) => {
 
 Uygulamamızı argüman vermeyerek, hatalı argüman vererek ve doğru argüman vererek çalıştırdığımızda aşağıdaki gibi sonuçlar elde ederiz.
 
-![_config.yml]({{ site.baseurl }}/images/cli-4.png)
+![_config.yml]({{ site.baseurl }}/assets/images/cli-4.png)
 
 Harika bir iş çıkartıyorsunuz. Bu şekilde devam. Bir sonraki yazımızda çevre değişkenlerinden (environment variables) bahsedeceğiz. İyi çalışmalar.

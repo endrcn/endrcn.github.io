@@ -49,7 +49,7 @@ eventEmitter.addListener("message", (data) => {
 
 İki metodun da aldığı temel iki parametre var. İlk parametre dinlenecek olayın adı (eventName), ikincisi ise olay gerçekleştiğinde çalışacak fonksiyondur.
 
-![_config.yml]({{ site.baseurl }}/images/addlistener.png)
+![_config.yml]({{ site.baseurl }}/assets/images/addlistener.png)
 
 Bir olay olduğundaysa emit() metodu ile tetiklemeyi gerçekleştirebiliriz. Uygulamamıza emit metotlarını da ekleyelim.
 
@@ -71,7 +71,7 @@ eventEmitter.emit("event", { firstName: "ender", lastName: "can", age: 30 });
 
 Bu uygulamayı çalıştırdığımızda çıktı aşağıdaki gibi olacaktır.
 
-![_config.yml]({{ site.baseurl }}/images/event_output.png)
+![_config.yml]({{ site.baseurl }}/assets/images/event_output.png)
 
 **Not:** Bir eventEmitter nesnesi üzerinden tanımlanmış bir listener, sadece aynı nesneden tetiklenen emit leri yakalar. Bu nedenle [referansı](https://endrcn.dev/nodejs/classes/) kaybetmemek önemlidir.
 
@@ -109,7 +109,7 @@ eventEmitter.emit("message", "ender", "can", 30);
 eventEmitter.emit("event", { firstName: "ender", lastName: "can", age: 30 });
 ```
 
-![_config.yml]({{ site.baseurl }}/images/event_output2.png)
+![_config.yml]({{ site.baseurl }}/assets/images/event_output2.png)
 
 **Not:** Aynı listener'dan birden fazla oluşturabiliriz. Bu durumda ilgili event tetiklendiğinde(emit) iki listener'da çalışacaktır.
 
@@ -151,7 +151,7 @@ eventEmitter.emit("eventOnce", { firstName: "ender", lastName: "can", age: 30 })
 eventEmitter.emit("eventOnce", { firstName: "ender", lastName: "can", age: 30 });
 ```
 
-![_config.yml]({{ site.baseurl }}/images/event_once.png)
+![_config.yml]({{ site.baseurl }}/assets/images/event_once.png)
 
 Uygulamanın 20. ve 21. satırlarında _eventOnce_ isimli olay iki kez tetiklenmesine rağmen listener sadece birini ekrana bastı. Çünkü _once()_ metodu, ilk tetiklemeden itibaren dinlemeyi durdurur.
 

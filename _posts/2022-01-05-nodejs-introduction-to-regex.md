@@ -29,7 +29,7 @@ Regex yazmak için bazı karakterleri ve ne işe yaradıklarını bilmek gerekir
 
 Yukarıdaki regex örneği, metnin içinde "regex" geçiyorsa eşleşecektir. Regex101'de deneyelim.
 
-![_config.yml]({{ site.baseurl }}/images/regex1.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex1.png)
 
 Regex Tanımlama
 
@@ -55,7 +55,7 @@ Bu şekilde bir regex tanımladığımızda, aslında şunu söylemiş oluyoruz:
 
 ifadeleri yakala. Bu eşleşmeye uyan metnin içinde geçen suluk, silik, salık, salak,s_l_k,s l k gibi ifadelerin tamamı yakalanır. Ayrıca asalak, isilik, asilik, sulukçu, sulukule gibi ifadeler de bir parçası eşleşen ifadeler de yakalanır. Ancak burada dikkat edilmesi gereken kısım, sadece tanımladığımız parçanın eşleşeceğidir.
 
-![_config.yml]({{ site.baseurl }}/images/regex2.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex2.png)
 
 Regex . karakteri
 
@@ -67,7 +67,7 @@ Köşeli parantezler arasına yazılan karakterlerin ifadelerin tümüyle eşle�
 /kas[ıi1]m/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex3-1.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex3-1.png)
 
 Ayrıca [] karakterlerini kullanarak bir karakter aralığı da tanımlayabiliriz. Aralık tanımlamak için - karakterinden yararlanırız. Örneğin metin içindeki sayıları yakalayan bir regex yazalım.
 
@@ -77,7 +77,7 @@ Ayrıca [] karakterlerini kullanarak bir karakter aralığı da tanımlayabiliri
 
 Yukarıdaki regex, metnin içinde geçen 0 ile 9 arasındaki tüm rakamları yakalar.
 
-![_config.yml]({{ site.baseurl }}/images/regex4.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex4.png)
 
 Regex - [0-9]
 
@@ -93,7 +93,7 @@ Ayrıca tüm küçük harfler için [a-z] ve tüm büyük harfler için [A-Z] ku
 /[0-9]+/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex5.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex5.png)
 
 
 
@@ -105,7 +105,7 @@ Ayrıca tüm küçük harfler için [a-z] ve tüm büyük harfler için [A-Z] ku
 /do*la*r/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex6.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex6.png)
 
 #### ? karakteri
 
@@ -117,7 +117,7 @@ Ayrıca tüm küçük harfler için [a-z] ve tüm büyük harfler için [A-Z] ku
 
 Yukarıdaki regexi ifadesi ile yakalanacak olan kelimeler: dolar, dolr, dlar, dlr. Ancak örneğin doolar ifadesi yakalanmayacaktır.
 
-![_config.yml]({{ site.baseurl }}/images/regex7.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex7.png)
 
 #### {n,m} karakteri
 
@@ -129,7 +129,7 @@ Yukarıdaki regexi ifadesi ile yakalanacak olan kelimeler: dolar, dolr, dlar, dl
 
 Yukarıdaki regex ifadesi, o ve a karakterlerinin hiç yazılmaması ya da en fazla 3 kez tekrarlanması durumunda dolar ifadesinin yakalanmasını sağlayacak. Ancak o veya a karakterlerinden biri 3 defadan fazla kullanılırsa yakalamayacak.
 
-![_config.yml]({{ site.baseurl }}/images/regex8.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex8.png)
 
 
 
@@ -139,7 +139,7 @@ Ek olarak {} karakteri arasında bir aralık yerine tek bir sayı da verebiliriz
 /do{2}la{2}r/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex9.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex9.png)
 
 
 
@@ -158,7 +158,7 @@ olarak ifade edebiliriz.
 /^[A-ZÖÇŞİĞÜ]/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex10.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex10.png)
 
 
 
@@ -168,7 +168,7 @@ Eğer köşeli parantezlerin içine yazılan karakterlerin başına ^ karakteri 
 /^[^A-ZÖÇŞİĞÜ0-9]/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex11.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex11.png)
 
 #### \ karakteri
 
@@ -178,7 +178,7 @@ Eğer köşeli parantezlerin içine yazılan karakterlerin başına ^ karakteri 
 /^\[.*\] .*/g
 ```
 
-![_config.yml]({{ site.baseurl }}/images/regex12.png)
+![_config.yml]({{ site.baseurl }}/assets/images/regex12.png)
 
 
 

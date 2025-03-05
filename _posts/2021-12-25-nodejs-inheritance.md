@@ -11,7 +11,7 @@ Bir önceki [Node.js Temelleri - Sınıflar (Classes)](https://endrcn.dev/nodejs
 
 **Kalıtım(Inheritance),** genel bir sınıftan daha özel bir sınıf türeterek, genel sınıfın özelliklerinin özel sınıfta da kullanılabilmesidir. Böylece kod tekrarından ve anlam karmaşalarından uzak, temiz ve anlaşılır bir kod geliştirebiliriz.
 
-![_config.yml]({{ site.baseurl }}/images/Screen-Shot-2021-12-26-at-00.33.16.png)
+![_config.yml]({{ site.baseurl }}/assets/images/Screen-Shot-2021-12-26-at-00.33.16.png)
 
 Kalıtım(Inheritance)
 
