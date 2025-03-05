@@ -3,8 +3,7 @@ layout: post
 title: "MongoDB Performans Artırma Yöntemleri"
 author: Ender CAN
 date: "2022-05-07"
-categories: 
-  - [ MongoDB ]
+categories: [ MongoDB ]
 ---
 
 MongoDB, genel olarak oldukça hızlı sorgulama yapmamıza imkan tanıyan bir veritabanıdır. Ancak sakladığı veriler büyüdükçe eğer doğru şekilde indexleme yapılmadıysa performansta ciddi olarak düşüş yaşanır. Bu makaledeki amacımız; mongodb performans sorunlarıyla karşılaştığımızda sorgu analizini nasıl yapabileceğimizi ve bu analiz sonucunda gerekli indexleri oluşturarak performansı nasıl artırabileceğimizi göstermektir.
