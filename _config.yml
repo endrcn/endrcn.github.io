@@ -1,7 +1,7 @@
 # Site
 name: "endrcn.dev"
 title: "Endrcn.dev"
-description: "Jekyll template, Medium styled, free for bloggers."
+description: "Personal Blog"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ''
