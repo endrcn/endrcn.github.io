@@ -5,6 +5,8 @@ image: https://community-cdn-digitalocean-com.global.ssl.fastly.net/uCcwj4q1e8Tx
 author: endrcn
 date: "2022-05-07"
 categories: [ MongoDB ]
+featured: true
+hidden: true
 ---
 
 MongoDB, genel olarak oldukça hızlı sorgulama yapmamıza imkan tanıyan bir veritabanıdır. Ancak sakladığı veriler büyüdükçe eğer doğru şekilde indexleme yapılmadıysa performansta ciddi olarak düşüş yaşanır. Bu makaledeki amacımız; mongodb performans sorunlarıyla karşılaştığımızda sorgu analizini nasıl yapabileceğimizi ve bu analiz sonucunda gerekli indexleri oluşturarak performansı nasıl artırabileceğimizi göstermektir.
