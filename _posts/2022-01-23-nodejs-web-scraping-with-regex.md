@@ -5,6 +5,8 @@ layout: post
 author: endrcn
 categories: [NodeJS]
 image: "assets/images/Architecture-of-web-scraping.jpg"
+featured: true
+hidden: true
 ---
 
 Web Scraping/Crawling, bir -ya da daha fazla- web sitesindeki verileri ayıklamak ve uygulama kullanıcılarına uygun hale getirme tekniğinin adıdır. Türkçe'ye Web Kazıma olarak geçse de yaygın olarak **_web scraping_** ya da **_web crawling_** terimleri kullanılır.
