@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git Nedir ve Temel Komutları Nelerdir? Başlangıç Rehberi"
+title: "En Çok Kullanılan 5 AI Agent Design Pattern"
 author: endrcn
 date: "2022-05-07"
 categories: [ Yapay Zeka ]
