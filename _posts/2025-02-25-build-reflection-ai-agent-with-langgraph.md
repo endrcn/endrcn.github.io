@@ -9,9 +9,7 @@ featured: true
 hidden: true
 ---
 
-Merhaba arkadaşlar!
-
-Bugün **LangGraph** kütüphanesini kullanarak, kendi kendini değerlendirebilen ve iyileştirebilen bir AI Agent geliştireceğiz.
+Merhaba arkadaşlar! Bugün **LangGraph** kütüphanesini kullanarak, kendi kendini değerlendirebilen ve iyileştirebilen bir AI Agent geliştireceğiz.
 
 Bu projemizde **Reflection Design Pattern**'i kullanarak, agent'ımızın düşünme ve karar verme süreçlerini nasıl optimize edebileceğimizi detaylıca inceleyeceğiz.
 
