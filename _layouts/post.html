@@ -54,7 +54,7 @@ post_class: post-template
             <!-- End Adsense -->
 
             <!-- Post Featured Image -->
-            {% if page.image %}
+            {% if page.image and (page.video == nil or page.video == "") %}
 
             {% if site.lazyimages == "enabled" %}
             <img class="featured-image img-fluid lazyimg"
