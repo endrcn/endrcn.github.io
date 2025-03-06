@@ -64,7 +64,7 @@ post_class: post-template
             <!-- Post Featured Video -->
             {% if page.video %}
 
-            <iframe width="1200" height="450" src="{% page.video %}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="1200" height="450" src="{{ page.video }}" title="{{ page.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
             {% endif %}
             <!-- End Featured Video -->
