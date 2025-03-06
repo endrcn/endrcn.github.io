@@ -5,6 +5,7 @@ author: endrcn
 date: "2025-02-25"
 categories: [ Yapay Zeka ]
 image: assets/images/ai/build_reflection_ai_agent_with_langgraph.png
+video: https://www.youtube.com/embed/TqCPm5WYGok?si=yohX7buErzIkNjB1
 featured: true
 hidden: true
 ---
@@ -18,8 +19,6 @@ Projemizde **Streamlit** ile basit bir arayüz oluşturacak, **typing** modülü
 Geleneksel AI sistemlerinin aksine, **Reflection Pattern** kullanan bir agent, kendi kararlarını değerlendirebilir ve gerektiğinde stratejisini değiştirebilir. Bu, daha akıllı ve adaptif sistemler geliştirmemize olanak sağlar.
 
 Hadi başlayalım ve birlikte adım adım geliştirelim!
-
-<iframe width="1200" height="450" src="https://www.youtube.com/embed/TqCPm5WYGok?si=yohX7buErzIkNjB1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
