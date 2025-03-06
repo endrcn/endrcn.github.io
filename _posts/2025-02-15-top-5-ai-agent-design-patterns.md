@@ -2,14 +2,12 @@
 layout: post
 title: "En Çok Kullanılan 5 AI Agent Design Pattern"
 author: endrcn
-date: "2022-05-07"
+date: "2025-02-15"
 categories: [ Yapay Zeka ]
 image: assets/images/ai/top_5_ai_agent_design_patterns.png
 featured: true
 hidden: true
 ---
-
-## TOP 5 AI Agent Design Patterns
 
 Herkese merhaba! Bugün sizlerle yapay zeka dünyasının çok önemli bir konusunu konuşacayız: **AI agent'ler ve bunların design pattern'leri**.
 
