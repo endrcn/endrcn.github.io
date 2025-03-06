@@ -9,11 +9,11 @@ featured: true
 hidden: true
 ---
 
-<iframe width="1200" height="675" src="https://www.youtube.com/embed/N8QbwiARe28?si=ax_si5NEf6qAzjKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ## TOP 5 AI Agent Design Patterns
 
 Herkese merhaba! Bugün sizlerle yapay zeka dünyasının çok önemli bir konusunu konuşacayız: **AI agent'ler ve bunların design pattern'leri**.
+
+<iframe width="1200" height="450" src="https://www.youtube.com/embed/N8QbwiARe28?si=ax_si5NEf6qAzjKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### AI Agent Nedir?
 AI agent'ler, belirli görevleri yerine getirmek için tasarlanmış akıllı yazılım programlarıdır. Bir asistan gibi düşünün - size yardımcı olmak için programlanmış, çevresiyle etkileşime girebilen ve öğrenebilen sistemlerdir.
