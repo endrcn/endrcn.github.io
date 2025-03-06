@@ -13,10 +13,6 @@ Docker, mikroservis mimarilerinde ve konteyner yönetiminde öncü bir araçtır
 
 Docker'da uygulamaların birbiriyle haberleşebilmesi için aynı ağda olmaları gerekir. Docker, bu amaçla üç temel ağ tipi sunar: `bridge`, `host` ve `overlay`. Çoklu konteyner yapılandırmalarında, `bridge` ve `overlay` ağları en yaygın kullanılanlardır.
 
-## Docker Ağları: Temel Kavramlar
-
-Docker'da uygulamaların birbiriyle haberleşebilmesi için aynı ağda olmaları gerekir. Docker, bu amaçla üç temel ağ tipi sunar: `bridge`, `host` ve `overlay`. Çoklu konteyner yapılandırmalarında, `bridge` ve `overlay` ağları en yaygın kullanılanlardır.
-
 ### Bridge Ağları
 
 Varsayılan olarak, Docker bir `bridge` ağı oluşturur ve konteynerları bu ağa bağlar. Ancak, farklı `docker-compose.yaml` dosyalarında tanımlanan konteynerler varsayılan `bridge` ağı üzerinden birbirlerini göremezler. Bu sorunu çözmek için özel bir `bridge` ağı oluşturabilir ve her iki YAML dosyasındaki konteynerları bu ağa bağlayabilirsiniz.
