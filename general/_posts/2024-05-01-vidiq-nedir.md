@@ -3,7 +3,7 @@ layout: post
 author: endrcn
 title: "VidIQ Nedir? Nasıl Kullanılır?"
 date: "2024-05-01"
-categories: ["Apps"]
+categories: ["General"]
 tags: [vidiq,youtube seo, video optimizasyonu, içerik pazarlaması]
 ---
 
