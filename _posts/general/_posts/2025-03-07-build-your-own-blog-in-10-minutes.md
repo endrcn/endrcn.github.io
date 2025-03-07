@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "10 Dakikada Kendi Blok Siteni Ücretsiz Oluştur"
+title: "10 Dakikada Kendi Blog Siteni Ücretsiz Oluştur"
 author: endrcn
 date: "2025-03-07"
 categories: [ General ]
