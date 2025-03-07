@@ -3,7 +3,7 @@ layout: post
 title: "10 Dakikada Kendi Blok Siteni Ücretsiz Oluştur"
 author: endrcn
 date: "2025-03-07"
-categories: [ Apps ]
+categories: [ General ]
 image: assets/images/apps/build_your_blog_in_10_minutes.png
 video: https://www.youtube.com/embed/MP0X3v4V5A4?si=GYSSB1JkxGBaliRu
 ---
