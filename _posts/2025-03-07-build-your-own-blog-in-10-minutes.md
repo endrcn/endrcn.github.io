@@ -78,4 +78,4 @@ Böylece artık **endrcn.dev** adresine gelen ziyaretçiler **blog sitemize eri�
 
 ---
 
-📢 **İçeriği beğendiyseniz videoyu beğenmeyi ve kanala abone olmayı unutmayın!**
+📢 **İçeriği beğendiyseniz [videoyu](https://www.youtube.com/watch?v=MP0X3v4V5A4) beğenmeyi ve kanala abone olmayı unutmayın!**
