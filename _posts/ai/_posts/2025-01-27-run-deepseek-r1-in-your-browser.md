@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "🚀 Deepseek R1’i Tarayıcınızda Çalıştırın!"
+title: "🚀 Deepseek R1’i WebLLM ile Tarayıcınızda Çalıştırın!"
 author: endrcn
 date: "2025-02-07"
 categories: [ AI ]
