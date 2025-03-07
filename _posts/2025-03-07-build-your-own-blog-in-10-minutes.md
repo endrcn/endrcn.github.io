@@ -8,202 +8,74 @@ image: assets/images/apps/build_your_blog_in_10_minutes.png
 video: https://www.youtube.com/embed/MP0X3v4V5A4?si=GYSSB1JkxGBaliRu
 ---
 
-Merhaba arkadaşlar! Bugün **LangGraph** kütüphanesini kullanarak, kendi kendini değerlendirebilen ve iyileştirebilen bir AI Agent geliştireceğiz.
+# GitHub Pages ile Ücretsiz Blog Kurma
 
-Bu projemizde **Reflection Design Pattern**'i kullanarak, agent'ımızın düşünme ve karar verme süreçlerini nasıl optimize edebileceğimizi detaylıca inceleyeceğiz.
+Merhaba arkadaşlar! Bugün sizlerle birlikte **GitHub Pages** ve **Jekyll** kullanarak tamamen ücretsiz ve profesyonel bir blog sitesi nasıl kurulur, bunu adım adım inceleyeceğiz. Bu rehberde, hiçbir ücret ödemeden, kendi alan adınızı kullanarak veya GitHub'ın size sağladığı ücretsiz alan adıyla profesyonel bir blog sitesi oluşturmayı öğreneceksiniz.
 
-Projemizde **Streamlit** ile basit bir arayüz oluşturacak, **typing** modülü ile tip güvenliğini sağlayacak ve **LangChain**'in temel bileşenlerini kullanarak modüler bir sistem tasarlayacağz.
+Bu yöntem özellikle **yazılımcılar, öğrenciler veya sadece düşüncelerini paylaşmak isteyen herkes için** idealdir. Neden mi?
 
-Geleneksel AI sistemlerinin aksine, **Reflection Pattern** kullanan bir agent, kendi kararlarını değerlendirebilir ve gerektiğinde stratejisini değiştirebilir. Bu, daha akıllı ve adaptif sistemler geliştirmemize olanak sağlar.
+- **Tamamen ücretsiz**
+- **Herhangi bir sunucu yönetimi gerektirmiyor**
+- **Git ile versiyon kontrolü sağlıyor**
+- **Markdown ile kolay içerik oluşturma imkanı sunuyor**
+- **Minimal ve hızlı bir web sitesi elde ediyorsunuz**
 
-Hadi başlayalım ve birlikte adım adım geliştirelim!
+Videoda oluşturacağımız blog sitesinin teması, **Wowthemes**'in MIT lisansıyla ücretsiz olarak sunduğu **Mediumish** teması olacaktır.
 
----
+## 🚀 Başlangıç
 
-## Proje Kurulumu
+### 1. Mediumish Temasını Forklayalım
+Öncelikle [Mediumish temasının GitHub reposuna](https://github.com/wowthemesnet/mediumish-theme-jekyll) girerek **kendi hesabımıza forkluyoruz**.
 
-### 1. Proje klasörü ve dosya yapısı
+### 2. GitHub Pages İçin Repo Adını Ayarlayalım
+GitHub Pages kullanabilmek için repo adını **`endrcn.github.io`** olarak tanımlayalım. GitHub Pages, bu formatı otomatik olarak tanır ve sitenizi yayınlamanıza izin verir.
 
-**app.py** dosyasını oluşturalım ve aşağıdaki kütüpahaneleri projeye dahil edelim:
+### 3. GitHub Pages Yayın Ayarları
+- **Settings > Pages** alanına giriyoruz.
+- **Deploy from a branch** seçeneğini işaretleyip,
+- **Branch olarak `master` ve root** seçiyoruz.
+- Böylece **master'a güncelleme yapıldığında site otomatik güncellenecek**.
 
-```python
-import streamlit as st
-from typing import Annotated
-from typing_extensions import TypedDict
+### 4. VS Code ile Düzenlemelere Başlayalım
+Şimdi repository'yi bilgisayarımıza **klonlayıp** **VS Code**'da açıyoruz.
 
-from langchain_core.messages import AIMessage, HumanMessage
-from langgraph.graph import StateGraph, START, END
-from langgraph.graph.message import add_messages
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langgraph.checkpoint.memory import MemorySaver
-```
+- Tema ile birlikte gelen **örnek post'ları** bir-iki tanesi hariç siliyoruz.
+- Daha önce yazdığım **MongoDB** ile ilgili post'u buraya kopyalıyorum.
 
----
+### 5. Metadata Alanını Düzenleyelim
+Post'un en üstündeki alan **metadata alanı**. Bu alanda **başlık, yazar, kategori** gibi temel bilgileri veriyoruz.
 
-### 2. State Tanımlamaları
+## 🔍 İlk Yayını Test Edelim
+İlk yüklemeyi yapıp **test ettiğimizde sitenin açılmadığını gördük**. Demek ki bir hata yaptık. Hemen **post'u ve build loglarını inceliyoruz**.
 
-Agent'ın durumunu tutacak **State** sınıfını oluşturalım:
+- `_config.yml` dosyasında eksik veriler olduğunu fark ettik. **Güncelleyip tekrar commit attık**.
+- **Hata devam ediyor**, metadata alanında **kategori** kısmının **dizi olarak tanımlanması gerektiğini fark ettik**. Düzeltip tekrar build ettik.
+- **Build başarılı oldu, siteyi açalım!** 🎉
 
-```python
-class State(TypedDict):
-    messages: Annotated[list, add_messages]
-```
+Ancak **dosyalar yüklenmemiş**! Sebebi `_config.yml` dosyasındaki `base_url` alanının yanlış verilmiş olması. **Onu düzeltiyoruz.**
 
-Burada **messages** attribute'unu bir **Annotated** olarak tanımladık. Yeni mesajların listeye eklenmesi için **add_messages** fonksiyonunu kullandık. Bu sayede, her yeni mesaj önceki mesajın üzerine yazılmayacak.
+### 6. Site Genel Ayarlarını Güncelleyelim
+`_config.yml` dosyasında:
 
----
+- **Sitenin adı, başlığı, açıklaması** gibi alanları düzenliyoruz.
+- **Lazy Loading (`lazyimages: true`)** ayarını açarak **site hızını artırıyoruz**.
+- **Cache temizliyoruz** ve **resimler düzgün yükleniyor!**
 
-### 3. Graph Tanımlamaları
+### 7. Menü ve Yazar Bilgilerini Düzenleyelim
+- **Menüyü `_layouts/default.html` dosyasından düzenliyoruz**.
+  - **Docs, WP Versions** gibi tema linklerini kaldırıyoruz.
+  - **GitHub linkini** kendi hesabımızla değiştiriyoruz.
+  - **YouTube kanal linkimizi ekliyoruz**.
+- **Post ekranında yazar bilgileri görünmüyor**. `_config.yml` dosyasındaki **yazar alanını düzenleyerek** bu sorunu çözüyoruz.
 
-**StateGraph** oluşturalım ve **State** sınıfını parametre olarak verelim:
+### 8. Kendi Alan Adımızı Tanımlayalım
+GitHub’ın ücretsiz verdiği **`endrcn.github.io`** adresi yerine **kendi domainimizi kullanmak için**:
 
-```python
-graph_builder = StateGraph(State)
-```
+- **Settings > Custom Domain** alanına **`endrcn.dev`** yazıyoruz.
+- Alan adını aldığımız firmanın sitesinden **DNS ayarlarında `www CNAME`ini `endrcn.github.io`ya yönlendiriyoruz**.
 
----
-
-### 4. Prompt Tanımlamaları
-
-#### **4.1. Generation Prompt**
-
-AI Agent'in metin üretmesi için bir **prompt** oluşturalım:
-
-```python
-prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            "You are an essay assistant tasked with writing excellent 5-paragraph essays."
-            " Generate the best essay possible for the user's request"
-            " If the user provides critique, respond with a revised version of your previous attempts."
-        ),
-        MessagesPlaceholder(variable_name="messages"),
-    ]
-)
-```
-
-**LLM modeli olarak GPT-4o kullanacağız:**
-
-```python
-llm = ChatOpenAI(model="gpt-4o")
-```
-
-**Prompt ile modelin çıktısını oluşturalım:**
-
-```python
-generate = prompt | llm
-```
-
-#### **4.2. Reflection Prompt**
-
-AI Agent'in üretimi değerlendirecek bir **reflection** prompt'u oluşturalım:
-
-```python
-reflection_prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            "You are a teacher grading an essay submission. Generate critique and recommendations for the user's submission."
-            " Provide detailed recommendations, including requests for length, depth, style, etc."
-        ),
-        MessagesPlaceholder(variable_name="messages"),
-    ]
-)
-```
-
-**Reflection modelini oluşturalım:**
-
-```python
-reflect = reflection_prompt | llm
-```
+Böylece artık **endrcn.dev** adresine gelen ziyaretçiler **blog sitemize erişebilecek**! 🎉
 
 ---
 
-### 5. Node Tanımlamaları
-
-#### **5.1. Generation Node**
-
-```python
-def generation_node(state: State):
-    return {"messages": [generate.invoke(state["messages"])]}
-```
-
-#### **5.2. Reflection Node**
-
-```python
-def reflection_node(state: State):
-    cls_map = {"ai": HumanMessage, "human": AIMessage}
-    translated = [state["messages"][0]] + [
-        cls_map[msg.type](content=msg.content) for msg in state["messages"][1:]
-    ]
-    res = reflect.invoke(translated)
-
-    return {"messages": [HumanMessage(content=res.content)]}
-```
-
----
-
-### 6. Graph Kenar ve Koşullarını Tanımlama
-
-```python
-graph_builder.add_node("generate", generation_node)
-graph_builder.add_node("reflect", reflection_node)
-
-graph_builder.add_edge(START, "generate")
-```
-
-#### **Koşul Tanımlama**
-
-```python
-def should_continue(state: State):
-    if len(state["messages"]) > 6:
-        return END
-    return "reflect"
-
-graph_builder.add_conditional_edges("generate", should_continue)
-graph_builder.add_edge("reflect", "generate")
-```
-
----
-
-### 7. Memory Kaydedici ve Graph Derleme
-
-```python
-memory = MemorySaver()
-graph = graph_builder.compile(checkpointer=memory)
-```
-
----
-
-### 8. Streamlit Arayüzü
-
-```python
-def stream_graph_updates(user_input: str):
-    for event in graph.stream({"messages": [HumanMessage(content=user_input)]}, config):
-        state = graph.get_state(config)
-        last_message = state.values["messages"][-1]
-        st.text(ChatPromptTemplate.from_messages([last_message]).pretty_repr())
-
-def main():
-    st.title("Reflection Agent")
-    st.write("Enter your task description below:")
-
-    task_description = st.text_area("Task Description", height=200)
-
-    if (st.button("Run Task")):
-        with st.spinner("Running Task..."):
-            stream_graph_updates(task_description)
-            st.success("Task Completed!")
-
-if __name__ == "__main__":
-    main()
-```
-
----
-
-Bu yazıda **LangGraph ile Reflection Design Pattern** kullanarak, kendi kendini eleştiren ve iyileştiren bir AI Agent oluşturduk.
-
-Beğendiyseniz **videoyu beğenmeyi ve kanala abone olmayı unutmayın!** 🚀
-
+📢 **İçeriği beğendiyseniz videoyu beğenmeyi ve kanala abone olmayı unutmayın!**
