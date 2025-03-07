@@ -8,9 +8,7 @@ image: assets/images/apps/build_your_blog_in_10_minutes.png
 video: https://www.youtube.com/embed/MP0X3v4V5A4?si=GYSSB1JkxGBaliRu
 ---
 
-# GitHub Pages ile Ücretsiz Blog Kurma
-
-Merhaba arkadaşlar! Bugün sizlerle birlikte **GitHub Pages** ve **Jekyll** kullanarak tamamen ücretsiz ve profesyonel bir blog sitesi nasıl kurulur, bunu adım adım inceleyeceğiz. Bu rehberde, hiçbir ücret ödemeden, kendi alan adınızı kullanarak veya GitHub'ın size sağladığı ücretsiz alan adıyla profesyonel bir blog sitesi oluşturmayı öğreneceksiniz.
+Herkese Merhaba! Bugün sizlerle birlikte **GitHub Pages** ve **Jekyll** kullanarak tamamen ücretsiz ve profesyonel bir blog sitesi nasıl kurulur, bunu adım adım inceleyeceğiz. Bu rehberde, hiçbir ücret ödemeden, kendi alan adınızı kullanarak veya GitHub'ın size sağladığı ücretsiz alan adıyla profesyonel bir blog sitesi oluşturmayı öğreneceksiniz.
 
 Bu yöntem özellikle **yazılımcılar, öğrenciler veya sadece düşüncelerini paylaşmak isteyen herkes için** idealdir. Neden mi?
 
