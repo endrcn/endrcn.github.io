@@ -6,13 +6,9 @@ date: "2025-02-07"
 categories: [ AI ]
 image: assets/images/ai/how_to_dub_your_video_with_ai.png
 video: https://www.youtube.com/embed/VNTYwWi8qAU?si=sNMfTIT9YhZ8teu5
----
+--- 
 
-### YouTube Videolarınıza Yapay Zekâ ile Ücretsiz Dublaj Yapın!  
-
-Herkese merhaba,  
-
-Bugün YouTube videolarınıza yapay zekâ kullanarak nasıl ücretsiz dublaj yapabileceğimizi konuşacağız.  
+Herkese merhaba, bugün YouTube videolarınıza yapay zekâ kullanarak nasıl ücretsiz dublaj yapabileceğimizi konuşacağız.  
 
 ## **SoniTranslate ile Dublaj İşlemi**  
 

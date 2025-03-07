@@ -8,8 +8,6 @@ image: assets/images/ai/run_deepseek_r1_in_your_browser.png
 video: https://www.youtube.com/embed/3pbSAWleLVo?si=oXdS-NQVzz46VmYL
 ---
 
-# Deepseek R1: Yapay Zekada Yeni Bir Çağ
-
 Bugün yapay zeka dünyasına yeni bir soluk getiren **Deepseek R1** modelini konuşacağız! Bu model, özellikle kodlama, metin üretimi ve analitik yetenekleriyle dikkat çekiyor. Peki, onu diğer modellerden ayıran özellikler neler?
 
 ## Deepseek R1 Nedir?
