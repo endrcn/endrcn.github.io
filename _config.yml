@@ -5,7 +5,7 @@ description: "Kişisel Blog"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo_ec.png'
 baseurl: 'https://endrcn.dev'
-google_analytics: 'G-09E6KHEP07'
+gtm_id: 'G-09E6KHEP07'
 disqus: 'demowebsite'
 mailchimp-list: ''
 include: ["_pages"]
