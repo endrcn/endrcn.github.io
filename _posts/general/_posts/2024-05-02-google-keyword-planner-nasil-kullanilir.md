@@ -1,13 +1,9 @@
 ---
+layout: post
+author: endrcn
 title: "Google Keyword Planner Nedir?"
 date: "2024-05-02"
-categories: 
-  - "general"
-tags: 
-  - "google-keyword-planner"
-  - "keyword-araştırması"
-  - "seo"
-  - "dijital-pazarlama"
+categories: [General]
 ---
 
 Google Keyword Planner, dijital pazarlama ve SEO (Arama Motoru Optimizasyonu) çalışmalarında kritik bir rol oynar. Bu araç, Google'ın sunduğu ücretsiz bir hizmet olup, kullanıcıların anahtar kelime araştırması yapmalarına, reklam kampanyaları için tahmini maliyetleri görmelerine ve potansiyel pazar hakkında derinlemesine bilgi edinmelerine olanak tanır. **Google Keyword Planner'ın nasıl kullanılacağını öğrenmek**, dijital pazarlama stratejinizi önemli ölçüde geliştirebilir.
