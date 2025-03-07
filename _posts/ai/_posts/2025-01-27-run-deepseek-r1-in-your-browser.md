@@ -17,10 +17,15 @@ Bugün yapay zeka dünyasına yeni bir soluk getiren **Deepseek R1** modelini ko
 **Deepseek R1**, açık kaynaklı ve büyük ölçekli bir dil modeli. Doğal dil işleme konusunda oldukça güçlü ve aynı zamanda programlama dillerinde de iddialı. **OpenAI**’nin modellerine benzer bir performans sergilerken, açık kaynak olmasıyla geliştiricilere büyük bir özgürlük sağlıyor.
 
 ### Deepseek R1’in Öne Çıkan Özellikleri:
+
 ✅ **Geniş Dil Anlayışı** – Birçok dili destekliyor ve doğal diyalog kurabiliyor.
+
 ✅ **Kodlama Yeteneği** – Python, JavaScript ve diğer dillerde güçlü.
+
 ✅ **Açık Kaynak** – İsteyen herkes inceleyebilir ve geliştirebilir.
+
 ✅ **Hızlı ve Optimize** – Hafif yapısıyla düşük donanımlarda bile verimli çalışabiliyor.
+
 
 Yani bu model, sadece bir sohbet botu değil! **Hem yazılım geliştirenler için bir asistan hem de büyük veri işleyebilen bir analiz aracı.**
 
