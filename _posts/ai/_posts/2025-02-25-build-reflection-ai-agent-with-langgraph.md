@@ -3,7 +3,7 @@ layout: post
 title: "LangGraph ile Reflection AI Agent Nasıl Yapılır?"
 author: endrcn
 date: "2025-02-25"
-categories: [ Yapay Zeka ]
+categories: [ AI ]
 image: assets/images/ai/build_reflection_ai_agent_with_langgraph.png
 video: https://www.youtube.com/embed/TqCPm5WYGok?si=yohX7buErzIkNjB1
 featured: true
